@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import logo from "@/assets/logo.png";
+import logoDark from "@/assets/logo-dark.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
