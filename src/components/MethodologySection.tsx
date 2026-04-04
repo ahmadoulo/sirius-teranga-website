@@ -32,12 +32,12 @@ const MethodologySection = () => {
   const headRef = useScrollAnimation('fade-in-up', 0);
 
   return (
-    <section id="methodology" className="py-24 bg-primary">
+    <section id="methodology" className="py-24 bg-accent dark:bg-card">
       <div className="container mx-auto px-4 lg:px-8">
         <div ref={headRef} className="text-center mb-16">
-          <span className="font-heading text-sm font-semibold text-accent uppercase tracking-widest">{t("methodology.tag")}</span>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary-foreground mt-3 mb-4">{t("methodology.title")}</h2>
-          <p className="font-body text-primary-foreground/70 text-lg max-w-2xl mx-auto">{t("methodology.subtitle")}</p>
+          <span className="font-heading text-sm font-semibold text-accent-foreground dark:text-accent uppercase tracking-widest">{t("methodology.tag")}</span>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-accent-foreground dark:text-foreground mt-3 mb-4">{t("methodology.title")}</h2>
+          <p className="font-body text-accent-foreground/70 dark:text-muted-foreground text-lg max-w-2xl mx-auto">{t("methodology.subtitle")}</p>
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
