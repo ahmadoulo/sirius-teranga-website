@@ -59,6 +59,7 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
         },
+        bordeaux: "hsl(var(--bordeaux))",
         "text-dark": "hsl(var(--text-dark))",
         "text-muted": "hsl(var(--text-muted))",
         surface: {
