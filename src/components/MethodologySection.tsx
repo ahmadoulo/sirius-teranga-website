@@ -17,12 +17,12 @@ const StepCard = ({ icon: Icon, num, sKey, delay, isLast }: { icon: React.Elemen
       {!isLast && (
         <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-primary-foreground/20" />
       )}
-      <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10">
+      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10 bg-accent/20 dark:border dark:border-accent/40 dark:bg-transparent">
         <Icon className="w-7 h-7 text-accent" />
       </div>
       <span className="font-heading text-xs font-bold text-accent tracking-widest">{num}</span>
-      <h3 className="font-heading font-bold text-xl text-primary-foreground mt-2 mb-3">{t(`methodology.steps.${sKey}.title`)}</h3>
-      <p className="font-body text-primary-foreground/70 text-sm leading-relaxed">{t(`methodology.steps.${sKey}.desc`)}</p>
+      <h3 className="font-heading font-bold text-xl mt-2 mb-3 text-foreground dark:text-accent">{t(`methodology.steps.${sKey}.title`)}</h3>
+      <p className="font-body text-muted-foreground text-sm leading-relaxed">{t(`methodology.steps.${sKey}.desc`)}</p>
     </div>
   );
 };
