@@ -7,7 +7,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const ContactSection = () => {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
-  const formRef = useScrollAnimation('fade-in-up', 0);
+  const formRef = useScrollAnimation<HTMLFormElement>('fade-in-up', 0);
   const infoRef = useScrollAnimation('fade-in-right', 200);
 
   const handleSubmit = (e: React.FormEvent) => {
