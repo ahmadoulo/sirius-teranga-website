@@ -108,7 +108,7 @@
     "info_location": "Dakar, Senegal"
   },
   "footer": {
-    "rights": "© {year} Sirius Teranga Consulting. All rights reserved.",
+    "rights": "© {{year}} Sirius Teranga Consulting. All rights reserved.",
     "links": "Quick links",
     "contact_title": "Contact"
   }
