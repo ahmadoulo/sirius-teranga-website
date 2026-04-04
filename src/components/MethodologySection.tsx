@@ -15,7 +15,7 @@ const StepCard = ({ icon: Icon, num, sKey, delay, isLast }: { icon: React.Elemen
   return (
     <div ref={ref} className="text-center relative">
       {!isLast && (
-        <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-primary-foreground/20" />
+        <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-accent-foreground/20 dark:bg-accent/30" />
       )}
       <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10 bg-accent/20 dark:border dark:border-accent/40 dark:bg-transparent">
         <Icon className="w-7 h-7 text-accent" />
