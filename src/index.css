@@ -56,6 +56,56 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 0 0% 92%;
+
+    --card: 222 40% 12%;
+    --card-foreground: 0 0% 92%;
+
+    --popover: 222 40% 12%;
+    --popover-foreground: 0 0% 92%;
+
+    --primary: 43 56% 52%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 30% 16%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 43 56% 52%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 222 20% 22%;
+    --input: 222 20% 22%;
+    --ring: 43 56% 52%;
+
+    /* Custom tokens dark */
+    --navy: 43 56% 52%;
+    --navy-light: 43 56% 62%;
+    --gold: 43 56% 52%;
+    --gold-light: 43 56% 62%;
+    --bordeaux: 346 39% 42%;
+    --text-dark: 0 0% 92%;
+    --text-muted: 0 0% 60%;
+    --surface: 222 40% 12%;
+    --surface-alt: 222 30% 16%;
+
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 43 56% 52%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 222 30% 18%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 222 20% 22%;
+    --sidebar-ring: 43 56% 52%;
+  }
 }
 
 @layer base {
@@ -64,7 +114,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply bg-background text-foreground font-body antialiased transition-colors duration-300;
   }
 
   h1, h2, h3, h4, h5, h6 {

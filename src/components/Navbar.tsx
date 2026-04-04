@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -21,13 +23,12 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-heading font-bold text-xl text-primary tracking-tight">SIRIUS</span>
-          <span className="font-heading text-sm text-accent font-semibold tracking-wide">Teranga Consulting</span>
+        <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -41,6 +42,7 @@ const Navbar = () => {
               {l.label}
             </Link>
           ))}
+          <ThemeToggle />
           <LanguageSwitcher />
           <Link
             to="/contact"
@@ -51,7 +53,8 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
           <LanguageSwitcher />
           <button className="text-foreground" onClick={() => setOpen(!open)}>
             {open ? <X size={24} /> : <Menu size={24} />}
