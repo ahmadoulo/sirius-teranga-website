@@ -11,6 +11,20 @@ const serviceKeys = [
   { icon: GraduationCap, key: "training" },
 ];
 
+const ServiceCard = ({ icon: Icon, sKey, delay }: { icon: React.ElementType; sKey: string; delay: number }) => {
+  const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', delay);
+  const { t } = useTranslation();
+  return (
+    <div ref={ref} className="group bg-surface-alt rounded-lg p-8 border border-border hover:border-accent/30 hover:shadow-lg transition-all">
+      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
+        <Icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+      </div>
+      <h3 className="font-heading font-bold text-lg text-foreground mb-3">{t(`services.items.${sKey}.title`)}</h3>
+      <p className="font-body text-text-muted leading-relaxed text-sm">{t(`services.items.${sKey}.desc`)}</p>
+    </div>
+  );
+};
+
 const ServicesSection = () => {
   const { t } = useTranslation();
   const headRef = useScrollAnimation('fade-in-up', 0);
@@ -25,18 +39,9 @@ const ServicesSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {serviceKeys.map((s, i) => {
-            const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', i * 100);
-            return (
-              <div ref={ref} key={s.key} className="group bg-surface-alt rounded-lg p-8 border border-border hover:border-accent/30 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5 group-hover:bg-accent/15 transition-colors">
-                  <s.icon className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
-                </div>
-                <h3 className="font-heading font-bold text-lg text-foreground mb-3">{t(`services.items.${s.key}.title`)}</h3>
-                <p className="font-body text-text-muted leading-relaxed text-sm">{t(`services.items.${s.key}.desc`)}</p>
-              </div>
-            );
-          })}
+          {serviceKeys.map((s, i) => (
+            <ServiceCard key={s.key} icon={s.icon} sKey={s.key} delay={i * 100} />
+          ))}
         </div>
       </div>
     </section>
