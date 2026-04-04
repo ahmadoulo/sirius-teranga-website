@@ -9,6 +9,24 @@ const stepKeys = [
   { icon: Rocket, num: "04", key: "transform" },
 ];
 
+const StepCard = ({ icon: Icon, num, sKey, delay, isLast }: { icon: React.ElementType; num: string; sKey: string; delay: number; isLast: boolean }) => {
+  const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', delay);
+  const { t } = useTranslation();
+  return (
+    <div ref={ref} className="text-center relative">
+      {!isLast && (
+        <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-primary-foreground/20" />
+      )}
+      <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10">
+        <Icon className="w-7 h-7 text-accent" />
+      </div>
+      <span className="font-heading text-xs font-bold text-accent tracking-widest">{num}</span>
+      <h3 className="font-heading font-bold text-xl text-primary-foreground mt-2 mb-3">{t(`methodology.steps.${sKey}.title`)}</h3>
+      <p className="font-body text-primary-foreground/70 text-sm leading-relaxed">{t(`methodology.steps.${sKey}.desc`)}</p>
+    </div>
+  );
+};
+
 const MethodologySection = () => {
   const { t } = useTranslation();
   const headRef = useScrollAnimation('fade-in-up', 0);
@@ -23,22 +41,9 @@ const MethodologySection = () => {
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {stepKeys.map((s, i) => {
-            const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', i * 150);
-            return (
-              <div ref={ref} key={s.num} className="text-center relative">
-                {i < stepKeys.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-primary-foreground/20" />
-                )}
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-5 relative z-10">
-                  <s.icon className="w-7 h-7 text-accent" />
-                </div>
-                <span className="font-heading text-xs font-bold text-accent tracking-widest">{s.num}</span>
-                <h3 className="font-heading font-bold text-xl text-primary-foreground mt-2 mb-3">{t(`methodology.steps.${s.key}.title`)}</h3>
-                <p className="font-body text-primary-foreground/70 text-sm leading-relaxed">{t(`methodology.steps.${s.key}.desc`)}</p>
-              </div>
-            );
-          })}
+          {stepKeys.map((s, i) => (
+            <StepCard key={s.num} icon={s.icon} num={s.num} sKey={s.key} delay={i * 150} isLast={i === stepKeys.length - 1} />
+          ))}
         </div>
       </div>
     </section>
