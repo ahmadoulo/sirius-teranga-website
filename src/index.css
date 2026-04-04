@@ -41,6 +41,7 @@
     --navy-light: 216 50% 25%;
     --gold: 43 56% 52%;
     --gold-light: 43 56% 62%;
+    --bordeaux: 346 39% 32%;
     --text-dark: 0 0% 18%;
     --text-muted: 0 0% 49%;
     --surface: 0 0% 100%;
@@ -69,4 +70,21 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
   }
+}
+
+@layer utilities {
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
+
+@layer base {
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
 }

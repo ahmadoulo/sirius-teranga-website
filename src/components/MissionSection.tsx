@@ -1,46 +1,65 @@
-import { Compass, Eye, Heart } from "lucide-react";
+import { Compass, Eye, Award, Zap, Shield, Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const cards = [
-  {
-    icon: Compass,
-    title: "Mission",
-    text: "Accompagner les entreprises dans l'optimisation de leurs performances en mettant en place des solutions organisationnelles et digitales adaptées à leurs besoins.",
-  },
-  {
-    icon: Eye,
-    title: "Vision",
-    text: "Devenir un acteur de référence en Afrique dans le conseil en organisation et transformation digitale, reconnu pour son expertise et son impact.",
-  },
-  {
-    icon: Heart,
-    title: "Valeurs",
-    text: "Qualité & Excellence · Innovation · Fiabilité & Confiance · Performance · Engagement",
-  },
-];
+const MissionSection = () => {
+  const { t } = useTranslation();
+  const headRef = useScrollAnimation('fade-in-up', 0);
 
-const MissionSection = () => (
-  <section className="py-24 bg-surface-alt">
-    <div className="container mx-auto px-4 lg:px-8">
-      <div className="text-center mb-14">
-        <span className="font-heading text-sm font-semibold text-accent uppercase tracking-widest">Notre ADN</span>
-        <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mt-3">
-          Mission, Vision & Valeurs
-        </h2>
-      </div>
+  const cards = [
+    { icon: Compass, title: t("mission.mission_title"), text: t("mission.mission_text") },
+    { icon: Eye, title: t("mission.vision_title"), text: t("mission.vision_text") },
+  ];
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {cards.map((c) => (
-          <div key={c.title} className="bg-surface rounded-lg p-8 border border-border hover:shadow-lg transition-shadow">
-            <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center mb-5">
-              <c.icon className="w-6 h-6 text-accent" />
-            </div>
-            <h3 className="font-heading font-bold text-xl text-foreground mb-3">{c.title}</h3>
-            <p className="font-body text-text-muted leading-relaxed">{c.text}</p>
+  const values = [
+    { icon: Award, key: "quality" },
+    { icon: Zap, key: "innovation" },
+    { icon: Shield, key: "trust" },
+    { icon: Zap, key: "performance" },
+    { icon: Heart, key: "engagement" },
+  ];
+
+  return (
+    <section className="py-24 bg-surface-alt">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div ref={headRef} className="text-center mb-14">
+          <span className="font-heading text-sm font-semibold text-accent uppercase tracking-widest">{t("mission.tag")}</span>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mt-3">{t("mission.title")}</h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          {cards.map((c, i) => {
+            const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', i * 150);
+            return (
+              <div ref={ref} key={c.title} className="bg-surface rounded-lg p-8 border border-border hover:shadow-lg transition-shadow">
+                <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center mb-5">
+                  <c.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="font-heading font-bold text-xl text-foreground mb-3">{c.title}</h3>
+                <p className="font-body text-text-muted leading-relaxed">{c.text}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <h3 className="font-heading font-bold text-xl text-foreground mb-6 text-center">{t("mission.values_title")}</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {values.map((v, i) => {
+              const ref = useScrollAnimation<HTMLDivElement>('scale-in', i * 100);
+              return (
+                <div ref={ref} key={v.key} className="bg-surface rounded-lg p-5 border border-border text-center hover:border-accent/30 transition-colors">
+                  <v.icon className="w-6 h-6 text-accent mx-auto mb-3" />
+                  <h4 className="font-heading font-semibold text-sm text-foreground mb-1">{t(`mission.values.${v.key}.title`)}</h4>
+                  <p className="font-body text-text-muted text-xs leading-relaxed">{t(`mission.values.${v.key}.desc`)}</p>
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default MissionSection;

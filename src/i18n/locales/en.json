@@ -1,0 +1,115 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Request a quote"
+  },
+  "hero": {
+    "badge": "Organization & Transformation Consulting",
+    "title": "Transform your organization.",
+    "highlight": "Accelerate your performance.",
+    "subtitle": "STC helps companies optimize their processes, drive digital transformation and sustainably improve their performance.",
+    "cta1": "Contact us",
+    "cta2": "Discover our services"
+  },
+  "about": {
+    "tag": "About",
+    "title": "Who are we?",
+    "p1": "STC is a consulting firm specialized in organizational optimization, digital transformation and business performance improvement. We support organizations in structuring their activities, optimizing their processes and integrating tailored technological solutions.",
+    "p2": "Our approach combines technical expertise with strategic vision to deliver concrete, effective and sustainable solutions.",
+    "sector_title": "Industry",
+    "sector": "Consulting, audit, organizational and digital transformation, information systems, professional training.",
+    "desc_title": "Description",
+    "desc": "STC works with companies to improve their efficiency, strengthen their organization and support their growth through solutions tailored to their challenges.",
+    "stat1_value": "SMEs & Large Groups",
+    "stat1_label": "Target clients",
+    "stat2_value": "Concrete results",
+    "stat2_label": "Impact-driven approach",
+    "stat3_value": "Expert team",
+    "stat3_label": "Multidisciplinary"
+  },
+  "mission": {
+    "tag": "Our DNA",
+    "title": "Mission, Vision & Values",
+    "mission_title": "Mission",
+    "mission_text": "Support companies in optimizing their performance by implementing organizational and digital solutions tailored to their needs.",
+    "vision_title": "Vision",
+    "vision_text": "Become a leading player in Africa in organizational consulting and digital transformation, recognized for its expertise and impact.",
+    "values_title": "Values",
+    "values": {
+      "quality": { "title": "Quality & Excellence", "desc": "Ensuring rigorous and effective services" },
+      "innovation": { "title": "Innovation", "desc": "Offering modern and adapted solutions" },
+      "trust": { "title": "Reliability & Trust", "desc": "Building lasting relationships" },
+      "performance": { "title": "Performance", "desc": "Generating concrete and measurable results" },
+      "engagement": { "title": "Commitment", "desc": "Supporting with responsibility and professionalism" }
+    }
+  },
+  "services": {
+    "tag": "Expertise",
+    "title": "Our Services",
+    "subtitle": "Structured solutions to support your transformation and sustainably improve your performance.",
+    "items": {
+      "org": { "title": "Organizational Consulting & Audit", "desc": "Analysis of your structures, process mapping and recommendations for a more efficient organization." },
+      "digital": { "title": "Digital Transformation", "desc": "Support in digitizing your activities and integrating tailored technological solutions." },
+      "process": { "title": "Process Optimization", "desc": "Improving operational efficiency, reducing waste and implementing best practices." },
+      "si": { "title": "Information Systems", "desc": "Implementation of CMMS/EAM, data-driven management and business intelligence solutions." },
+      "iso": { "title": "ISO & Quality (QMS)", "desc": "Support towards ISO certifications, implementation of quality management systems." },
+      "training": { "title": "Training & Skills Transfer", "desc": "Professional training programs to empower your teams and strengthen their capabilities." }
+    }
+  },
+  "methodology": {
+    "tag": "Approach",
+    "title": "Our Methodology",
+    "subtitle": "A structured and proven approach for concrete and lasting results.",
+    "steps": {
+      "analyze": { "title": "Analyze", "desc": "In-depth diagnosis of your organization, processes and existing performance." },
+      "structure": { "title": "Structure", "desc": "Definition of a clear action plan with measurable and achievable objectives." },
+      "optimize": { "title": "Optimize", "desc": "Implementation of improvements, process redesign and tool integration." },
+      "transform": { "title": "Transform", "desc": "Change management, team training and results monitoring." }
+    }
+  },
+  "whyus": {
+    "tag": "Differentiation",
+    "title": "Why choose STC?",
+    "points": {
+      "context": { "title": "Contextualized approach", "desc": "Solutions adapted to local realities and specific constraints of each organization." },
+      "field": { "title": "Field presence", "desc": "Teams on the ground for hands-on support closest to your operations." },
+      "results": { "title": "Measurable results", "desc": "KPIs defined from the start and rigorous performance monitoring." },
+      "transfer": { "title": "Skills transfer", "desc": "Training and empowerment of your internal teams for lasting impact." },
+      "multi": { "title": "Multidisciplinary expertise", "desc": "Organization, digital, quality and information systems united in one team." },
+      "commitment": { "title": "Total commitment", "desc": "Direct involvement in execution and implementation, not just advice." }
+    }
+  },
+  "cta": {
+    "title": "Ready to transform your organization?",
+    "subtitle": "Contact us to discuss your challenges and discover how STC can help you achieve greater performance.",
+    "button": "Let's talk about your project"
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Contact us",
+    "subtitle": "Tell us about your project. We'll get back to you within 24 hours.",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "name_placeholder": "Your name",
+    "email_placeholder": "your@email.com",
+    "company_placeholder": "Your company name",
+    "message_placeholder": "Describe your needs...",
+    "submit": "Send message",
+    "success": "Message sent successfully! We'll get back to you shortly.",
+    "error": "Please fill in all required fields.",
+    "info_title": "Information",
+    "info_email": "contact@siriusteranga.com",
+    "info_phone": "+221 XX XXX XX XX",
+    "info_location": "Dakar, Senegal"
+  },
+  "footer": {
+    "rights": "© {year} Sirius Teranga Consulting. All rights reserved.",
+    "links": "Quick links",
+    "contact_title": "Contact"
+  }
+}
