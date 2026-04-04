@@ -21,7 +21,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <Link to="/" className="inline-block mb-4">
-              <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto dark:brightness-0 dark:invert" />
+              <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto dark:hidden" />
+              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-10 w-auto hidden dark:block" />
             </Link>
             <p className="font-body text-muted-foreground text-sm leading-relaxed max-w-xs">
               {t("about.desc")}

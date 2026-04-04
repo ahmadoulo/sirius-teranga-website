@@ -25,7 +25,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-          <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto" />
+          <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto dark:hidden" />
+          <img src={logoDark} alt="Sirius Teranga Consulting" className="h-10 w-auto hidden dark:block" />
         </Link>
 
         {/* Desktop */}
