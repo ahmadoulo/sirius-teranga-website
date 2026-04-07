@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Arimo:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Arimo:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -38,14 +38,19 @@
 
     /* Custom tokens */
     --navy: 216 70% 14%;
+    --navy-dark: 216 72% 9%;
+    --navy-mid: 216 63% 17%;
     --navy-light: 216 50% 25%;
     --gold: 43 56% 52%;
     --gold-light: 43 56% 62%;
+    --gold-dark: 43 56% 42%;
     --bordeaux: 346 39% 32%;
     --text-dark: 0 0% 18%;
     --text-muted: 0 0% 49%;
     --surface: 0 0% 100%;
     --surface-alt: 0 0% 96%;
+    --offwhite: 0 0% 96%;
+    --light-grey: 0 0% 91%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -88,14 +93,19 @@
 
     /* Custom tokens dark */
     --navy: 43 56% 52%;
+    --navy-dark: 222 47% 6%;
+    --navy-mid: 222 40% 14%;
     --navy-light: 43 56% 62%;
     --gold: 43 56% 52%;
     --gold-light: 43 56% 62%;
+    --gold-dark: 43 56% 42%;
     --bordeaux: 346 39% 42%;
     --text-dark: 0 0% 92%;
     --text-muted: 0 0% 60%;
     --surface: 222 40% 12%;
     --surface-alt: 222 30% 16%;
+    --offwhite: 222 30% 16%;
+    --light-grey: 222 20% 22%;
 
     --sidebar-background: 222 40% 10%;
     --sidebar-foreground: 0 0% 85%;
@@ -114,7 +124,9 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased transition-colors duration-300;
+    @apply bg-background text-foreground font-body antialiased;
+    line-height: 1.7;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -128,13 +140,77 @@
   }
 }
 
-@layer base {
-  @keyframes fade-in {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* Scroll Animations */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Scroll wheel */
+@keyframes scroll-down {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+.animate-scroll-wheel {
+  animation: scroll-down 2s ease-in-out infinite;
+}
+
+/* Particle float */
+@keyframes particle-float {
+  0%   { opacity: 0;   transform: translateY(0) scale(0); }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.3; }
+  100% { opacity: 0;   transform: translateY(-100vh) scale(1.5); }
+}
+
+/* Bar grow */
+@keyframes bar-grow {
+  from { width: 0; }
+}
+
+.animate-bar-grow {
+  animation: bar-grow 2s ease forwards;
+}
+
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
+}
+
+/* Pulse for CTA badge */
+@keyframes pulse-badge {
+  0%, 100% { box-shadow: 0 8px 32px rgba(212,175,55,0.3); }
+  50% { box-shadow: 0 8px 48px rgba(212,175,55,0.5); }
+}
+
+.animate-pulse-badge {
+  animation: pulse-badge 3s ease-in-out infinite;
 }
