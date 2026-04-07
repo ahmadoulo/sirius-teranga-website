@@ -39,7 +39,7 @@ const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
         isTransparent
           ? "bg-transparent py-4 md:py-5"
-          : "bg-background/95 dark:bg-[#071528]/97 backdrop-blur-[16px] py-2.5 md:py-3 shadow-[0_2px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-border dark:border-white/10"
+          : "bg-white dark:bg-[#071528] backdrop-blur-[16px] py-2.5 md:py-3 shadow-[0_2px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-border dark:border-white/10"
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-4 md:px-8 flex items-center justify-between">
