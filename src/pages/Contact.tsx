@@ -16,7 +16,9 @@ const Contact = () => {
         path="/contact"
       />
       <Navbar />
-      <ContactSection />
+      <main id="main-content">
+        <ContactSection />
+      </main>
       <Footer />
       <BackToTop />
     </div>

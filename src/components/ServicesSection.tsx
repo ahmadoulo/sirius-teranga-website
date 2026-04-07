@@ -70,7 +70,7 @@ const ServicesSection = () => {
             <div className="text-center z-[1]">
               <Handshake className="w-8 h-8 md:w-10 md:h-10 text-accent mx-auto mb-3 md:mb-4" />
               <h3 className="font-heading font-extrabold text-base md:text-xl text-white mb-3 md:mb-4">{t("services.cta_title")}</h3>
-              <p className="text-white/70 text-xs md:text-sm mb-4 md:mb-6">{t("services.cta_desc")}</p>
+              <p className="text-white/80 text-xs md:text-sm mb-4 md:mb-6">{t("services.cta_desc")}</p>
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 font-heading text-xs md:text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-5 md:px-6 py-2.5 md:py-3 rounded-full shadow-gold hover:bg-gold-light transition-all duration-300"

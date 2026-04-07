@@ -18,9 +18,11 @@ const Services = () => {
         path="/services"
       />
       <Navbar />
-      <ServicesSection />
-      <MethodologySection />
-      <CtaSection />
+      <main id="main-content">
+        <ServicesSection />
+        <MethodologySection />
+        <CtaSection />
+      </main>
       <Footer />
       <BackToTop />
     </div>

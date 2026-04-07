@@ -40,6 +40,9 @@ const Navbar = () => {
 
   return (
     <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1100] focus:bg-accent focus:text-accent-foreground focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold">
+        Passer au contenu
+      </a>
       <nav
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
           isTransparent

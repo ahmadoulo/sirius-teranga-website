@@ -33,14 +33,16 @@ const Index = () => {
         jsonLd={jsonLd}
       />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <MissionSection />
-      <ServicesSection />
-      <MethodologySection />
-      <WhyUsSection />
-      <CtaSection />
-      <ContactSection />
+      <main id="main-content">
+        <HeroSection />
+        <AboutSection />
+        <MissionSection />
+        <ServicesSection />
+        <MethodologySection />
+        <WhyUsSection />
+        <CtaSection />
+        <ContactSection />
+      </main>
       <Footer />
       <BackToTop />
     </div>

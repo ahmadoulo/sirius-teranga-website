@@ -34,7 +34,7 @@ const HeroSection = () => {
           <span className="text-accent">{t("hero.highlight")}</span>
         </h1>
 
-        <p ref={subRef} className="text-[clamp(0.9rem,2vw,1.2rem)] text-white/75 max-w-[600px] mx-auto mb-8 md:mb-10 leading-relaxed px-2">
+        <p ref={subRef} className="text-[clamp(0.9rem,2vw,1.2rem)] text-white/85 max-w-[600px] mx-auto mb-8 md:mb-10 leading-relaxed px-2">
           {t("hero.subtitle")}
         </p>
 
@@ -110,7 +110,7 @@ const StatItem = ({ numKey, labelKey }: { numKey: string; labelKey: string }) =>
         <span className="font-heading text-2xl sm:text-3xl md:text-[2.5rem] font-black text-white leading-none">{count}</span>
         <span className="font-heading text-xl sm:text-2xl md:text-[1.8rem] font-black text-accent">+</span>
       </div>
-      <span className="text-[0.65rem] sm:text-[0.72rem] md:text-[0.78rem] text-white/60 uppercase tracking-[0.08em] mt-1 font-heading text-center">{t(labelKey)}</span>
+      <span className="text-[0.65rem] sm:text-[0.72rem] md:text-[0.78rem] text-white/80 uppercase tracking-[0.08em] mt-1 font-heading text-center">{t(labelKey)}</span>
     </div>
   );
 };
