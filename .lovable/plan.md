@@ -1,100 +1,109 @@
 
 
-## Plan: Multi-page architecture, i18n, animations, and brand guidelines integration
+## Plan: Complete UI/UX Redesign to Match Reference Design
 
 ### Summary
+Full visual overhaul of every section and component to match the uploaded HTML/CSS reference design exactly. The structure (multi-page routing, i18n, dark mode) stays intact, but every component gets redesigned with the premium styling from the reference.
 
-Transform the current single-page site into a multi-page application with dedicated routes, add French/English internationalization using `react-i18next`, integrate brand content from the charte graphique PDF, add scroll-triggered animations, and optimize SEO with meta tags per page.
+### Key Design Changes
 
----
+**Overall**: The reference uses a darker, more premium aesthetic with navy gradients, gold accents, rounded cards with hover effects (lift + navy overlay on service cards), glassmorphism stats bar, and polished micro-interactions. The current site looks flat and generic by comparison.
 
-### 1. Install dependencies
+### Files to Modify
 
-- `react-i18next` + `i18next` + `i18next-browser-languagedetector` for translations
-- No other new dependencies needed (animations via Tailwind CSS)
+**1. `src/index.css` — Design tokens overhaul**
+- Add missing CSS variables: `--color-navy-mid`, shadow tokens (`--shadow-gold`, `--shadow-xl`), transition speeds
+- Add scroll animation classes: `.reveal-up`, `.reveal-left`, `.reveal-right` with `.visible` state
+- Add the gold pulsing dot keyframe, scroll-wheel animation
+- Refine dark mode variables for consistency
 
-### 2. Set up i18n
+**2. `src/components/Navbar.tsx` — Premium navbar**
+- Transparent navbar that becomes navy/blur on scroll (add scroll listener)
+- STC text logo with gold border badge (matching reference `logo-icon` pattern) alongside the actual logo images
+- Nav links: uppercase, small, semi-transparent white text with gold underline on hover
+- Gold CTA button with rounded-full + shadow
+- Mobile: full-screen navy overlay with centered links, animated hamburger (3 spans)
 
-- Create `src/i18n/` folder with:
-  - `i18n.ts` — i18next configuration with language detector
-  - `locales/fr.json` — all French translations (current content)
-  - `locales/en.json` — English translations of all content
-- Import i18n in `main.tsx`
-- All hardcoded French text in components replaced with `t()` calls
-- Translations cover: navbar, hero, about, mission/vision/values, services, methodology, why us, CTA, contact, footer
+**3. `src/components/HeroSection.tsx` — Hero redesign**
+- Navy gradient background (not image-based) with subtle radial gold overlays and dot pattern
+- Floating gold particles (optional, lightweight)
+- Pulsing badge dot + gold pill badge
+- Stats bar at bottom: glassmorphism container with 3 stats (150+ projects, 50+ clients, 10+ years) separated by dividers
+- Scroll indicator (mouse icon with animated wheel)
+- i18n keys: add `hero.stat1_number`, `hero.stat1_label`, etc.
 
-### 3. Multi-page routing
+**4. `src/components/AboutSection.tsx` — Two-column layout**
+- Left: decorative card stack visual (CSS-only with progress bars, icons, badge)
+- Right: section label pill, title with gold accent span, two paragraphs, highlight items (icon + title + desc), CTA button
+- Grid layout `grid-cols-2` on desktop, stacked on mobile
 
-Convert from single-page scroll to separate routes:
+**5. `src/components/MissionSection.tsx` — Card redesign**
+- 3-column grid of cards with top accent bar (gold gradient, appears on hover via scaleX)
+- Icon wraps: 64px, navy or gold background, rounded-lg
+- Values displayed as small tags with checkmark icons inside the Values card
+- Cards lift on hover with shadow increase
 
-| Route | Page | Content |
-|-------|------|---------|
-| `/` | Home | Hero + brief about + services preview + CTA |
-| `/a-propos` | About | Full about, mission/vision/values, why us |
-| `/services` | Services | Full services grid + methodology |
-| `/contact` | Contact | Contact form + company info |
+**6. `src/components/ServicesSection.tsx` — Premium service cards**
+- 3x2 grid + 1 CTA card (6th position)
+- Cards: white, rounded-xl, with `::before` navy overlay that fades in on hover
+- On hover: card lifts, text turns white, icon bg turns gold
+- "En savoir plus" link with arrow that slides right on hover
+- CTA card: navy gradient background, gold button, handshake icon
 
-- Update `App.tsx` with new routes
-- Update `Navbar.tsx` to use `<Link>` from react-router-dom instead of scroll anchors
-- Add a language switcher (FR/EN toggle) in the navbar
-- Each page component wraps relevant sections
-- Add `ScrollToTop` component to scroll to top on route change
+**7. `src/components/MethodologySection.tsx` — Timeline approach**
+- 4-column grid with connecting horizontal line (gradient navy-gold-navy)
+- Step numbers in gold pill badges (01, 02, 03, 04)
+- Circular step icons (70px, navy bg, white icon) alternating with gold gradient
+- Icons scale up on hover
+- White background (`section-alt`)
 
-### 4. Update content from charte graphique
+**8. `src/components/WhyUsSection.tsx` — Two-column with metrics**
+- Left: section label, title, description, checklist items with gold check circles
+- Right: stacked metric cards (3) with slide-right hover, 2nd card offset
+- Metrics: +40% productivity, 98% satisfaction, 15+ countries
 
-Integrate precise brand content from the PDF:
-- **About section**: Exact "Qui sommes-nous" text from page 5
-- **Mission/Vision/Values**: Detailed values from page 6 (Qualite & Excellence, Innovation, Fiabilite & Confiance, Performance, Engagement)
-- **Tone of voice**: Professional, clear, direct, pedagogical, accessible
-- **Colors**: Already correct (navy #0B1F3A, gold #D4AF37, off-white #F5F5F5)
-- **Secondary colors**: Add bordeaux #6B2F3F as accent variant in Tailwind config
-- **Typography**: Already correct (Montserrat headings, Arimo body)
+**9. `src/components/CtaSection.tsx` — CTA banner**
+- Navy gradient with radial gold overlays
+- Gold badge circle with star icon (pulsing)
+- Large white headline with gold accent
+- Gold CTA button
 
-### 5. Animations
+**10. `src/components/ContactSection.tsx` — Redesigned contact**
+- Two-column: left info blocks (cards with icon, hover slide), social links; right form
+- Form: off-white inputs, gold focus ring, subject dropdown added
+- Info blocks: navy icon squares with gold icon color
 
-Add subtle scroll-triggered animations using Intersection Observer:
-- Create `useScrollAnimation` custom hook using IntersectionObserver
-- Add keyframes to `tailwind.config.ts`: fade-in-up, fade-in-left, fade-in-right, scale-in
-- Apply staggered animations to section headings, cards, service blocks, methodology steps
-- Keep animations subtle and professional (no flashy effects)
+**11. `src/components/Footer.tsx` — 4-column footer**
+- Dark navy background
+- 4 columns: brand + tagline, navigation links, services links, contact info + social
+- Footer bottom: copyright + legal links
+- Social icons: circular, navy hover with gold
 
-### 6. SEO optimization
+**12. `src/components/BackToTop.tsx` — Styled button**
+- Navy circle with gold chevron, gold border, appears on scroll
+- On hover: gold bg, navy icon
 
-- Create a reusable `SEOHead` component using `react-helmet-async` (install dependency)
-- Add `HelmetProvider` in App
-- Per-page meta tags: unique title, description, Open Graph tags
-- Structured data (JSON-LD) for Organization schema on home page
-- Add canonical URLs, hreflang tags for FR/EN
-- Update `robots.txt` with sitemap reference
-- Semantic HTML: ensure proper heading hierarchy (h1 per page, h2 for sections)
+**13. `src/i18n/locales/fr.json` & `en.json` — New translation keys**
+- Add hero stats keys, about highlights, why-us metrics, service CTA card text, footer services column
 
-### 7. UI polish
+**14. `src/hooks/useScrollAnimation.ts`**
+- Add support for `reveal-left`, `reveal-right` directions (not just `fade-in-up`)
 
-- Improve footer with more sections (links to pages, contact info, social links)
-- Add a "back to top" button
-- Smooth page transitions with fade animations
-- Ensure all pages have consistent spacing and layout
+**15. `tailwind.config.ts`**
+- Add `navy-mid` color token
+- Add box-shadow utilities for gold shadow
+- Ensure `rounded-xl` maps to 24px
 
----
+### Responsive Breakpoints (preserved from reference)
+- `>1100px`: full layout
+- `900px`: single-column about/why-us, 2-col services, 2-col methodology
+- `640px`: single-column everything, full-screen mobile menu, stacked stats
 
-### Technical details
-
-**File changes:**
-- **New files**: `src/i18n/i18n.ts`, `src/i18n/locales/fr.json`, `src/i18n/locales/en.json`, `src/hooks/useScrollAnimation.ts`, `src/components/SEOHead.tsx`, `src/components/ScrollToTop.tsx`, `src/components/LanguageSwitcher.tsx`, `src/pages/About.tsx`, `src/pages/Services.tsx`, `src/pages/Contact.tsx`
-- **Modified files**: `package.json`, `main.tsx`, `App.tsx`, `Navbar.tsx`, `HeroSection.tsx`, `AboutSection.tsx`, `MissionSection.tsx`, `ServicesSection.tsx`, `MethodologySection.tsx`, `WhyUsSection.tsx`, `CtaSection.tsx`, `ContactSection.tsx`, `Footer.tsx`, `tailwind.config.ts`, `index.html`
-
-**i18n key structure:**
-```text
-nav.home, nav.about, nav.services, nav.contact
-hero.badge, hero.title, hero.highlight, hero.subtitle, hero.cta1, hero.cta2
-about.title, about.subtitle, about.description
-...
-```
-
-**Animation hook pattern:**
-```text
-const ref = useScrollAnimation() 
-// Returns a ref that adds 'animate-fade-in-up' class when element enters viewport
-// Uses IntersectionObserver with threshold 0.1
-```
+### What stays unchanged
+- React Router multi-page architecture
+- i18n setup with react-i18next
+- Dark/light mode toggle system
+- Logo assets (logo.png, logo-dark.png)
+- SEOHead component
+- Dockerfile, docker-compose, nginx config
 
