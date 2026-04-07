@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import logo from "@/assets/logo.png";
@@ -9,8 +8,22 @@ import logoDark from "@/assets/logo-dark.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
   const location = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   const navLinks = [
     { label: t("nav.home"), to: "/" },
@@ -20,26 +33,43 @@ const Navbar = () => {
   ];
 
   const isActive = (to: string) => location.pathname === to;
+  const isHome = location.pathname === "/";
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-          <img src={logo} alt="Sirius Teranga Consulting" className="h-10 w-auto dark:hidden" />
-          <img src={logoDark} alt="Sirius Teranga Consulting" className="h-10 w-auto hidden dark:block" />
+    <nav
+      className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
+        scrolled || !isHome
+          ? "bg-[#071528]/97 backdrop-blur-[16px] py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
+          : "py-5 bg-transparent"
+      }`}
+    >
+      <div className="max-w-[1200px] mx-auto px-8 flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <div className="relative flex items-center font-heading font-black text-xl tracking-tight text-white bg-gradient-to-br from-[#102848] to-[#0B1F3A] border-2 border-accent rounded-lg px-2.5 py-1 leading-none">
+            <span>S</span><span>T</span><span className="text-accent">C</span>
+            <div className="absolute -top-[3px] -right-[3px] w-2 h-2 bg-accent rounded-full border-[1.5px] border-[#071528]" />
+          </div>
+          <div className="flex flex-col leading-tight">
+            <span className="font-heading font-extrabold text-base text-white tracking-wide">Sirius Teranga</span>
+            <span className="font-body text-[0.7rem] text-accent uppercase tracking-[0.12em]">Consulting</span>
+          </div>
         </Link>
 
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center gap-2">
           {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className={`font-body text-sm transition-colors relative pb-1 ${
-                isActive(l.to)
-                  ? "text-accent font-semibold after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-accent"
-                  : "text-foreground hover:text-accent"
-              }`}
+              className={`relative font-heading text-[0.82rem] font-semibold tracking-[0.05em] uppercase px-3.5 py-2 rounded-full transition-all duration-200
+                ${isActive(l.to)
+                  ? "text-accent"
+                  : "text-white/85 hover:text-white"
+                }
+                after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300
+                ${isActive(l.to) ? "after:w-[70%]" : "after:w-0 hover:after:w-[70%]"}
+              `}
             >
               {l.label}
             </Link>
@@ -48,7 +78,7 @@ const Navbar = () => {
           <LanguageSwitcher />
           <Link
             to="/contact"
-            className="bg-accent text-accent-foreground font-heading text-sm font-semibold px-5 py-2.5 rounded-md hover:bg-gold-light transition-colors"
+            className="font-heading text-[0.82rem] font-extrabold uppercase tracking-[0.05em] bg-accent text-accent-foreground px-5 py-2.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-px transition-all duration-200 ml-1"
           >
             {t("nav.cta")}
           </Link>
@@ -58,36 +88,44 @@ const Navbar = () => {
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
           <LanguageSwitcher />
-          <button className="text-foreground" onClick={() => setOpen(!open)}>
-            {open ? <X size={24} /> : <Menu size={24} />}
+          <button
+            className="flex flex-col gap-[5px] p-[5px] relative z-[1001]"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
+            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
+            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden bg-surface border-t border-border px-4 pb-6 pt-2 space-y-3 animate-fade-in">
-          {navLinks.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              onClick={() => setOpen(false)}
-              className={`block w-full text-left font-body py-2 transition-colors ${
-                isActive(l.to) ? "text-accent font-semibold" : "text-foreground hover:text-accent"
-              }`}
-            >
-              {l.label}
-            </Link>
-          ))}
+      {/* Mobile full-screen overlay */}
+      <div
+        className={`fixed inset-0 bg-[#071528]/98 flex flex-col items-center justify-center gap-4 transition-all duration-300 z-[999] md:hidden ${
+          open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        }`}
+      >
+        {navLinks.map((l) => (
           <Link
-            to="/contact"
+            key={l.to}
+            to={l.to}
             onClick={() => setOpen(false)}
-            className="block w-full text-center bg-accent text-accent-foreground font-heading text-sm font-semibold px-5 py-2.5 rounded-md"
+            className={`font-heading text-xl font-semibold uppercase tracking-[0.05em] px-6 py-3 rounded-full transition-colors ${
+              isActive(l.to) ? "text-accent" : "text-white/85 hover:text-white"
+            }`}
           >
-            {t("nav.cta")}
+            {l.label}
           </Link>
-        </div>
-      )}
+        ))}
+        <Link
+          to="/contact"
+          onClick={() => setOpen(false)}
+          className="font-heading text-base font-extrabold uppercase bg-accent text-accent-foreground px-8 py-3 rounded-full shadow-gold mt-4"
+        >
+          {t("nav.cta")}
+        </Link>
+      </div>
     </nav>
   );
 };

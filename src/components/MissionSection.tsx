@@ -1,69 +1,68 @@
-import { Compass, Eye, Award, Zap, Shield, Heart } from "lucide-react";
+import { Rocket, Eye, Gem, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const AnimatedCard = ({ icon: Icon, title, text, delay }: { icon: React.ElementType; title: string; text: string; delay: number }) => {
-  const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', delay);
-  return (
-    <div ref={ref} className="bg-surface rounded-lg p-8 border border-border hover:shadow-lg transition-shadow">
-      <div className="w-12 h-12 bg-accent/15 rounded-lg flex items-center justify-center mb-5">
-        <Icon className="w-6 h-6 text-accent" />
-      </div>
-      <h3 className="font-heading font-bold text-xl text-foreground mb-3">{title}</h3>
-      <p className="font-body text-text-muted leading-relaxed">{text}</p>
-    </div>
-  );
-};
-
-const ValueCard = ({ icon: Icon, titleKey, descKey, delay }: { icon: React.ElementType; titleKey: string; descKey: string; delay: number }) => {
-  const ref = useScrollAnimation<HTMLDivElement>('scale-in', delay);
-  const { t } = useTranslation();
-  return (
-    <div ref={ref} className="bg-surface rounded-lg p-5 border border-border text-center hover:border-accent/30 transition-colors">
-      <Icon className="w-6 h-6 text-accent mx-auto mb-3" />
-      <h4 className="font-heading font-semibold text-sm text-foreground mb-1">{t(titleKey)}</h4>
-      <p className="font-body text-text-muted text-xs leading-relaxed">{t(descKey)}</p>
-    </div>
-  );
-};
+const valueKeys = ["quality", "innovation", "trust", "performance", "engagement"];
 
 const MissionSection = () => {
   const { t } = useTranslation();
   const headRef = useScrollAnimation('fade-in-up', 0);
-
-  const cards = [
-    { icon: Compass, title: t("mission.mission_title"), text: t("mission.mission_text") },
-    { icon: Eye, title: t("mission.vision_title"), text: t("mission.vision_text") },
-  ];
-
-  const values = [
-    { icon: Award, key: "quality" },
-    { icon: Zap, key: "innovation" },
-    { icon: Shield, key: "trust" },
-    { icon: Zap, key: "performance" },
-    { icon: Heart, key: "engagement" },
-  ];
+  const missionRef = useScrollAnimation('fade-in-up', 0);
+  const visionRef = useScrollAnimation('fade-in-up', 150);
+  const valuesRef = useScrollAnimation('fade-in-up', 300);
 
   return (
-    <section className="py-24 bg-surface-alt">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div ref={headRef} className="text-center mb-14">
-          <span className="font-heading text-sm font-semibold text-accent uppercase tracking-widest">{t("mission.tag")}</span>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-foreground mt-3">{t("mission.title")}</h2>
+    <section className="py-24 bg-card">
+      <div className="max-w-[1200px] mx-auto px-8">
+        <div ref={headRef} className="text-center mb-16">
+          <div className="inline-block font-heading text-xs font-bold tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/30 px-4 py-1.5 rounded-full mb-4">
+            {t("mission.tag")}
+          </div>
+          <h2 className="font-heading font-extrabold text-[clamp(1.8rem,4vw,2.8rem)] leading-[1.2] text-foreground">
+            {t("mission.title")} <span className="text-accent">{t("mission.title_accent")}</span>
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-[600px] mx-auto mt-4">{t("mission.subtitle")}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
-          {cards.map((c, i) => (
-            <AnimatedCard key={c.title} icon={c.icon} title={c.title} text={c.text} delay={i * 150} />
-          ))}
-        </div>
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Mission */}
+          <div ref={missionRef} className="relative bg-card rounded-xl p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+            <div className="w-16 h-16 rounded-2xl bg-primary text-accent flex items-center justify-center text-2xl mb-6">
+              <Rocket className="w-7 h-7" />
+            </div>
+            <h3 className="font-heading font-extrabold text-xl text-foreground mb-4">{t("mission.mission_title")}</h3>
+            <p className="text-muted-foreground text-[0.95rem] leading-relaxed">{t("mission.mission_text")}</p>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          <h3 className="font-heading font-bold text-xl text-foreground mb-6 text-center">{t("mission.values_title")}</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {values.map((v, i) => (
-              <ValueCard key={v.key} icon={v.icon} titleKey={`mission.values.${v.key}.title`} descKey={`mission.values.${v.key}.desc`} delay={i * 100} />
-            ))}
+          {/* Vision */}
+          <div ref={visionRef} className="relative bg-card rounded-xl p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gold-dark to-accent text-accent-foreground flex items-center justify-center text-2xl mb-6">
+              <Eye className="w-7 h-7" />
+            </div>
+            <h3 className="font-heading font-extrabold text-xl text-foreground mb-4">{t("mission.vision_title")}</h3>
+            <p className="text-muted-foreground text-[0.95rem] leading-relaxed">{t("mission.vision_text")}</p>
+          </div>
+
+          {/* Values */}
+          <div ref={valuesRef} className="relative bg-card rounded-xl p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
+            <div className="w-16 h-16 rounded-2xl bg-primary text-accent flex items-center justify-center text-2xl mb-6">
+              <Gem className="w-7 h-7" />
+            </div>
+            <h3 className="font-heading font-extrabold text-xl text-foreground mb-4">{t("mission.values_title")}</h3>
+            <div className="flex flex-wrap gap-2 mt-2">
+              {valueKeys.map((key) => (
+                <span
+                  key={key}
+                  className="inline-flex items-center gap-1.5 font-heading text-xs font-bold text-foreground bg-primary/[0.06] border border-primary/[0.12] px-3 py-1.5 rounded-full transition-all duration-200 hover:bg-primary hover:text-white cursor-default"
+                >
+                  <Check className="w-3 h-3 text-accent" />
+                  {t(`mission.values.${key}.title`)}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
