@@ -66,7 +66,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator - hidden on mobile */}
-      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/45">
+      <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-white/60">
         <div className="w-[22px] h-[36px] border-2 border-white/30 rounded-[11px] flex justify-center items-start pt-[5px]">
           <div className="w-1 h-2 bg-accent rounded-full animate-scroll-wheel" />
         </div>
