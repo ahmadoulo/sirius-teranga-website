@@ -9,10 +9,9 @@ const AboutSection = () => {
   const contentRef = useScrollAnimation('fade-in-right', 200);
 
   return (
-    <section id="about" className="py-14 md:py-24 bg-background">
+    <section id="about" className="py-14 md:py-24 bg-background overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Content first on mobile */}
           <div ref={contentRef} className="order-1 lg:order-2">
             <div className="inline-block font-heading text-[0.65rem] md:text-xs font-bold tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/30 px-3 md:px-4 py-1 md:py-1.5 rounded-full mb-3 md:mb-4">
               {t("about.tag")}
@@ -24,7 +23,6 @@ const AboutSection = () => {
             <p className="text-muted-foreground mb-3 md:mb-4 text-[0.85rem] md:text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: t("about.p1") }} />
             <p className="text-muted-foreground mb-5 md:mb-6 text-[0.85rem] md:text-base leading-relaxed">{t("about.p2")}</p>
 
-            {/* Highlights */}
             <div className="flex flex-col gap-4 mb-6 md:mb-8">
               <HighlightItem icon={Shield} title={t("about.highlight1_title")} desc={t("about.highlight1_desc")} />
               <HighlightItem icon={Target} title={t("about.highlight2_title")} desc={t("about.highlight2_desc")} />
@@ -38,12 +36,9 @@ const AboutSection = () => {
             </Link>
           </div>
 
-          {/* Card Visual */}
-          <div ref={visualRef} className="relative max-w-[360px] md:max-w-[480px] mx-auto lg:mx-0 order-2 lg:order-1">
+          <div ref={visualRef} className="relative hidden md:block max-w-[360px] md:max-w-[480px] mx-auto lg:mx-0 order-2 lg:order-1">
             <div className="relative w-full" style={{ aspectRatio: '4/3' }}>
-              {/* Background card */}
               <div className="absolute inset-0 bg-gradient-to-br from-offwhite to-light-grey dark:from-white/5 dark:to-white/10 rounded-xl -rotate-3 scale-[0.97] border border-border" />
-              {/* Main card */}
               <div className="absolute inset-0 bg-card rounded-xl p-5 md:p-8 shadow-navy-xl border border-accent/10 flex flex-col justify-between">
                 <div className="flex gap-3">
                   <div className="w-9 h-9 md:w-[52px] md:h-[52px] rounded-lg bg-primary/[0.08] flex items-center justify-center">
@@ -69,7 +64,6 @@ const AboutSection = () => {
                   <span>{t("about.badge_text")}</span>
                 </div>
               </div>
-              {/* Accent square */}
               <div className="absolute -bottom-2 -right-2 md:-bottom-3 md:-right-3 w-14 md:w-20 h-14 md:h-20 bg-accent rounded-2xl opacity-[0.12] -z-10" />
             </div>
           </div>

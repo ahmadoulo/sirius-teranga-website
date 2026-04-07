@@ -12,13 +12,13 @@ const MissionSection = () => {
   const valuesRef = useScrollAnimation('fade-in-up', 300);
 
   return (
-    <section className="py-14 md:py-24 bg-card">
+    <section className="py-12 md:py-24 bg-card border-t border-border/40">
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
-        <div ref={headRef} className="text-center mb-10 md:mb-16">
+        <div ref={headRef} className="text-center mb-8 md:mb-16">
           <div className="inline-block font-heading text-[0.65rem] md:text-xs font-bold tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/30 px-3 md:px-4 py-1 md:py-1.5 rounded-full mb-3 md:mb-4">
             {t("mission.tag")}
           </div>
-          <h2 className="font-heading font-extrabold text-[clamp(1.4rem,4vw,2.8rem)] leading-[1.2] text-foreground">
+          <h2 className="font-heading font-extrabold text-[clamp(1.4rem,4vw,2.8rem)] leading-[1.2] text-foreground max-w-[12ch] md:max-w-none mx-auto">
             {t("mission.title")} <span className="text-accent">{t("mission.title_accent")}</span>
           </h2>
           <p className="text-muted-foreground text-sm md:text-lg max-w-[600px] mx-auto mt-3 md:mt-4">{t("mission.subtitle")}</p>
