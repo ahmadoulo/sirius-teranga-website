@@ -20,6 +20,7 @@ const About = () => {
       />
       <Navbar />
       <main id="main-content">
+        <h1 className="sr-only">{t("about.tag")} - Sirius Teranga Consulting</h1>
         <AboutSection />
         <MissionSection />
         <WhyUsSection />
