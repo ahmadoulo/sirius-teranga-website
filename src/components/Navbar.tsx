@@ -134,7 +134,8 @@ const Navbar = () => {
         >
           {t("nav.cta")}
         </Link>
-      </div>
+        </div>
+      )}
     </nav>
   );
 };
