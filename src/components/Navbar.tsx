@@ -112,11 +112,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile full-screen overlay */}
-      <div
-        className={`fixed inset-0 bg-[#071528]/98 flex flex-col items-center justify-center gap-3 transition-all duration-300 z-[999] lg:hidden ${
-          open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
+      {open && (
+        <div className="fixed inset-0 bg-[#071528] flex flex-col items-center justify-center gap-3 z-[999] lg:hidden animate-fade-in">
+
         {navLinks.map((l) => (
           <Link
             key={l.to}
