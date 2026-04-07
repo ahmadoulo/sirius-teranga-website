@@ -26,6 +26,8 @@ const ContactSection = () => {
     { icon: MapPin, label: t("contact.info_location_label"), value: t("contact.info_location") },
   ];
 
+  const inputClasses = "w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]";
+
   return (
     <section id="contact" className="py-24 bg-background">
       <div className="max-w-[1200px] mx-auto px-8">
@@ -47,8 +49,8 @@ const ContactSection = () => {
                 key={i}
                 className="flex items-start gap-4 p-5 bg-card border border-border rounded-2xl transition-all duration-300 hover:shadow-navy-md hover:border-accent/30 hover:translate-x-1"
               >
-                <div className="w-11 h-11 bg-primary text-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                  <block.icon className="w-5 h-5" />
+                <div className="w-11 h-11 bg-[#0B1F3A] dark:bg-accent/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <block.icon className="w-5 h-5 text-accent" />
                 </div>
                 <div>
                   <strong className="block font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground mb-0.5">
@@ -71,42 +73,20 @@ const ContactSection = () => {
             <div className="grid sm:grid-cols-2 gap-5 mb-5">
               <div className="flex flex-col gap-1.5">
                 <label className="font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.name")} *</label>
-                <input
-                  type="text"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  className="w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]"
-                  placeholder={t("contact.name_placeholder")}
-                />
+                <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} placeholder={t("contact.name_placeholder")} />
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.email")} *</label>
-                <input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]"
-                  placeholder={t("contact.email_placeholder")}
-                />
+                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClasses} placeholder={t("contact.email_placeholder")} />
               </div>
             </div>
             <div className="flex flex-col gap-1.5 mb-5">
               <label className="font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.company")}</label>
-              <input
-                type="text"
-                value={form.company}
-                onChange={(e) => setForm({ ...form, company: e.target.value })}
-                className="w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)]"
-                placeholder={t("contact.company_placeholder")}
-              />
+              <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClasses} placeholder={t("contact.company_placeholder")} />
             </div>
             <div className="flex flex-col gap-1.5 mb-5">
               <label className="font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.subject")}</label>
-              <select
-                value={form.subject}
-                onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                className="w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)] cursor-pointer appearance-none"
-              >
+              <select value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={`${inputClasses} cursor-pointer appearance-none`}>
                 <option value="">{t("contact.subject_placeholder")}</option>
                 <option value="org">{t("contact.subject_options.org")}</option>
                 <option value="digital">{t("contact.subject_options.digital")}</option>
@@ -118,18 +98,9 @@ const ContactSection = () => {
             </div>
             <div className="flex flex-col gap-1.5 mb-5">
               <label className="font-heading text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.message")} *</label>
-              <textarea
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                rows={5}
-                className="w-full font-body text-[0.95rem] text-foreground bg-offwhite border-[1.5px] border-border rounded-lg px-4 py-3.5 outline-none transition-all duration-200 focus:border-accent focus:bg-card focus:shadow-[0_0_0_3px_rgba(212,175,55,0.12)] resize-y min-h-[120px]"
-                placeholder={t("contact.message_placeholder")}
-              />
+              <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={5} className={`${inputClasses} resize-y min-h-[120px]`} placeholder={t("contact.message_placeholder")} />
             </div>
-            <button
-              type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-8 py-3.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300"
-            >
+            <button type="submit" className="w-full inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-8 py-3.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300">
               <span>{t("contact.submit")}</span>
               <Send className="w-4 h-4" />
             </button>
