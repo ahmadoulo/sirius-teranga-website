@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
-import logo from "@/assets/logo.png";
-import logoDark from "@/assets/logo-dark.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -19,10 +17,11 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   const navLinks = [
@@ -34,42 +33,42 @@ const Navbar = () => {
 
   const isActive = (to: string) => location.pathname === to;
   const isHome = location.pathname === "/";
+  const isSolid = scrolled || !isHome;
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-300 ${
-        scrolled || !isHome
-          ? "bg-[#071528]/97 backdrop-blur-[16px] py-3 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
-          : "py-5 bg-transparent"
+        isSolid
+          ? "bg-background/95 dark:bg-navy-dark/95 backdrop-blur-[16px] py-3 shadow-[0_4px_30px_hsl(var(--foreground)/0.16)] border-b border-border/60 dark:border-white/10"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-[1200px] mx-auto px-8 flex items-center justify-between">
-        {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="relative flex items-center font-heading font-black text-xl tracking-tight text-white bg-gradient-to-br from-[#102848] to-[#0B1F3A] border-2 border-accent rounded-lg px-2.5 py-1 leading-none">
-            <span>S</span><span>T</span><span className="text-accent">C</span>
-            <div className="absolute -top-[3px] -right-[3px] w-2 h-2 bg-accent rounded-full border-[1.5px] border-[#071528]" />
+          <div className="relative flex items-center font-heading font-black text-xl tracking-tight text-white bg-gradient-to-br from-primary to-navy-mid border-2 border-accent rounded-lg px-2.5 py-1 leading-none">
+            <span>S</span>
+            <span>T</span>
+            <span className="text-accent">C</span>
+            <div className="absolute -top-[3px] -right-[3px] w-2 h-2 bg-accent rounded-full border-[1.5px] border-navy-dark" />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-heading font-extrabold text-base text-white tracking-wide">Sirius Teranga</span>
+            <span className={`font-heading font-extrabold text-base tracking-wide ${isSolid ? "text-foreground dark:text-white" : "text-white"}`}>
+              Sirius Teranga
+            </span>
             <span className="font-body text-[0.7rem] text-accent uppercase tracking-[0.12em]">Consulting</span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-2">
           {navLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className={`relative font-heading text-[0.82rem] font-semibold tracking-[0.05em] uppercase px-3.5 py-2 rounded-full transition-all duration-200
-                ${isActive(l.to)
-                  ? "text-accent"
-                  : "text-white/85 hover:text-white"
-                }
-                after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300
-                ${isActive(l.to) ? "after:w-[70%]" : "after:w-0 hover:after:w-[70%]"}
-              `}
+              className={`relative font-heading text-[0.82rem] font-semibold tracking-[0.05em] uppercase px-3.5 py-2 rounded-full transition-all duration-200 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-accent after:rounded-full after:transition-all after:duration-300 ${
+                isActive(l.to)
+                  ? "text-accent after:w-[70%]"
+                  : `${isSolid ? "text-foreground hover:text-accent dark:text-white/85 dark:hover:text-white" : "text-white/85 hover:text-white"} after:w-0 hover:after:w-[70%]`
+              }`}
             >
               {l.label}
             </Link>
@@ -84,25 +83,19 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-2">
           <ThemeToggle />
           <LanguageSwitcher />
-          <button
-            className="flex flex-col gap-[5px] p-[5px] relative z-[1001]"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
-            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "translate-y-[7px] rotate-45" : ""}`} />
-            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block w-6 h-[2px] bg-white rounded-full transition-all duration-300 ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
+          <button className="flex flex-col gap-[5px] p-[5px] relative z-[1001]" onClick={() => setOpen(!open)} aria-label="Menu">
+            <span className={`block w-6 h-[2px] rounded-full transition-all duration-300 ${isSolid ? "bg-foreground dark:bg-white" : "bg-white"} ${open ? "translate-y-[7px] rotate-45" : ""}`} />
+            <span className={`block w-6 h-[2px] rounded-full transition-all duration-300 ${isSolid ? "bg-foreground dark:bg-white" : "bg-white"} ${open ? "opacity-0 scale-x-0" : ""}`} />
+            <span className={`block w-6 h-[2px] rounded-full transition-all duration-300 ${isSolid ? "bg-foreground dark:bg-white" : "bg-white"} ${open ? "-translate-y-[7px] -rotate-45" : ""}`} />
           </button>
         </div>
       </div>
 
-      {/* Mobile full-screen overlay */}
       <div
-        className={`fixed inset-0 bg-[#071528]/98 flex flex-col items-center justify-center gap-4 transition-all duration-300 z-[999] md:hidden ${
+        className={`fixed inset-0 bg-background/98 dark:bg-navy-dark/98 flex flex-col items-center justify-center gap-4 transition-all duration-300 z-[999] md:hidden ${
           open ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
@@ -112,7 +105,7 @@ const Navbar = () => {
             to={l.to}
             onClick={() => setOpen(false)}
             className={`font-heading text-xl font-semibold uppercase tracking-[0.05em] px-6 py-3 rounded-full transition-colors ${
-              isActive(l.to) ? "text-accent" : "text-white/85 hover:text-white"
+              isActive(l.to) ? "text-accent" : "text-foreground hover:text-accent dark:text-white/85 dark:hover:text-white"
             }`}
           >
             {l.label}
