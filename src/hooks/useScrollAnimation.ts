@@ -12,26 +12,27 @@ export const useScrollAnimation = <T extends HTMLElement = HTMLDivElement>(
     const el = ref.current;
     if (!el) return;
 
-    el.style.opacity = '0';
-    el.style.transition = `opacity 0.6s ease-out ${delay}ms, transform 0.6s ease-out ${delay}ms`;
-
-    const transforms: Record<AnimationType, string> = {
-      'fade-in-up': 'translateY(30px)',
-      'fade-in-left': 'translateX(-30px)',
-      'fade-in-right': 'translateX(30px)',
-      'scale-in': 'scale(0.95)',
+    const classMap: Record<AnimationType, string> = {
+      'fade-in-up': 'reveal-up',
+      'fade-in-left': 'reveal-left',
+      'fade-in-right': 'reveal-right',
+      'scale-in': 'reveal-up',
     };
-    el.style.transform = transforms[animation];
+
+    const cls = classMap[animation];
+    el.classList.add(cls);
+    if (delay > 0) {
+      el.style.transitionDelay = `${delay}ms`;
+    }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
+          el.classList.add('visible');
           observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
     );
 
     observer.observe(el);

@@ -1,115 +1,159 @@
 {
   "nav": {
     "home": "Accueil",
-    "about": "À propos",
+    "about": "À Propos",
     "services": "Services",
+    "approach": "Approche",
     "contact": "Contact",
-    "cta": "Demander un devis"
+    "cta": "Nous Contacter"
   },
   "hero": {
-    "badge": "Cabinet de conseil en organisation & transformation",
+    "badge": "Consulting Stratégique & Digital",
     "title": "Transformez votre organisation.",
     "highlight": "Accélérez votre performance.",
-    "subtitle": "STC accompagne les entreprises dans l'optimisation de leurs processus, la transformation digitale et l'amélioration durable de leur performance.",
+    "subtitle": "Sirius Teranga Consulting accompagne les entreprises dans leur transformation organisationnelle et digitale, avec expertise, méthode et engagement.",
     "cta1": "Nous contacter",
-    "cta2": "Découvrir nos services"
+    "cta2": "Découvrir nos services",
+    "scroll": "Défiler",
+    "stat1_number": "150",
+    "stat1_label": "Projets réalisés",
+    "stat2_number": "50",
+    "stat2_label": "Clients satisfaits",
+    "stat3_number": "10",
+    "stat3_label": "Années d'expertise"
   },
   "about": {
-    "tag": "À propos",
-    "title": "Qui sommes-nous ?",
-    "p1": "STC est un cabinet de conseil spécialisé dans l'optimisation des organisations, la transformation digitale et l'amélioration de la performance des entreprises. Nous accompagnons les structures dans la structuration de leurs activités, l'optimisation de leurs processus et l'intégration de solutions technologiques adaptées.",
-    "p2": "Notre approche repose sur une expertise technique et une vision stratégique, afin de proposer des solutions concrètes, efficaces et durables.",
-    "sector_title": "Secteur d'activité",
-    "sector": "Conseil, audit, transformation organisationnelle et digitale, systèmes d'information, formation professionnelle.",
-    "desc_title": "Description",
-    "desc": "STC intervient auprès des entreprises pour améliorer leur efficacité, renforcer leur organisation et soutenir leur développement grâce à des solutions adaptées à leurs enjeux.",
-    "stat1_value": "PME & Grands Groupes",
-    "stat1_label": "Clientèle cible",
-    "stat2_value": "Résultats concrets",
-    "stat2_label": "Approche orientée impact",
-    "stat3_value": "Équipe d'experts",
-    "stat3_label": "Pluridisciplinaire"
+    "tag": "À Propos de STC",
+    "title": "Un partenaire stratégique",
+    "title_accent": "de confiance",
+    "p1": "<strong>Sirius Teranga Consulting (STC)</strong> est un cabinet de conseil spécialisé dans l'optimisation organisationnelle, la transformation digitale et l'amélioration de la performance des entreprises.",
+    "p2": "Nous intervenons auprès d'organisations de toutes tailles pour les aider à structurer, moderniser et optimiser leurs processus afin d'atteindre leurs objectifs stratégiques.",
+    "highlight1_title": "Expertise Reconnue",
+    "highlight1_desc": "Des consultants expérimentés avec une vision globale et locale.",
+    "highlight2_title": "Résultats Concrets",
+    "highlight2_desc": "Une approche axée sur des livrables mesurables et durables.",
+    "cta": "Discutons de votre projet",
+    "badge_text": "Excellence · Performance",
+    "desc": "STC intervient auprès des entreprises pour améliorer leur efficacité, renforcer leur organisation et soutenir leur développement grâce à des solutions adaptées à leurs enjeux."
   },
   "mission": {
     "tag": "Notre ADN",
-    "title": "Mission, Vision & Valeurs",
-    "mission_title": "Mission",
-    "mission_text": "Accompagner les entreprises dans l'optimisation de leurs performances en mettant en place des solutions organisationnelles et digitales adaptées à leurs besoins.",
-    "vision_title": "Vision",
-    "vision_text": "Devenir un acteur de référence en Afrique dans le conseil en organisation et transformation digitale, reconnu pour son expertise et son impact.",
-    "values_title": "Valeurs",
+    "title": "Mission · Vision ·",
+    "title_accent": "Valeurs",
+    "subtitle": "Les fondements qui guident chacune de nos interventions.",
+    "mission_title": "Notre Mission",
+    "mission_text": "Aider les organisations à optimiser leur performance à travers des solutions de conseil adaptées, rigoureuses et centrées sur les résultats.",
+    "vision_title": "Notre Vision",
+    "vision_text": "Devenir le cabinet de conseil de référence en Afrique, reconnu pour son excellence, son innovation et la durabilité de ses résultats.",
+    "values_title": "Nos Valeurs",
     "values": {
-      "quality": { "title": "Qualité & Excellence", "desc": "Garantir des prestations rigoureuses et efficaces" },
-      "innovation": { "title": "Innovation", "desc": "Proposer des solutions modernes et adaptées" },
-      "trust": { "title": "Fiabilité & Confiance", "desc": "Construire des relations durables" },
-      "performance": { "title": "Performance", "desc": "Générer des résultats concrets et mesurables" },
-      "engagement": { "title": "Engagement", "desc": "Accompagner avec responsabilité et professionnalisme" }
+      "quality": { "title": "Excellence", "desc": "" },
+      "innovation": { "title": "Innovation", "desc": "" },
+      "trust": { "title": "Confiance", "desc": "" },
+      "performance": { "title": "Performance", "desc": "" },
+      "engagement": { "title": "Engagement", "desc": "" }
     }
   },
   "services": {
-    "tag": "Expertise",
-    "title": "Nos Services",
-    "subtitle": "Des solutions structurées pour accompagner votre transformation et améliorer durablement votre performance.",
+    "tag": "Ce que nous faisons",
+    "title": "Nos",
+    "title_accent": "Services",
+    "subtitle": "Des solutions de conseil sur mesure pour chaque défi organisationnel et digital.",
+    "learn_more": "En savoir plus",
     "items": {
-      "org": { "title": "Conseil & Audit Organisationnel", "desc": "Analyse de vos structures, cartographie des processus et recommandations pour une organisation plus efficace." },
-      "digital": { "title": "Transformation Digitale", "desc": "Accompagnement dans la digitalisation de vos activités et l'intégration de solutions technologiques adaptées." },
-      "process": { "title": "Optimisation des Processus", "desc": "Amélioration de l'efficacité opérationnelle, réduction des gaspillages et mise en place de bonnes pratiques." },
-      "si": { "title": "Systèmes d'Information", "desc": "Mise en place de GMAO/EAM, pilotage par les données et solutions de reporting décisionnel." },
-      "iso": { "title": "ISO & Qualité (SMQ)", "desc": "Accompagnement vers les certifications ISO, mise en place de systèmes de management de la qualité." },
-      "training": { "title": "Formation & Transfert de Compétences", "desc": "Programmes de formation professionnelle pour autonomiser vos équipes et renforcer leurs capacités." }
-    }
+      "org": { "title": "Conseil Organisationnel", "desc": "Restructuration, gouvernance, optimisation des structures et des ressources humaines pour une organisation plus agile et efficace." },
+      "digital": { "title": "Transformation Digitale", "desc": "Accompagnement dans la numérisation des processus, l'adoption des nouvelles technologies et le changement culturel associé." },
+      "si": { "title": "Systèmes d'Information", "desc": "Audit, cartographie et optimisation des SI, sélection d'outils adaptés et pilotage des projets informatiques d'entreprise." },
+      "process": { "title": "Optimisation des Processus", "desc": "Analyse et refonte des processus métiers pour éliminer les inefficiences, réduire les coûts et améliorer la qualité." },
+      "training": { "title": "Formation Professionnelle", "desc": "Programmes de formation sur mesure pour développer les compétences managériales, digitales et techniques de vos équipes." },
+      "iso": { "title": "ISO & Qualité (SMQ)", "desc": "Accompagnement vers les certifications ISO, mise en place de systèmes de management de la qualité." }
+    },
+    "cta_title": "Un projet en tête ?",
+    "cta_desc": "Discutons ensemble de vos défis et co-construisons une solution adaptée à vos besoins.",
+    "cta_button": "Nous contacter"
   },
   "methodology": {
-    "tag": "Approche",
-    "title": "Notre Méthodologie",
-    "subtitle": "Une démarche structurée et éprouvée pour des résultats concrets et durables.",
+    "tag": "Notre Méthodologie",
+    "title": "Notre",
+    "title_accent": "Approche",
+    "subtitle": "Une méthodologie éprouvée, rigoureuse et orientée résultats.",
     "steps": {
-      "analyze": { "title": "Analyser", "desc": "Diagnostic approfondi de votre organisation, processus et performance existante." },
-      "structure": { "title": "Structurer", "desc": "Définition d'un plan d'action clair avec des objectifs mesurables et atteignables." },
-      "optimize": { "title": "Optimiser", "desc": "Mise en œuvre des améliorations, refonte des processus et intégration des outils." },
-      "transform": { "title": "Transformer", "desc": "Accompagnement au changement, formation des équipes et pilotage des résultats." }
+      "analyze": { "title": "Analyser", "desc": "Diagnostic approfondi de votre organisation, identification des enjeux et des opportunités d'amélioration." },
+      "structure": { "title": "Structurer", "desc": "Conception d'un plan de transformation clair, priorisé et aligné sur vos objectifs stratégiques." },
+      "optimize": { "title": "Optimiser", "desc": "Mise en œuvre des solutions, formation des équipes et ajustement continu pour maximiser la performance." },
+      "transform": { "title": "Transformer", "desc": "Ancrage des changements dans la culture d'entreprise et accompagnement vers une performance durable." }
     }
   },
   "whyus": {
-    "tag": "Différenciation",
-    "title": "Pourquoi choisir STC ?",
+    "tag": "Pourquoi STC ?",
+    "title": "Ce qui nous rend",
+    "title_accent": "différents",
+    "desc": "Nous ne proposons pas des solutions génériques. Chaque intervention est unique, construite autour de votre réalité et de vos ambitions.",
     "points": {
-      "context": { "title": "Approche contextualisée", "desc": "Solutions adaptées aux réalités locales et contraintes spécifiques de chaque organisation." },
-      "field": { "title": "Présence terrain", "desc": "Équipes sur le terrain pour un accompagnement au plus près de vos opérations." },
-      "results": { "title": "Résultats mesurables", "desc": "Des KPI définis dès le départ et un suivi rigoureux de la performance." },
-      "transfer": { "title": "Transfert de compétences", "desc": "Formation et autonomisation de vos équipes internes pour un impact durable." },
-      "multi": { "title": "Expertise pluridisciplinaire", "desc": "Organisation, digital, qualité et systèmes d'information réunis dans une seule équipe." },
-      "commitment": { "title": "Engagement total", "desc": "Implication directe dans l'exécution et la mise en œuvre, pas seulement le conseil." }
-    }
+      "expertise": { "title": "Expertise Stratégique", "desc": "Des consultants seniors avec une profonde connaissance des enjeux africains et internationaux." },
+      "results": { "title": "Résultats Concrets & Mesurables", "desc": "Nous nous engageons sur des indicateurs clairs et suivons rigoureusement leur atteinte." },
+      "solutions": { "title": "Solutions Sur Mesure", "desc": "Pas de copier-coller. Chaque solution est conçue spécifiquement pour votre contexte." },
+      "method": { "title": "Méthodologie Éprouvée", "desc": "Un cadre d'intervention rigoureux, testé sur plus de 150 projets dans différents secteurs." }
+    },
+    "metric1_number": "+40%",
+    "metric1_label": "Gain de productivité moyen",
+    "metric2_number": "98%",
+    "metric2_label": "Taux de satisfaction client",
+    "metric3_number": "15+",
+    "metric3_label": "Pays d'intervention"
   },
   "cta": {
-    "title": "Prêt à transformer votre organisation ?",
-    "subtitle": "Contactez-nous pour discuter de vos enjeux et découvrir comment STC peut vous accompagner vers plus de performance.",
-    "button": "Parlons de votre projet"
+    "title": "Prêt à transformer",
+    "title_accent": "votre organisation ?",
+    "subtitle": "Nos experts sont disponibles pour analyser votre situation et proposer des solutions adaptées à votre contexte.",
+    "button": "Contactez-nous dès maintenant"
   },
   "contact": {
-    "tag": "Contact",
-    "title": "Contactez-nous",
-    "subtitle": "Parlez-nous de votre projet. Nous vous répondrons sous 24h.",
-    "name": "Nom",
+    "tag": "Parlons de votre projet",
+    "title": "Nous",
+    "title_accent": "Contacter",
+    "subtitle": "Remplissez le formulaire ou utilisez nos coordonnées directes.",
+    "name": "Nom complet",
     "email": "Email",
     "company": "Entreprise",
+    "subject": "Sujet",
+    "subject_placeholder": "Sélectionnez un sujet",
+    "subject_options": {
+      "org": "Conseil Organisationnel",
+      "digital": "Transformation Digitale",
+      "si": "Systèmes d'Information",
+      "process": "Optimisation des Processus",
+      "training": "Formation Professionnelle",
+      "other": "Autre"
+    },
     "message": "Message",
     "name_placeholder": "Votre nom",
     "email_placeholder": "votre@email.com",
-    "company_placeholder": "Nom de votre entreprise",
-    "message_placeholder": "Décrivez votre besoin...",
+    "company_placeholder": "Nom de votre organisation",
+    "message_placeholder": "Décrivez votre projet ou votre besoin...",
     "submit": "Envoyer le message",
-    "success": "Message envoyé avec succès ! Nous vous recontacterons rapidement.",
+    "success": "Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.",
     "error": "Veuillez remplir tous les champs obligatoires.",
-    "info_title": "Informations",
+    "info_email_label": "Email",
     "info_email": "contact@siriusteranga.com",
-    "info_phone": "+221 XX XXX XX XX",
+    "info_phone_label": "Téléphone",
+    "info_phone": "+221 00 000 00 00",
+    "info_location_label": "Bureau",
     "info_location": "Dakar, Sénégal"
   },
   "footer": {
+    "tagline": "Votre partenaire stratégique pour la transformation et la performance.",
+    "nav_title": "Navigation",
+    "services_title": "Services",
+    "contact_title": "Contact",
     "rights": "© {{year}} Sirius Teranga Consulting. Tous droits réservés.",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
     "links": "Liens rapides",
-    "contact_title": "Contact"
+    "services_org": "Conseil Organisationnel",
+    "services_digital": "Transformation Digitale",
+    "services_si": "Systèmes d'Information",
+    "services_process": "Optimisation des Processus",
+    "services_training": "Formation Professionnelle"
   }
 }
