@@ -19,6 +19,7 @@ const Services = () => {
       />
       <Navbar />
       <main id="main-content">
+        <h1 className="sr-only">{t("services.title")} {t("services.title_accent")} - Sirius Teranga Consulting</h1>
         <ServicesSection />
         <MethodologySection />
         <CtaSection />

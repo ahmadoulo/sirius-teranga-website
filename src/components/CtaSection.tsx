@@ -25,7 +25,7 @@ const CtaSection = () => {
             {t("cta.title")}<br />
             <span className="text-accent">{t("cta.title_accent")}</span>
           </h2>
-          <p className="text-white/70 text-sm md:text-lg max-w-[540px] mx-auto mb-8 md:mb-10">{t("cta.subtitle")}</p>
+          <p className="text-white/80 text-sm md:text-lg max-w-[540px] mx-auto mb-8 md:mb-10">{t("cta.subtitle")}</p>
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 font-heading text-sm md:text-base font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-8 md:px-10 py-3 md:py-4 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(212,175,55,0.45)] transition-all duration-300"

@@ -17,6 +17,7 @@ const Contact = () => {
       />
       <Navbar />
       <main id="main-content">
+        <h1 className="sr-only">{t("contact.title")} {t("contact.title_accent")} - Sirius Teranga Consulting</h1>
         <ContactSection />
       </main>
       <Footer />
