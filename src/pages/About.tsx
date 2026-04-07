@@ -19,10 +19,12 @@ const About = () => {
         path="/a-propos"
       />
       <Navbar />
-      <AboutSection />
-      <MissionSection />
-      <WhyUsSection />
-      <CtaSection />
+      <main id="main-content">
+        <AboutSection />
+        <MissionSection />
+        <WhyUsSection />
+        <CtaSection />
+      </main>
       <Footer />
       <BackToTop />
     </div>

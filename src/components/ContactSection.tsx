@@ -72,21 +72,21 @@ const ContactSection = () => {
           <form ref={formRef} onSubmit={handleSubmit} className="bg-card rounded-xl p-5 md:p-8 border border-border shadow-navy-md">
             <div className="grid sm:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.name")} *</label>
-                <input type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} placeholder={t("contact.name_placeholder")} />
+                <label htmlFor="contact-name" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.name")} *</label>
+                <input id="contact-name" type="text" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputClasses} placeholder={t("contact.name_placeholder")} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.email")} *</label>
-                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClasses} placeholder={t("contact.email_placeholder")} />
+                <label htmlFor="contact-email" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.email")} *</label>
+                <input id="contact-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClasses} placeholder={t("contact.email_placeholder")} />
               </div>
             </div>
             <div className="flex flex-col gap-1.5 mb-4 md:mb-5">
-              <label className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.company")}</label>
-              <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClasses} placeholder={t("contact.company_placeholder")} />
+              <label htmlFor="contact-company" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.company")}</label>
+              <input id="contact-company" type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClasses} placeholder={t("contact.company_placeholder")} />
             </div>
             <div className="flex flex-col gap-1.5 mb-4 md:mb-5">
-              <label className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.subject")}</label>
-              <select value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={`${inputClasses} cursor-pointer appearance-none`}>
+              <label htmlFor="contact-subject" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.subject")}</label>
+              <select id="contact-subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={`${inputClasses} cursor-pointer appearance-none`}>
                 <option value="">{t("contact.subject_placeholder")}</option>
                 <option value="org">{t("contact.subject_options.org")}</option>
                 <option value="digital">{t("contact.subject_options.digital")}</option>
@@ -97,8 +97,8 @@ const ContactSection = () => {
               </select>
             </div>
             <div className="flex flex-col gap-1.5 mb-4 md:mb-5">
-              <label className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.message")} *</label>
-              <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={`${inputClasses} resize-y min-h-[100px]`} placeholder={t("contact.message_placeholder")} />
+              <label htmlFor="contact-message" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.message")} *</label>
+              <textarea id="contact-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={`${inputClasses} resize-y min-h-[100px]`} placeholder={t("contact.message_placeholder")} />
             </div>
             <button type="submit" className="w-full inline-flex items-center justify-center gap-2 font-heading text-xs md:text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300">
               <span>{t("contact.submit")}</span>
