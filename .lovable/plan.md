@@ -1,109 +1,73 @@
 
 
-## Plan: Complete UI/UX Redesign to Match Reference Design
+## Plan: Improve Accessibility (88→95+) and Best Practices (81→95+)
 
-### Summary
-Full visual overhaul of every section and component to match the uploaded HTML/CSS reference design exactly. The structure (multi-page routing, i18n, dark mode) stays intact, but every component gets redesigned with the premium styling from the reference.
+### Issues from Lighthouse Screenshots
 
-### Key Design Changes
+**Accessibility:**
+1. Select elements without associated label elements (contact form `<select>`)
+2. Insufficient color contrast ratio
+3. Heading elements not in sequentially-descending order
+4. Document does not have a main landmark
 
-**Overall**: The reference uses a darker, more premium aesthetic with navy gradients, gold accents, rounded cards with hover effects (lift + navy overlay on service cards), glassmorphism stats bar, and polished micro-interactions. The current site looks flat and generic by comparison.
+**Best Practices:**
+1. Uses deprecated APIs (not actionable from our code)
+2. OG image pointing to lovable.dev placeholder
 
-### Files to Modify
+---
 
-**1. `src/index.css` — Design tokens overhaul**
-- Add missing CSS variables: `--color-navy-mid`, shadow tokens (`--shadow-gold`, `--shadow-xl`), transition speeds
-- Add scroll animation classes: `.reveal-up`, `.reveal-left`, `.reveal-right` with `.visible` state
-- Add the gold pulsing dot keyframe, scroll-wheel animation
-- Refine dark mode variables for consistency
+### Changes
 
-**2. `src/components/Navbar.tsx` — Premium navbar**
-- Transparent navbar that becomes navy/blur on scroll (add scroll listener)
-- STC text logo with gold border badge (matching reference `logo-icon` pattern) alongside the actual logo images
-- Nav links: uppercase, small, semi-transparent white text with gold underline on hover
-- Gold CTA button with rounded-full + shadow
-- Mobile: full-screen navy overlay with centered links, animated hamburger (3 spans)
+#### 1. Add `<main>` landmark wrapper
+- **Files**: `Index.tsx`, `About.tsx`, `Services.tsx`, `Contact.tsx`
+- Wrap page content in `<main>` element (exclude Navbar/Footer)
 
-**3. `src/components/HeroSection.tsx` — Hero redesign**
-- Navy gradient background (not image-based) with subtle radial gold overlays and dot pattern
-- Floating gold particles (optional, lightweight)
-- Pulsing badge dot + gold pill badge
-- Stats bar at bottom: glassmorphism container with 3 stats (150+ projects, 50+ clients, 10+ years) separated by dividers
-- Scroll indicator (mouse icon with animated wheel)
-- i18n keys: add `hero.stat1_number`, `hero.stat1_label`, etc.
+#### 2. Fix form labels with `htmlFor` + `id` attributes
+- **File**: `ContactSection.tsx`
+- Add unique `id` to each input/select/textarea
+- Add matching `htmlFor` on each `<label>`
+- This fixes both "select without label" and general label association
 
-**4. `src/components/AboutSection.tsx` — Two-column layout**
-- Left: decorative card stack visual (CSS-only with progress bars, icons, badge)
-- Right: section label pill, title with gold accent span, two paragraphs, highlight items (icon + title + desc), CTA button
-- Grid layout `grid-cols-2` on desktop, stacked on mobile
+#### 3. Fix heading hierarchy
+- **Files**: Review all sections for heading order (h1→h2→h3, no skips)
+- Ensure only HeroSection uses `<h1>`, all sections use `<h2>`, sub-items use `<h3>`
+- Check `AboutSection.tsx`, `ServicesSection.tsx`, `MethodologySection.tsx`, etc.
 
-**5. `src/components/MissionSection.tsx` — Card redesign**
-- 3-column grid of cards with top accent bar (gold gradient, appears on hover via scaleX)
-- Icon wraps: 64px, navy or gold background, rounded-lg
-- Values displayed as small tags with checkmark icons inside the Values card
-- Cards lift on hover with shadow increase
+#### 4. Fix color contrast issues
+- Audit muted text classes (`text-white/60`, `text-white/75`, `text-muted-foreground` on dark backgrounds)
+- Increase opacity on hero stat labels (`text-white/60` → `text-white/80`)
+- Increase opacity on hero subtitle (`text-white/75` → `text-white/85`)
+- Ensure accent gold text (#D4AF37) on dark backgrounds meets 4.5:1 ratio
 
-**6. `src/components/ServicesSection.tsx` — Premium service cards**
-- 3x2 grid + 1 CTA card (6th position)
-- Cards: white, rounded-xl, with `::before` navy overlay that fades in on hover
-- On hover: card lifts, text turns white, icon bg turns gold
-- "En savoir plus" link with arrow that slides right on hover
-- CTA card: navy gradient background, gold button, handshake icon
+#### 5. Fix OG image and meta tags
+- **File**: `index.html`
+- Replace lovable.dev placeholder OG image with proper brand image or remove
+- Remove `twitter:site` pointing to @Lovable
 
-**7. `src/components/MethodologySection.tsx` — Timeline approach**
-- 4-column grid with connecting horizontal line (gradient navy-gold-navy)
-- Step numbers in gold pill badges (01, 02, 03, 04)
-- Circular step icons (70px, navy bg, white icon) alternating with gold gradient
-- Icons scale up on hover
-- White background (`section-alt`)
+#### 6. Add skip-to-content link
+- **File**: `Navbar.tsx` or `App.tsx`
+- Add visually hidden skip link for keyboard users: `<a href="#main-content" class="sr-only focus:not-sr-only">Skip to content</a>`
 
-**8. `src/components/WhyUsSection.tsx` — Two-column with metrics**
-- Left: section label, title, description, checklist items with gold check circles
-- Right: stacked metric cards (3) with slide-right hover, 2nd card offset
-- Metrics: +40% productivity, 98% satisfaction, 15+ countries
+#### 7. Add `role` and `aria` attributes where needed
+- Add `aria-label` to decorative/icon-only elements
+- Ensure all interactive elements have accessible names
 
-**9. `src/components/CtaSection.tsx` — CTA banner**
-- Navy gradient with radial gold overlays
-- Gold badge circle with star icon (pulsing)
-- Large white headline with gold accent
-- Gold CTA button
+---
 
-**10. `src/components/ContactSection.tsx` — Redesigned contact**
-- Two-column: left info blocks (cards with icon, hover slide), social links; right form
-- Form: off-white inputs, gold focus ring, subject dropdown added
-- Info blocks: navy icon squares with gold icon color
+### Technical Details
 
-**11. `src/components/Footer.tsx` — 4-column footer**
-- Dark navy background
-- 4 columns: brand + tagline, navigation links, services links, contact info + social
-- Footer bottom: copyright + legal links
-- Social icons: circular, navy hover with gold
+**Label association pattern:**
+```tsx
+<label htmlFor="contact-subject">Subject</label>
+<select id="contact-subject" ...>
+```
 
-**12. `src/components/BackToTop.tsx` — Styled button**
-- Navy circle with gold chevron, gold border, appears on scroll
-- On hover: gold bg, navy icon
+**Main landmark pattern:**
+```tsx
+<main id="main-content">
+  {/* sections */}
+</main>
+```
 
-**13. `src/i18n/locales/fr.json` & `en.json` — New translation keys**
-- Add hero stats keys, about highlights, why-us metrics, service CTA card text, footer services column
-
-**14. `src/hooks/useScrollAnimation.ts`**
-- Add support for `reveal-left`, `reveal-right` directions (not just `fade-in-up`)
-
-**15. `tailwind.config.ts`**
-- Add `navy-mid` color token
-- Add box-shadow utilities for gold shadow
-- Ensure `rounded-xl` maps to 24px
-
-### Responsive Breakpoints (preserved from reference)
-- `>1100px`: full layout
-- `900px`: single-column about/why-us, 2-col services, 2-col methodology
-- `640px`: single-column everything, full-screen mobile menu, stacked stats
-
-### What stays unchanged
-- React Router multi-page architecture
-- i18n setup with react-i18next
-- Dark/light mode toggle system
-- Logo assets (logo.png, logo-dark.png)
-- SEOHead component
-- Dockerfile, docker-compose, nginx config
+**Contrast fixes** target WCAG AA (4.5:1 for normal text, 3:1 for large text).
 
