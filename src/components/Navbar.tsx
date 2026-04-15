@@ -29,8 +29,10 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t("nav.home"), to: "/" },
-    { label: t("nav.about"), to: "/a-propos" },
+    { label: t("nav.partnership"), to: "/partenariat" },
+    { label: t("nav.expertises"), to: "/expertises" },
     { label: t("nav.services"), to: "/services" },
+    { label: t("nav.references"), to: "/references" },
     { label: t("nav.contact"), to: "/contact" },
   ];
 
@@ -90,7 +92,7 @@ const Navbar = () => {
             <ThemeToggle isTransparent={isTransparent} />
             <LanguageSwitcher isTransparent={isTransparent} />
             <Link
-              to="/contact"
+              to="/diagnostic"
               className="font-heading text-[0.8rem] font-extrabold uppercase tracking-[0.05em] bg-accent text-accent-foreground px-5 py-2.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-px transition-all duration-200 ml-1"
             >
               {t("nav.cta")}
@@ -148,7 +150,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/diagnostic"
             onClick={() => setOpen(false)}
             className="font-heading text-sm font-extrabold uppercase bg-accent text-accent-foreground px-8 py-3.5 rounded-full shadow-gold mt-6"
           >

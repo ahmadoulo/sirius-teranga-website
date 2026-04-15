@@ -40,7 +40,7 @@ const HeroSection = () => {
 
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4 sm:px-0">
           <Link
-            to="/contact"
+            to="/diagnostic"
             className="inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-7 md:px-8 py-3 md:py-3.5 rounded-full border-2 border-transparent shadow-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(212,175,55,0.45)] transition-all duration-300"
           >
             {t("hero.cta1")}
@@ -78,7 +78,10 @@ const HeroSection = () => {
 
 const StatItem = ({ numKey, labelKey }: { numKey: string; labelKey: string }) => {
   const { t } = useTranslation();
-  const target = parseInt(t(numKey), 10);
+  const numStr = t(numKey);
+  const target = parseInt(numStr, 10);
+  const prefix = t(`${numKey.replace('_number', '_prefix')}`, { defaultValue: '' });
+  const suffix = t(`${numKey.replace('_number', '_suffix')}`, { defaultValue: '' });
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const animated = useRef(false);
@@ -107,8 +110,9 @@ const StatItem = ({ numKey, labelKey }: { numKey: string; labelKey: string }) =>
   return (
     <div ref={ref} className="flex flex-col items-center px-6 sm:px-8 md:px-12">
       <div className="flex items-baseline">
+        {prefix && <span className="font-heading text-xl sm:text-2xl md:text-[1.8rem] font-black text-accent mr-0.5">{prefix}</span>}
         <span className="font-heading text-2xl sm:text-3xl md:text-[2.5rem] font-black text-white leading-none">{count}</span>
-        <span className="font-heading text-xl sm:text-2xl md:text-[1.8rem] font-black text-accent">+</span>
+        {suffix && <span className="font-heading text-xl sm:text-2xl md:text-[1.8rem] font-black text-accent">{suffix}</span>}
       </div>
       <span className="text-[0.65rem] sm:text-[0.72rem] md:text-[0.78rem] text-white/80 uppercase tracking-[0.08em] mt-1 font-heading text-center">{t(labelKey)}</span>
     </div>
