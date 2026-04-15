@@ -7,8 +7,11 @@ const Footer = () => {
 
   const navLinks = [
     { label: t("nav.home"), to: "/" },
-    { label: t("nav.about"), to: "/a-propos" },
+    { label: t("nav.partnership"), to: "/partenariat" },
+    { label: t("nav.expertises"), to: "/expertises" },
     { label: t("nav.services"), to: "/services" },
+    { label: t("nav.references"), to: "/references" },
+    { label: t("nav.diagnostic"), to: "/diagnostic" },
     { label: t("nav.contact"), to: "/contact" },
   ];
 

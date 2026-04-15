@@ -88,9 +88,9 @@ const ContactSection = () => {
               <label htmlFor="contact-subject" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.subject")}</label>
               <select id="contact-subject" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className={`${inputClasses} cursor-pointer appearance-none`}>
                 <option value="">{t("contact.subject_placeholder")}</option>
+                <option value="diagnostic">{t("contact.subject_options.diagnostic")}</option>
+                <option value="eam">{t("contact.subject_options.eam")}</option>
                 <option value="org">{t("contact.subject_options.org")}</option>
-                <option value="digital">{t("contact.subject_options.digital")}</option>
-                <option value="si">{t("contact.subject_options.si")}</option>
                 <option value="process">{t("contact.subject_options.process")}</option>
                 <option value="training">{t("contact.subject_options.training")}</option>
                 <option value="other">{t("contact.subject_options.other")}</option>
