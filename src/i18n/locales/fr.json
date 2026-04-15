@@ -3,38 +3,44 @@
     "home": "Accueil",
     "about": "À Propos",
     "services": "Services",
-    "approach": "Approche",
+    "partnership": "Partenariat",
+    "expertises": "Expertises",
+    "references": "Références",
+    "diagnostic": "Diagnostic",
     "contact": "Contact",
-    "cta": "Nous Contacter"
+    "cta": "Diagnostic Gratuit"
   },
   "hero": {
-    "badge": "Consulting Stratégique & Digital",
-    "title": "Transformez votre organisation.",
-    "highlight": "Accélérez votre performance.",
-    "subtitle": "Sirius Teranga Consulting accompagne les entreprises dans leur transformation organisationnelle et digitale, avec expertise, méthode et engagement.",
-    "cta1": "Nous contacter",
+    "badge": "Partenaire officiel de Talan — Channel Partner Hexagon — Sénégal & Afrique de l'Ouest",
+    "title": "La Souveraineté opérationnelle.",
+    "highlight": "L'Expertise mondiale. L'Ancrage local.",
+    "subtitle": "SIRIUS TERANGA CONSULTING est le cabinet de référence en Asset Management & EAM au Sénégal. Portés par 40 ans d'expérience industrielle et une alliance stratégique avec Talan — le leader français de l'intégration Octave Attune EAM — nous transformons la gestion de vos actifs critiques en avantage compétitif durable.",
+    "cta1": "Lancer mon Diagnostic gratuit",
     "cta2": "Découvrir nos services",
     "scroll": "Défiler",
-    "stat1_number": "150",
-    "stat1_label": "Projets réalisés",
-    "stat2_number": "50",
-    "stat2_label": "Clients satisfaits",
-    "stat3_number": "10",
-    "stat3_label": "Années d'expertise"
+    "stat1_number": "40",
+    "stat1_label": "Ans d'expertise cumulée",
+    "stat2_number": "7",
+    "stat2_label": "Références mondiales iconiques",
+    "stat3_number": "1",
+    "stat3_label": "Partenaire Octave Attune EAM au Sénégal",
+    "stat1_suffix": "ans",
+    "stat2_suffix": "+",
+    "stat3_prefix": "N°"
   },
   "about": {
     "tag": "À Propos de STC",
-    "title": "Un partenaire stratégique",
-    "title_accent": "de confiance",
-    "p1": "<strong>Sirius Teranga Consulting (STC)</strong> est un cabinet de conseil spécialisé dans l'optimisation organisationnelle, la transformation digitale et l'amélioration de la performance des entreprises.",
-    "p2": "Nous intervenons auprès d'organisations de toutes tailles pour les aider à structurer, moderniser et optimiser leurs processus afin d'atteindre leurs objectifs stratégiques.",
-    "highlight1_title": "Expertise Reconnue",
-    "highlight1_desc": "Des consultants expérimentés avec une vision globale et locale.",
-    "highlight2_title": "Résultats Concrets",
-    "highlight2_desc": "Une approche axée sur des livrables mesurables et durables.",
+    "title": "Le cabinet de référence",
+    "title_accent": "en Asset Management & EAM",
+    "p1": "<strong>Sirius Teranga Consulting (STC)</strong> est le cabinet de conseil spécialisé en Asset Management & EAM au Sénégal. Nous accompagnons les organisations dans la transformation de la gestion de leurs actifs critiques grâce à notre alliance stratégique avec Talan et Hexagon.",
+    "p2": "Notre équipe cumule plus de 40 ans d'expérience dans les environnements industriels les plus exigeants — Toyota, Fives ECL, RATP, Veolia — et déploie cette expertise au service des entreprises sénégalaises et ouest-africaines.",
+    "highlight1_title": "Partenaire Certifié Hexagon",
+    "highlight1_desc": "Seul point d'entrée certifié pour Octave Attune EAM au Sénégal.",
+    "highlight2_title": "40 ans d'expertise terrain",
+    "highlight2_desc": "Des décennies d'expérience dans l'industrie lourde, le transport et le facility management.",
     "cta": "Discutons de votre projet",
     "badge_text": "Excellence · Performance",
-    "desc": "STC intervient auprès des entreprises pour améliorer leur efficacité, renforcer leur organisation et soutenir leur développement grâce à des solutions adaptées à leurs enjeux."
+    "desc": "STC ne se limite pas à l'intégration de solutions EAM. Du diagnostic stratégique à l'implémentation opérationnelle, nous livrons des organisations transformées."
   },
   "mission": {
     "tag": "Notre ADN",
@@ -42,9 +48,9 @@
     "title_accent": "Valeurs",
     "subtitle": "Les fondements qui guident chacune de nos interventions.",
     "mission_title": "Notre Mission",
-    "mission_text": "Aider les organisations à optimiser leur performance à travers des solutions de conseil adaptées, rigoureuses et centrées sur les résultats.",
+    "mission_text": "Transformer la gestion des actifs critiques des entreprises sénégalaises et ouest-africaines en avantage compétitif durable, grâce à l'excellence opérationnelle et les meilleures solutions EAM mondiales.",
     "vision_title": "Notre Vision",
-    "vision_text": "Devenir le cabinet de conseil de référence en Afrique, reconnu pour son excellence, son innovation et la durabilité de ses résultats.",
+    "vision_text": "Devenir le partenaire de référence en Asset Management digital en Afrique de l'Ouest, reconnu pour la qualité de ses déploiements et la pérennité de ses résultats.",
     "values_title": "Nos Valeurs",
     "values": {
       "quality": { "title": "Excellence", "desc": "" },
@@ -58,30 +64,30 @@
     "tag": "Ce que nous faisons",
     "title": "Nos",
     "title_accent": "Services",
-    "subtitle": "Des solutions de conseil sur mesure pour chaque défi organisationnel et digital.",
+    "subtitle": "Des solutions intégrées pour transformer la gestion de vos actifs et optimiser votre performance opérationnelle.",
     "learn_more": "En savoir plus",
     "items": {
-      "org": { "title": "Conseil Organisationnel", "desc": "Restructuration, gouvernance, optimisation des structures et des ressources humaines pour une organisation plus agile et efficace." },
-      "digital": { "title": "Transformation Digitale", "desc": "Accompagnement dans la numérisation des processus, l'adoption des nouvelles technologies et le changement culturel associé." },
-      "si": { "title": "Systèmes d'Information", "desc": "Audit, cartographie et optimisation des SI, sélection d'outils adaptés et pilotage des projets informatiques d'entreprise." },
-      "process": { "title": "Optimisation des Processus", "desc": "Analyse et refonte des processus métiers pour éliminer les inefficiences, réduire les coûts et améliorer la qualité." },
-      "training": { "title": "Formation Professionnelle", "desc": "Programmes de formation sur mesure pour développer les compétences managériales, digitales et techniques de vos équipes." },
-      "iso": { "title": "ISO & Qualité (SMQ)", "desc": "Accompagnement vers les certifications ISO, mise en place de systèmes de management de la qualité." }
+      "org": { "title": "Conseil Organisationnel", "desc": "Audit organisationnel, analyse RACI, définition du Target Operating Model et référentiels organisationnels pour une structure alignée avec vos enjeux." },
+      "digital": { "title": "Intégration EAM", "desc": "Déploiement certifié Octave Attune EAM (Hexagon) avec méthodologie Audit to Success™, paramétrage métier et transfert de compétences." },
+      "si": { "title": "Systèmes d'Information", "desc": "Audit et optimisation de vos SI, intégration EAM/ERP, stratégie data et pilotage des projets de transformation digitale." },
+      "process": { "title": "Optimisation des Processus", "desc": "Cartographie VSM/BPMN, standardisation SOP, démarche Lean et amélioration continue pour des gains de productivité mesurables." },
+      "training": { "title": "Formation & Transfert", "desc": "Programmes de formation certifiés Octave Attune EAM, accompagnement au changement et montée en compétences de vos équipes." },
+      "iso": { "title": "ISO 55001 & Qualité", "desc": "Accompagnement vers la certification ISO 55001, mise en place de systèmes de management des actifs conformes aux standards internationaux." }
     },
     "cta_title": "Un projet en tête ?",
     "cta_desc": "Discutons ensemble de vos défis et co-construisons une solution adaptée à vos besoins.",
-    "cta_button": "Nous contacter"
+    "cta_button": "Lancer mon Diagnostic"
   },
   "methodology": {
     "tag": "Notre Méthodologie",
     "title": "Notre",
     "title_accent": "Approche",
-    "subtitle": "Une méthodologie éprouvée, rigoureuse et orientée résultats.",
+    "subtitle": "Une méthodologie éprouvée — du diagnostic à la performance durable.",
     "steps": {
-      "analyze": { "title": "Analyser", "desc": "Diagnostic approfondi de votre organisation, identification des enjeux et des opportunités d'amélioration." },
-      "structure": { "title": "Structurer", "desc": "Conception d'un plan de transformation clair, priorisé et aligné sur vos objectifs stratégiques." },
-      "optimize": { "title": "Optimiser", "desc": "Mise en œuvre des solutions, formation des équipes et ajustement continu pour maximiser la performance." },
-      "transform": { "title": "Transformer", "desc": "Ancrage des changements dans la culture d'entreprise et accompagnement vers une performance durable." }
+      "analyze": { "title": "Diagnostiquer", "desc": "Audit terrain de vos processus, actifs et systèmes d'information. Évaluation de maturité sur l'échelle ISO 55001." },
+      "structure": { "title": "Structurer", "desc": "Définition du Target Operating Model, roadmap de transformation sur 12-36 mois et chiffrage prévisionnel." },
+      "optimize": { "title": "Déployer", "desc": "Implémentation certifiée Octave Attune EAM, formation des équipes et paramétrage métier validé." },
+      "transform": { "title": "Piloter", "desc": "Suivi des KPI, animation des comités de pilotage et accompagnement vers une performance opérationnelle durable." }
     }
   },
   "whyus": {
@@ -90,40 +96,40 @@
     "title_accent": "différents",
     "desc": "Nous ne proposons pas des solutions génériques. Chaque intervention est unique, construite autour de votre réalité et de vos ambitions.",
     "points": {
-      "expertise": { "title": "Expertise Stratégique", "desc": "Des consultants seniors avec une profonde connaissance des enjeux africains et internationaux." },
-      "results": { "title": "Résultats Concrets & Mesurables", "desc": "Nous nous engageons sur des indicateurs clairs et suivons rigoureusement leur atteinte." },
-      "solutions": { "title": "Solutions Sur Mesure", "desc": "Pas de copier-coller. Chaque solution est conçue spécifiquement pour votre contexte." },
-      "method": { "title": "Méthodologie Éprouvée", "desc": "Un cadre d'intervention rigoureux, testé sur plus de 150 projets dans différents secteurs." }
+      "expertise": { "title": "L'Héritage industriel", "desc": "Toyota. Fives ECL. Saudequip. Orange. Notre équipe a forgé son expertise dans les environnements industriels les plus exigeants du monde." },
+      "results": { "title": "L'Alliance stratégique", "desc": "Partenaire officiel de Talan, leader français de l'intégration Octave Attune EAM — allié privilégié d'Hexagon. Déploiement certifié garanti." },
+      "solutions": { "title": "Le Local-Global", "desc": "Rigueur des standards internationaux (ISO 55001, Hexagon Best Practices) combinée à la connaissance fine du terrain sénégalais." },
+      "method": { "title": "Résultats durables", "desc": "Nous ne livrons pas des logiciels configurés. Nous livrons des organisations transformées, avec des résultats mesurables." }
     },
-    "metric1_number": "+40%",
-    "metric1_label": "Gain de productivité moyen",
-    "metric2_number": "98%",
-    "metric2_label": "Taux de satisfaction client",
-    "metric3_number": "15+",
-    "metric3_label": "Pays d'intervention"
+    "metric1_number": "40",
+    "metric1_label": "Ans d'expertise cumulée",
+    "metric2_number": "7+",
+    "metric2_label": "Références mondiales",
+    "metric3_number": "N°1",
+    "metric3_label": "Partenaire EAM au Sénégal"
   },
   "cta": {
     "title": "Prêt à transformer",
-    "title_accent": "votre organisation ?",
-    "subtitle": "Nos experts sont disponibles pour analyser votre situation et proposer des solutions adaptées à votre contexte.",
-    "button": "Contactez-nous dès maintenant"
+    "title_accent": "la gestion de vos actifs ?",
+    "subtitle": "Demandez votre Diagnostic de maturité digitale — Gratuit, 2 jours, livrable : Roadmap de transformation sur mesure.",
+    "button": "Lancer mon Diagnostic gratuit"
   },
   "contact": {
     "tag": "Parlons de votre projet",
     "title": "Nous",
     "title_accent": "Contacter",
-    "subtitle": "Remplissez le formulaire ou utilisez nos coordonnées directes.",
+    "subtitle": "Remplissez le formulaire ou utilisez nos coordonnées directes. Réponse sous 24h.",
     "name": "Nom complet",
     "email": "Email",
     "company": "Entreprise",
     "subject": "Sujet",
     "subject_placeholder": "Sélectionnez un sujet",
     "subject_options": {
+      "diagnostic": "Diagnostic de maturité digitale",
+      "eam": "Intégration Octave Attune EAM",
       "org": "Conseil Organisationnel",
-      "digital": "Transformation Digitale",
-      "si": "Systèmes d'Information",
       "process": "Optimisation des Processus",
-      "training": "Formation Professionnelle",
+      "training": "Formation & Transfert",
       "other": "Autre"
     },
     "message": "Message",
@@ -132,28 +138,188 @@
     "company_placeholder": "Nom de votre organisation",
     "message_placeholder": "Décrivez votre projet ou votre besoin...",
     "submit": "Envoyer le message",
-    "success": "Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.",
+    "success": "Votre message a été envoyé. Nous vous répondrons sous 24h.",
     "error": "Veuillez remplir tous les champs obligatoires.",
     "info_email_label": "Email",
     "info_email": "contact@siriusteranga.com",
     "info_phone_label": "Téléphone",
-    "info_phone": "+221 00 000 00 00",
+    "info_phone": "+221 78 788 80 55",
     "info_location_label": "Bureau",
     "info_location": "Dakar, Sénégal"
   },
   "footer": {
-    "tagline": "Votre partenaire stratégique pour la transformation et la performance.",
+    "tagline": "Cabinet de référence en Asset Management & EAM au Sénégal. Partenaire officiel Talan — Channel Partner Hexagon.",
     "nav_title": "Navigation",
-    "services_title": "Services",
+    "services_title": "Expertise",
     "contact_title": "Contact",
     "rights": "© {{year}} Sirius Teranga Consulting. Tous droits réservés.",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
     "links": "Liens rapides",
     "services_org": "Conseil Organisationnel",
-    "services_digital": "Transformation Digitale",
+    "services_digital": "Intégration EAM",
     "services_si": "Systèmes d'Information",
-    "services_process": "Optimisation des Processus",
-    "services_training": "Formation Professionnelle"
+    "services_process": "Optimisation Processus",
+    "services_training": "Formation & Transfert"
+  },
+  "partnership": {
+    "tag": "Notre Alliance — Le Fondement de notre autorité",
+    "title": "Octave Attune EAM au Sénégal :",
+    "title_accent": "votre seul point d'entrée certifié.",
+    "intro": "Dans le monde de l'Asset Management digital, toutes les solutions ne se valent pas — et tous les intégrateurs encore moins. Octave Attune EAM (anciennement HxGN EAM), développé par Hexagon, est reconnu par les analystes mondiaux comme la plateforme de référence pour la gestion du cycle de vie des actifs industriels.",
+    "intro2": "Au Sénégal, ce partenaire, c'est SIRIUS TERANGA CONSULTING.",
+    "chain_title": "La Chaîne d'Excellence",
+    "chain_hexagon": "Hexagon",
+    "chain_hexagon_desc": "Éditeur mondial — 22 000 collaborateurs, 50 pays",
+    "chain_talan": "Talan",
+    "chain_talan_desc": "Leader français de l'intégration Octave Attune EAM",
+    "chain_stc": "Sirius Teranga Consulting",
+    "chain_stc_desc": "Partenaire officiel au Sénégal & Afrique de l'Ouest",
+    "chain_guarantee": "Cette chaîne vous garantit : des certifications officielles Hexagon sur chaque déploiement, une escalade directe vers l'éditeur en cas de besoin, une roadmap produit maintenue et pérenne, et la tranquillité d'un investissement qui ne deviendra jamais orphelin.",
+    "compare_title": "Ce que ce partenariat change pour vous",
+    "sans_stc": "Sans STC",
+    "avec_stc": "Avec STC",
+    "compare": [
+      { "sans": "Intégrateur non certifié, méthodologie empirique", "avec": "Déploiement certifié Hexagon, méthodologie Audit to Success™" },
+      { "sans": "Risque de dérive de projet, surcoût, délais", "avec": "Planning maîtrisé, jalons contractuels, budget respecté" },
+      { "sans": "Support limité, escalade difficile vers l'éditeur", "avec": "Escalade directe vers Hexagon via notre partenaire français" },
+      { "sans": "Solution mal paramétrée, faible adoption", "avec": "Paramétrage métier validé, formation, transfert de compétences" },
+      { "sans": "Investissement fragilisé par l'obsolescence", "avec": "Mises à jour planifiées, pérennité garantie par l'éditeur mondial" }
+    ],
+    "cta": "Lancer mon Diagnostic gratuit"
+  },
+  "expertises": {
+    "tag": "Au-delà des systèmes : structurer l'organisation et exécuter la transformation",
+    "title": "L'outil sans la méthode,",
+    "title_accent": "c'est la performance sans la durabilité.",
+    "intro": "Le déploiement d'un EAM comme Octave Attune est une condition nécessaire mais non suffisante à la transformation de la performance de vos actifs. Ce qui fait la différence entre un projet qui tient dans le temps et un déploiement qui s'essouffle après 6 mois, c'est la qualité de l'organisation, des processus et du pilotage qui l'entourent.",
+    "intro2": "SIRIUS TERANGA CONSULTING intervient sur l'ensemble de cette chaîne. Nous ne livrons pas des logiciels configurés. Nous livrons des organisations transformées.",
+    "domains": [
+      {
+        "title": "Optimisation des processus & excellence opérationnelle",
+        "objective": "Améliorer la performance globale en éliminant les inefficacités et en structurant les processus clés.",
+        "problems": ["Processus non formalisés ou mal maîtrisés", "Tâches sans valeur ajoutée", "Manque de coordination interservices", "Pilotage de la performance absent"],
+        "interventions": ["Cartographie VSM / BPMN", "Analyse des flux et gaspillages", "Standardisation des processus (SOP)", "Référentiels opérationnels", "Démarche Lean / amélioration continue"],
+        "results": ["Processus clairs et reproductibles", "Gains de productivité mesurables", "Réduction des dysfonctionnements", "Coordination interservices renforcée"]
+      },
+      {
+        "title": "Audit organisationnel & structuration",
+        "objective": "Aligner l'organisation avec ses enjeux opérationnels et stratégiques.",
+        "problems": ["Organisation floue ou inefficace", "Chevauchement des rôles", "Manque de lisibilité décisionnelle", "Difficulté à faire évoluer la structure"],
+        "interventions": ["Diagnostic organisationnel", "Analyse RACI des responsabilités", "Revue des structures", "Définition du Target Operating Model", "Référentiels organisationnels"],
+        "results": ["Organisation claire et structurée", "Efficacité décisionnelle améliorée", "Responsabilités alignées", "Capacité à piloter et scaler"]
+      },
+      {
+        "title": "Mise à disposition de ressources & pilotage opérationnel",
+        "objective": "Sécuriser l'exécution des projets et garantir l'atteinte des résultats.",
+        "problems": ["Ressources internes insuffisantes", "Difficulté à piloter les projets", "Transformation non exécutée", "Manque de suivi des actions"],
+        "interventions": ["Consultants PMO / chefs de projet", "Pilotage de programmes de transformation", "Suivi des plans d'actions", "Animation comités & KPI", "Accompagnement des équipes"],
+        "results": ["Projets livrés dans les délais", "Maîtrise des transformations", "Résultats mesurables et durables", "Équipes internes renforcées"]
+      }
+    ],
+    "integrated_title": "Une approche intégrée : Organisation × Processus × Systèmes",
+    "integrated_desc": "Nos trois domaines d'intervention ne sont pas des prestations isolées. Ils forment un système cohérent, conçu pour aligner ce que fait votre organisation (processus), comment elle est structurée (organisation), et avec quels outils elle opère (systèmes d'information). C'est cet alignement — et lui seul — qui garantit une performance opérationnelle durable.",
+    "pillar_org": "ORGANISATION",
+    "pillar_org_desc": "Rôles · Gouvernance · RACI",
+    "pillar_process": "PROCESSUS",
+    "pillar_process_desc": "VSM · SOP · Lean",
+    "pillar_systems": "SYSTÈMES",
+    "pillar_systems_desc": "EAM · ERP · Data",
+    "positioning": "SIRIUS TERANGA CONSULTING ne se limite pas à l'intégration de solutions EAM.",
+    "positioning_flow": "Diagnostic stratégique → Implémentation opérationnelle → Pilotage de la performance",
+    "cta_title": "Votre organisation est-elle alignée pour performer ?",
+    "cta_desc": "Demandez un Diagnostic organisationnel & processus — complément naturel du Diagnostic EAM",
+    "cta_button": "Lancer mon Diagnostic transformation"
+  },
+  "references": {
+    "tag": "Ce que nos équipes ont construit — avant de construire STC",
+    "title": "Notre track record ne date pas",
+    "title_accent": "de la création de STC.",
+    "intro": "Les organisations ne font pas confiance à des cabinets — elles font confiance à des experts. Les consultants de STC ont passé des décennies à résoudre exactement les problèmes que vous rencontrez aujourd'hui : maintenir des flottes critiques, structurer des patrimoines immobiliers complexes, industrialiser des processus de maintenance, déployer des infrastructures en Afrique.",
+    "angles": [
+      {
+        "label": "ANGLE 1",
+        "title": "Industrie lourde",
+        "subtitle": "& Excellence opérationnelle",
+        "companies": [
+          { "name": "Toyota", "detail": "Japon / Monde" },
+          { "name": "New Holland Agriculture", "detail": "France" },
+          { "name": "Fives ECL", "detail": "France" },
+          { "name": "Eiffage", "detail": "France" },
+          { "name": "Vinci", "detail": "France" }
+        ]
+      },
+      {
+        "label": "ANGLE 2",
+        "title": "Infrastructures critiques",
+        "subtitle": "& Grands comptes",
+        "companies": [
+          { "name": "RATP", "detail": "Transport, Paris" },
+          { "name": "CEA", "detail": "Recherche nucléaire" },
+          { "name": "Veolia", "detail": "Utilities, USA" },
+          { "name": "Le Louvre", "detail": "FM patrimonial" },
+          { "name": "Château Blanc", "detail": "Boulangerie ind." },
+          { "name": "Macaroon SA", "detail": "Suisse" }
+        ]
+      },
+      {
+        "label": "ANGLE 3",
+        "title": "Ancrage local",
+        "subtitle": "& Terrain Africain",
+        "companies": [
+          { "name": "Saudequip", "detail": "Sénégal" },
+          { "name": "Kaparock Ingenierie", "detail": "Géotechnique, Sénégal" }
+        ]
+      }
+    ],
+    "sectors_title": "Nos références par secteur",
+    "sectors_subtitle": "Ce que nous avons fait, pas seulement où nous étions.",
+    "sectors": [
+      { "sector": "Transport & Mobilité", "missions": "Maintenance préventive flottes critiques, optimisation disponibilité, gestion révisions, conformité sécurité", "refs": "RATP · Vinci" },
+      { "sector": "Facility Management", "missions": "Gestion technique bâtiments haute fréquentation, conformité réglementaire, pilotage contrats sous-traitants", "refs": "Le Louvre · Eiffage · CEA" },
+      { "sector": "Industrie & Production", "missions": "Lean Manufacturing, réduction temps d'arrêt machines, standardisation gammes de maintenance, OEE", "refs": "Toyota · Fiat · Fives ECL" },
+      { "sector": "Agroalimentaire", "missions": "GMAO en environnement alimentaire, maintenance préventive lignes de conditionnement, conformité hygiène", "refs": "Château Blanc · Macaroon SA" },
+      { "sector": "Énergie & Utilities", "missions": "Maintenance actifs réseau, arrêts programmés, traçabilité réglementaire, coûts de cycle de vie", "refs": "Veolia · CEA" },
+      { "sector": "Télécoms & Infrastructure", "missions": "Construction et suivi pylônes/antennes, gestion actifs réseau en Afrique, maintenance infrastructure passive", "refs": "Orange · Saudigroup" },
+      { "sector": "BTP & Construction", "missions": "Équipements lourds de chantier, maintenance en conditions terrain difficile, sites multi-projets", "refs": "Eiffage · Vinci · Saudequip" }
+    ],
+    "micro_case": "Maintenance d'une flotte ferroviaire de 5M voyageurs/jour — structuration des plans préventifs, réduction du taux de panne de 23%.",
+    "cta_title": "Ces références, c'est votre prochaine solution.",
+    "cta_desc": "Demandez à voir comment nous transposons ces expertises à votre contexte",
+    "cta_button": "Discutons de votre projet"
+  },
+  "diagnostic": {
+    "tag": "Offre Exclusive — Diagnostic de maturité digitale STC",
+    "title": "En 2 jours, sachez exactement où vous en êtes.",
+    "title_accent": "Et où vous devez aller.",
+    "intro": "La plupart des organisations sénégalaises et ouest-africaines gèrent leurs actifs avec des outils inadaptés — tableurs, systèmes obsolètes, ou absence totale de GMAO. Elles savent que quelque chose doit changer, mais elles ne savent pas par où commencer, combien cela coûte, ni combien cela rapporte.",
+    "intro2": "Le Diagnostic de maturité digitale STC répond à ces trois questions en 2 jours. Sans jargon. Avec des chiffres.",
+    "what_title": "Ce que vous obtenez",
+    "day1_title": "Jour 1 — Audit terrain",
+    "day1_desc": "Nos consultants senior analysent vos processus de maintenance actuels, interviewent vos équipes opérationnelles, inspectent votre patrimoine d'actifs et évaluent votre système d'information existant.",
+    "day2_title": "Jour 2 — Restitution stratégique",
+    "day2_desc": "Présentation du Rapport de Maturité digitale avec notation sur l'échelle ISO 55001, identification des 3 chantiers prioritaires à ROI rapide, proposition de Roadmap de transformation sur 12-36 mois, chiffrage prévisionnel de l'investissement et des gains attendus.",
+    "deliverable": "Livrable : Un document de 20 à 30 pages, exploitable immédiatement pour décision stratégique ou soumission à financement.",
+    "who_title": "Pour qui est ce Diagnostic ?",
+    "criteria_title": "Vous êtes concerné si...",
+    "criteria": [
+      "Vous gérez un parc d'actifs critiques (transport, bâtiment, industrie) de valeur > 500M FCFA.",
+      "Vous avez des difficultés à anticiper les pannes et les coûts de maintenance.",
+      "Vous répondez à des appels d'offres publics où la maturité digitale est un critère d'évaluation.",
+      "Vous êtes en phase de croissance et souhaitez industrialiser vos processus avant de scaler."
+    ],
+    "sectors_title": "Secteurs éligibles",
+    "sectors": [
+      "Transport & Mobilité — Opérateurs BRT, TER, aéroports, ports",
+      "Facility Management — Gestionnaires immobiliers, hospitality, santé",
+      "Mines & Ressources — Sites miniers, carrières, extractifs",
+      "Oil & Gas — Upstream, midstream, distribution",
+      "Industrie & Énergie — Cimenteries, agro-industrie, utilities"
+    ],
+    "cta_title": "Demandez votre Diagnostic de maturité digitale",
+    "cta_desc": "Gratuit pour les appels d'offres qualifiés. Confidentiel. Sans engagement.",
+    "cta_button": "Lancer mon Diagnostic gratuit",
+    "cta_sub": "Réponse sous 24h. Diagnostic réalisé sous 2 semaines. Confidentiel.",
+    "badge": "Partenaire Officiel Octave Attune EAM — Talan — Certifié Hexagon"
   }
 }

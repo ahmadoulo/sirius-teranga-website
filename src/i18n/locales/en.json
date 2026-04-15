@@ -3,38 +3,44 @@
     "home": "Home",
     "about": "About",
     "services": "Services",
-    "approach": "Approach",
+    "partnership": "Partnership",
+    "expertises": "Expertises",
+    "references": "References",
+    "diagnostic": "Diagnostic",
     "contact": "Contact",
-    "cta": "Contact Us"
+    "cta": "Free Diagnostic"
   },
   "hero": {
-    "badge": "Strategic & Digital Consulting",
-    "title": "Transform your organization.",
-    "highlight": "Accelerate your performance.",
-    "subtitle": "Sirius Teranga Consulting supports companies in their organizational and digital transformation, with expertise, method and commitment.",
-    "cta1": "Contact us",
+    "badge": "Official Talan Partner — Hexagon Channel Partner — Senegal & West Africa",
+    "title": "Operational Sovereignty.",
+    "highlight": "Global Expertise. Local Roots.",
+    "subtitle": "SIRIUS TERANGA CONSULTING is the leading Asset Management & EAM consulting firm in Senegal. Backed by 40 years of industrial experience and a strategic alliance with Talan — the French leader in Octave Attune EAM integration — we transform your critical asset management into lasting competitive advantage.",
+    "cta1": "Start my Free Diagnostic",
     "cta2": "Discover our services",
     "scroll": "Scroll",
-    "stat1_number": "150",
-    "stat1_label": "Projects completed",
-    "stat2_number": "50",
-    "stat2_label": "Satisfied clients",
-    "stat3_number": "10",
-    "stat3_label": "Years of expertise"
+    "stat1_number": "40",
+    "stat1_label": "Years of combined expertise",
+    "stat2_number": "7",
+    "stat2_label": "Iconic global references",
+    "stat3_number": "1",
+    "stat3_label": "Octave Attune EAM Partner in Senegal",
+    "stat1_suffix": "yrs",
+    "stat2_suffix": "+",
+    "stat3_prefix": "N°"
   },
   "about": {
     "tag": "About STC",
-    "title": "A strategic partner",
-    "title_accent": "you can trust",
-    "p1": "<strong>Sirius Teranga Consulting (STC)</strong> is a consulting firm specialized in organizational optimization, digital transformation and improving business performance.",
-    "p2": "We work with organizations of all sizes to help them structure, modernize and optimize their processes to achieve their strategic objectives.",
-    "highlight1_title": "Recognized Expertise",
-    "highlight1_desc": "Experienced consultants with a global and local vision.",
-    "highlight2_title": "Concrete Results",
-    "highlight2_desc": "An approach focused on measurable and sustainable deliverables.",
+    "title": "The leading firm",
+    "title_accent": "in Asset Management & EAM",
+    "p1": "<strong>Sirius Teranga Consulting (STC)</strong> is the specialized Asset Management & EAM consulting firm in Senegal. We support organizations in transforming their critical asset management through our strategic alliance with Talan and Hexagon.",
+    "p2": "Our team brings over 40 years of experience in the most demanding industrial environments — Toyota, Fives ECL, RATP, Veolia — deploying this expertise for Senegalese and West African companies.",
+    "highlight1_title": "Certified Hexagon Partner",
+    "highlight1_desc": "Sole certified entry point for Octave Attune EAM in Senegal.",
+    "highlight2_title": "40 years of field expertise",
+    "highlight2_desc": "Decades of experience in heavy industry, transport and facility management.",
     "cta": "Let's discuss your project",
     "badge_text": "Excellence · Performance",
-    "desc": "STC works with companies to improve their efficiency, strengthen their organization and support their growth through solutions tailored to their challenges."
+    "desc": "STC goes beyond EAM solution integration. From strategic diagnosis to operational implementation, we deliver transformed organizations."
   },
   "mission": {
     "tag": "Our DNA",
@@ -42,9 +48,9 @@
     "title_accent": "Values",
     "subtitle": "The foundations that guide each of our interventions.",
     "mission_title": "Our Mission",
-    "mission_text": "Help organizations optimize their performance through tailored, rigorous and results-oriented consulting solutions.",
+    "mission_text": "Transform critical asset management for Senegalese and West African companies into lasting competitive advantage, through operational excellence and the best global EAM solutions.",
     "vision_title": "Our Vision",
-    "vision_text": "Become the leading consulting firm in Africa, recognized for its excellence, innovation and the sustainability of its results.",
+    "vision_text": "Become the reference partner for digital Asset Management in West Africa, recognized for deployment quality and result sustainability.",
     "values_title": "Our Values",
     "values": {
       "quality": { "title": "Excellence", "desc": "" },
@@ -58,30 +64,30 @@
     "tag": "What we do",
     "title": "Our",
     "title_accent": "Services",
-    "subtitle": "Tailored consulting solutions for every organizational and digital challenge.",
+    "subtitle": "Integrated solutions to transform your asset management and optimize operational performance.",
     "learn_more": "Learn more",
     "items": {
-      "org": { "title": "Organizational Consulting", "desc": "Restructuring, governance, optimization of structures and human resources for a more agile and efficient organization." },
-      "digital": { "title": "Digital Transformation", "desc": "Support in digitizing processes, adopting new technologies and the associated cultural change." },
-      "si": { "title": "Information Systems", "desc": "Audit, mapping and optimization of IS, selection of suitable tools and management of enterprise IT projects." },
-      "process": { "title": "Process Optimization", "desc": "Analysis and redesign of business processes to eliminate inefficiencies, reduce costs and improve quality." },
-      "training": { "title": "Professional Training", "desc": "Custom training programs to develop managerial, digital and technical skills of your teams." },
-      "iso": { "title": "ISO & Quality (QMS)", "desc": "Support towards ISO certifications, implementation of quality management systems." }
+      "org": { "title": "Organizational Consulting", "desc": "Organizational audit, RACI analysis, Target Operating Model definition and organizational standards for a structure aligned with your challenges." },
+      "digital": { "title": "EAM Integration", "desc": "Certified Octave Attune EAM (Hexagon) deployment with Audit to Success™ methodology, business configuration and skills transfer." },
+      "si": { "title": "Information Systems", "desc": "IS audit and optimization, EAM/ERP integration, data strategy and digital transformation project management." },
+      "process": { "title": "Process Optimization", "desc": "VSM/BPMN mapping, SOP standardization, Lean approach and continuous improvement for measurable productivity gains." },
+      "training": { "title": "Training & Transfer", "desc": "Certified Octave Attune EAM training programs, change management and team upskilling." },
+      "iso": { "title": "ISO 55001 & Quality", "desc": "Support towards ISO 55001 certification, implementation of asset management systems compliant with international standards." }
     },
     "cta_title": "Have a project in mind?",
     "cta_desc": "Let's discuss your challenges together and co-build a solution tailored to your needs.",
-    "cta_button": "Contact us"
+    "cta_button": "Start my Diagnostic"
   },
   "methodology": {
     "tag": "Our Methodology",
     "title": "Our",
     "title_accent": "Approach",
-    "subtitle": "A proven, rigorous and results-oriented methodology.",
+    "subtitle": "A proven methodology — from diagnosis to lasting performance.",
     "steps": {
-      "analyze": { "title": "Analyze", "desc": "In-depth diagnosis of your organization, identifying challenges and opportunities for improvement." },
-      "structure": { "title": "Structure", "desc": "Design of a clear, prioritized transformation plan aligned with your strategic objectives." },
-      "optimize": { "title": "Optimize", "desc": "Implementation of solutions, team training and continuous adjustment to maximize performance." },
-      "transform": { "title": "Transform", "desc": "Embedding changes in corporate culture and support towards sustainable performance." }
+      "analyze": { "title": "Diagnose", "desc": "Field audit of your processes, assets and information systems. Maturity assessment on the ISO 55001 scale." },
+      "structure": { "title": "Structure", "desc": "Target Operating Model definition, 12-36 month transformation roadmap and projected costing." },
+      "optimize": { "title": "Deploy", "desc": "Certified Octave Attune EAM implementation, team training and validated business configuration." },
+      "transform": { "title": "Manage", "desc": "KPI monitoring, steering committee facilitation and support towards lasting operational performance." }
     }
   },
   "whyus": {
@@ -90,40 +96,40 @@
     "title_accent": "different",
     "desc": "We don't offer generic solutions. Each intervention is unique, built around your reality and ambitions.",
     "points": {
-      "expertise": { "title": "Strategic Expertise", "desc": "Senior consultants with deep knowledge of African and international challenges." },
-      "results": { "title": "Concrete & Measurable Results", "desc": "We commit to clear indicators and rigorously monitor their achievement." },
-      "solutions": { "title": "Tailored Solutions", "desc": "No copy-paste. Each solution is designed specifically for your context." },
-      "method": { "title": "Proven Methodology", "desc": "A rigorous intervention framework, tested on over 150 projects across different sectors." }
+      "expertise": { "title": "Industrial Heritage", "desc": "Toyota. Fives ECL. Saudequip. Orange. Our team forged its expertise in the world's most demanding industrial environments." },
+      "results": { "title": "Strategic Alliance", "desc": "Official Talan partner, French leader in Octave Attune EAM integration — Hexagon's privileged ally. Guaranteed certified deployment." },
+      "solutions": { "title": "Local-Global", "desc": "International standards rigor (ISO 55001, Hexagon Best Practices) combined with deep knowledge of the Senegalese landscape." },
+      "method": { "title": "Lasting Results", "desc": "We don't deliver configured software. We deliver transformed organizations, with measurable results." }
     },
-    "metric1_number": "+40%",
-    "metric1_label": "Average productivity gain",
-    "metric2_number": "98%",
-    "metric2_label": "Client satisfaction rate",
-    "metric3_number": "15+",
-    "metric3_label": "Countries of intervention"
+    "metric1_number": "40",
+    "metric1_label": "Years of combined expertise",
+    "metric2_number": "7+",
+    "metric2_label": "Global references",
+    "metric3_number": "N°1",
+    "metric3_label": "EAM Partner in Senegal"
   },
   "cta": {
     "title": "Ready to transform",
-    "title_accent": "your organization?",
-    "subtitle": "Our experts are available to analyze your situation and propose solutions adapted to your context.",
-    "button": "Contact us now"
+    "title_accent": "your asset management?",
+    "subtitle": "Request your Digital Maturity Diagnostic — Free, 2 days, deliverable: Custom transformation roadmap.",
+    "button": "Start my Free Diagnostic"
   },
   "contact": {
     "tag": "Let's talk about your project",
     "title": "Contact",
     "title_accent": "Us",
-    "subtitle": "Fill out the form or use our direct contact details.",
+    "subtitle": "Fill out the form or use our direct contact details. Response within 24h.",
     "name": "Full name",
     "email": "Email",
     "company": "Company",
     "subject": "Subject",
     "subject_placeholder": "Select a subject",
     "subject_options": {
+      "diagnostic": "Digital Maturity Diagnostic",
+      "eam": "Octave Attune EAM Integration",
       "org": "Organizational Consulting",
-      "digital": "Digital Transformation",
-      "si": "Information Systems",
       "process": "Process Optimization",
-      "training": "Professional Training",
+      "training": "Training & Transfer",
       "other": "Other"
     },
     "message": "Message",
@@ -132,28 +138,188 @@
     "company_placeholder": "Your organization name",
     "message_placeholder": "Describe your project or your needs...",
     "submit": "Send message",
-    "success": "Your message has been sent. We will get back to you shortly.",
+    "success": "Your message has been sent. We will get back to you within 24h.",
     "error": "Please fill in all required fields.",
     "info_email_label": "Email",
     "info_email": "contact@siriusteranga.com",
     "info_phone_label": "Phone",
-    "info_phone": "+221 00 000 00 00",
+    "info_phone": "+221 78 788 80 55",
     "info_location_label": "Office",
     "info_location": "Dakar, Senegal"
   },
   "footer": {
-    "tagline": "Your strategic partner for transformation and performance.",
+    "tagline": "Leading Asset Management & EAM consulting firm in Senegal. Official Talan Partner — Hexagon Channel Partner.",
     "nav_title": "Navigation",
-    "services_title": "Services",
+    "services_title": "Expertise",
     "contact_title": "Contact",
     "rights": "© {{year}} Sirius Teranga Consulting. All rights reserved.",
     "legal": "Legal notice",
     "privacy": "Privacy policy",
     "links": "Quick links",
     "services_org": "Organizational Consulting",
-    "services_digital": "Digital Transformation",
+    "services_digital": "EAM Integration",
     "services_si": "Information Systems",
     "services_process": "Process Optimization",
-    "services_training": "Professional Training"
+    "services_training": "Training & Transfer"
+  },
+  "partnership": {
+    "tag": "Our Alliance — The Foundation of our Authority",
+    "title": "Octave Attune EAM in Senegal:",
+    "title_accent": "your only certified entry point.",
+    "intro": "In the world of digital Asset Management, not all solutions are equal — and neither are all integrators. Octave Attune EAM (formerly HxGN EAM), developed by Hexagon, is recognized by global analysts as the reference platform for industrial asset lifecycle management.",
+    "intro2": "In Senegal, that partner is SIRIUS TERANGA CONSULTING.",
+    "chain_title": "The Chain of Excellence",
+    "chain_hexagon": "Hexagon",
+    "chain_hexagon_desc": "Global publisher — 22,000 employees, 50 countries",
+    "chain_talan": "Talan",
+    "chain_talan_desc": "French leader in Octave Attune EAM integration",
+    "chain_stc": "Sirius Teranga Consulting",
+    "chain_stc_desc": "Official partner in Senegal & West Africa",
+    "chain_guarantee": "This chain guarantees: official Hexagon certifications on every deployment, direct escalation to the publisher when needed, a maintained and sustainable product roadmap, and the peace of mind that your investment will never become orphaned.",
+    "compare_title": "What this partnership changes for you",
+    "sans_stc": "Without STC",
+    "avec_stc": "With STC",
+    "compare": [
+      { "sans": "Uncertified integrator, empirical methodology", "avec": "Hexagon-certified deployment, Audit to Success™ methodology" },
+      { "sans": "Risk of project drift, cost overrun, delays", "avec": "Controlled planning, contractual milestones, respected budget" },
+      { "sans": "Limited support, difficult escalation to publisher", "avec": "Direct escalation to Hexagon via our French partner" },
+      { "sans": "Poorly configured solution, low adoption", "avec": "Validated business configuration, training, skills transfer" },
+      { "sans": "Investment weakened by obsolescence", "avec": "Planned updates, sustainability guaranteed by global publisher" }
+    ],
+    "cta": "Start my Free Diagnostic"
+  },
+  "expertises": {
+    "tag": "Beyond systems: structuring the organization and executing transformation",
+    "title": "The tool without the method",
+    "title_accent": "is performance without sustainability.",
+    "intro": "Deploying an EAM like Octave Attune is a necessary but not sufficient condition for transforming your asset performance. What makes the difference between a project that lasts and a deployment that runs out of steam after 6 months is the quality of the organization, processes and management that surround it.",
+    "intro2": "SIRIUS TERANGA CONSULTING operates across this entire chain. We don't deliver configured software. We deliver transformed organizations.",
+    "domains": [
+      {
+        "title": "Process optimization & operational excellence",
+        "objective": "Improve overall performance by eliminating inefficiencies and structuring key processes.",
+        "problems": ["Unformalized or poorly controlled processes", "Tasks without added value", "Lack of cross-department coordination", "Absent performance management"],
+        "interventions": ["VSM / BPMN mapping", "Flow and waste analysis", "Process standardization (SOP)", "Operational standards", "Lean / continuous improvement approach"],
+        "results": ["Clear and reproducible processes", "Measurable productivity gains", "Reduced dysfunctions", "Strengthened cross-department coordination"]
+      },
+      {
+        "title": "Organizational audit & structuring",
+        "objective": "Align the organization with its operational and strategic challenges.",
+        "problems": ["Unclear or ineffective organization", "Role overlap", "Lack of decision-making clarity", "Difficulty evolving the structure"],
+        "interventions": ["Organizational diagnostic", "RACI responsibility analysis", "Structure review", "Target Operating Model definition", "Organizational standards"],
+        "results": ["Clear and structured organization", "Improved decision-making efficiency", "Aligned responsibilities", "Ability to manage and scale"]
+      },
+      {
+        "title": "Resource provision & operational management",
+        "objective": "Secure project execution and guarantee results achievement.",
+        "problems": ["Insufficient internal resources", "Difficulty managing projects", "Unexecuted transformation", "Lack of action follow-up"],
+        "interventions": ["PMO consultants / project managers", "Transformation program management", "Action plan monitoring", "Committee & KPI facilitation", "Team support"],
+        "results": ["Projects delivered on time", "Transformation mastery", "Measurable and lasting results", "Strengthened internal teams"]
+      }
+    ],
+    "integrated_title": "An integrated approach: Organization × Processes × Systems",
+    "integrated_desc": "Our three intervention domains are not isolated services. They form a coherent system, designed to align what your organization does (processes), how it is structured (organization), and with what tools it operates (information systems). This alignment — and it alone — guarantees lasting operational performance.",
+    "pillar_org": "ORGANIZATION",
+    "pillar_org_desc": "Roles · Governance · RACI",
+    "pillar_process": "PROCESSES",
+    "pillar_process_desc": "VSM · SOP · Lean",
+    "pillar_systems": "SYSTEMS",
+    "pillar_systems_desc": "EAM · ERP · Data",
+    "positioning": "SIRIUS TERANGA CONSULTING goes beyond EAM solution integration.",
+    "positioning_flow": "Strategic Diagnostic → Operational Implementation → Performance Management",
+    "cta_title": "Is your organization aligned to perform?",
+    "cta_desc": "Request an Organizational & Process Diagnostic — natural complement to the EAM Diagnostic",
+    "cta_button": "Start my Transformation Diagnostic"
+  },
+  "references": {
+    "tag": "What our teams built — before building STC",
+    "title": "Our track record doesn't start",
+    "title_accent": "with the creation of STC.",
+    "intro": "Organizations don't trust firms — they trust experts. STC consultants have spent decades solving exactly the problems you face today: maintaining critical fleets, structuring complex real estate portfolios, industrializing maintenance processes, deploying infrastructure in Africa.",
+    "angles": [
+      {
+        "label": "ANGLE 1",
+        "title": "Heavy Industry",
+        "subtitle": "& Operational Excellence",
+        "companies": [
+          { "name": "Toyota", "detail": "Japan / World" },
+          { "name": "New Holland Agriculture", "detail": "France" },
+          { "name": "Fives ECL", "detail": "France" },
+          { "name": "Eiffage", "detail": "France" },
+          { "name": "Vinci", "detail": "France" }
+        ]
+      },
+      {
+        "label": "ANGLE 2",
+        "title": "Critical Infrastructure",
+        "subtitle": "& Large Accounts",
+        "companies": [
+          { "name": "RATP", "detail": "Transport, Paris" },
+          { "name": "CEA", "detail": "Nuclear research" },
+          { "name": "Veolia", "detail": "Utilities, USA" },
+          { "name": "Le Louvre", "detail": "Heritage FM" },
+          { "name": "Château Blanc", "detail": "Industrial bakery" },
+          { "name": "Macaroon SA", "detail": "Switzerland" }
+        ]
+      },
+      {
+        "label": "ANGLE 3",
+        "title": "Local Roots",
+        "subtitle": "& African Terrain",
+        "companies": [
+          { "name": "Saudequip", "detail": "Senegal" },
+          { "name": "Kaparock Ingenierie", "detail": "Geotechnics, Senegal" }
+        ]
+      }
+    ],
+    "sectors_title": "Our references by sector",
+    "sectors_subtitle": "What we did, not just where we were.",
+    "sectors": [
+      { "sector": "Transport & Mobility", "missions": "Critical fleet preventive maintenance, availability optimization, revision management, safety compliance", "refs": "RATP · Vinci" },
+      { "sector": "Facility Management", "missions": "High-traffic building technical management, regulatory compliance, subcontractor contract management", "refs": "Le Louvre · Eiffage · CEA" },
+      { "sector": "Industry & Production", "missions": "Lean Manufacturing, machine downtime reduction, maintenance range standardization, OEE", "refs": "Toyota · Fiat · Fives ECL" },
+      { "sector": "Food & Beverage", "missions": "CMMS in food environments, packaging line preventive maintenance, hygiene compliance", "refs": "Château Blanc · Macaroon SA" },
+      { "sector": "Energy & Utilities", "missions": "Network asset maintenance, planned shutdowns, regulatory traceability, lifecycle costs", "refs": "Veolia · CEA" },
+      { "sector": "Telecoms & Infrastructure", "missions": "Tower/antenna construction and monitoring, network asset management in Africa, passive infrastructure maintenance", "refs": "Orange · Saudigroup" },
+      { "sector": "Construction & BTP", "missions": "Heavy site equipment, maintenance in difficult field conditions, multi-project sites", "refs": "Eiffage · Vinci · Saudequip" }
+    ],
+    "micro_case": "Maintenance of a railway fleet serving 5M passengers/day — structuring preventive plans, reducing failure rate by 23%.",
+    "cta_title": "These references are your next solution.",
+    "cta_desc": "Ask to see how we transpose this expertise to your context",
+    "cta_button": "Let's discuss your project"
+  },
+  "diagnostic": {
+    "tag": "Exclusive Offer — STC Digital Maturity Diagnostic",
+    "title": "In 2 days, know exactly where you stand.",
+    "title_accent": "And where you need to go.",
+    "intro": "Most Senegalese and West African organizations manage their assets with inadequate tools — spreadsheets, obsolete systems, or complete absence of CMMS. They know something must change, but they don't know where to start, how much it costs, or how much it returns.",
+    "intro2": "The STC Digital Maturity Diagnostic answers these three questions in 2 days. No jargon. With numbers.",
+    "what_title": "What you get",
+    "day1_title": "Day 1 — Field Audit",
+    "day1_desc": "Our senior consultants analyze your current maintenance processes, interview your operational teams, inspect your asset portfolio and evaluate your existing information system.",
+    "day2_title": "Day 2 — Strategic Presentation",
+    "day2_desc": "Presentation of the Digital Maturity Report with ISO 55001 scale scoring, identification of 3 priority quick-ROI projects, 12-36 month transformation roadmap proposal, projected investment and expected gains costing.",
+    "deliverable": "Deliverable: A 20-30 page document, immediately usable for strategic decision-making or funding submission.",
+    "who_title": "Who is this Diagnostic for?",
+    "criteria_title": "You are concerned if...",
+    "criteria": [
+      "You manage a critical asset portfolio (transport, buildings, industry) valued > 500M FCFA.",
+      "You have difficulties anticipating breakdowns and maintenance costs.",
+      "You respond to public tenders where digital maturity is an evaluation criterion.",
+      "You are in a growth phase and want to industrialize your processes before scaling."
+    ],
+    "sectors_title": "Eligible sectors",
+    "sectors": [
+      "Transport & Mobility — BRT operators, TER, airports, ports",
+      "Facility Management — Property managers, hospitality, healthcare",
+      "Mining & Resources — Mining sites, quarries, extractives",
+      "Oil & Gas — Upstream, midstream, distribution",
+      "Industry & Energy — Cement plants, agro-industry, utilities"
+    ],
+    "cta_title": "Request your Digital Maturity Diagnostic",
+    "cta_desc": "Free for qualified tenders. Confidential. No commitment.",
+    "cta_button": "Start my Free Diagnostic",
+    "cta_sub": "Response within 24h. Diagnostic completed within 2 weeks. Confidential.",
+    "badge": "Official Octave Attune EAM Partner — Talan — Hexagon Certified"
   }
 }
