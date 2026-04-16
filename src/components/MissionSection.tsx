@@ -28,8 +28,8 @@ const MissionSection = () => {
           {/* Mission */}
           <div ref={missionRef} className="relative bg-card rounded-xl p-5 md:p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center mb-4 md:mb-6">
-              <Rocket className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#0B1F3A] dark:bg-accent/20 flex items-center justify-center mb-4 md:mb-6">
+              <Rocket className="w-5 h-5 md:w-7 md:h-7 text-accent" />
             </div>
             <h3 className="font-heading font-extrabold text-base md:text-xl text-foreground mb-3 md:mb-4">{t("mission.mission_title")}</h3>
             <p className="text-muted-foreground text-[0.85rem] md:text-[0.95rem] leading-relaxed">{t("mission.mission_text")}</p>
@@ -38,8 +38,8 @@ const MissionSection = () => {
           {/* Vision */}
           <div ref={visionRef} className="relative bg-card rounded-xl p-5 md:p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-accent/80 to-accent flex items-center justify-center mb-4 md:mb-6 border border-accent/40">
-              <Eye className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-to-br from-gold-dark to-accent flex items-center justify-center mb-4 md:mb-6">
+              <Eye className="w-5 h-5 md:w-7 md:h-7 text-[#0B1F3A]" />
             </div>
             <h3 className="font-heading font-extrabold text-base md:text-xl text-foreground mb-3 md:mb-4">{t("mission.vision_title")}</h3>
             <p className="text-muted-foreground text-[0.85rem] md:text-[0.95rem] leading-relaxed">{t("mission.vision_text")}</p>
@@ -48,8 +48,8 @@ const MissionSection = () => {
           {/* Values */}
           <div ref={valuesRef} className="relative bg-card rounded-xl p-5 md:p-8 border border-border shadow-navy-sm overflow-hidden transition-all duration-300 hover:shadow-navy-lg hover:-translate-y-1.5 hover:border-accent/30 group">
             <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold-dark via-accent to-gold-light scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100" />
-            <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center mb-4 md:mb-6">
-              <Gem className="w-5 h-5 md:w-6 md:h-6 text-accent" />
+            <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-[#0B1F3A] dark:bg-accent/20 flex items-center justify-center mb-4 md:mb-6">
+              <Gem className="w-5 h-5 md:w-7 md:h-7 text-accent" />
             </div>
             <h3 className="font-heading font-extrabold text-base md:text-xl text-foreground mb-3 md:mb-4">{t("mission.values_title")}</h3>
             <div className="flex flex-wrap gap-1.5 md:gap-2 mt-2">
