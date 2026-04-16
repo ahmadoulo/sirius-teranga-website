@@ -68,7 +68,7 @@ const MetricCard = ({ icon: Icon, numKey, labelKey, gold, offset }: { icon: Reac
       }`}
     >
       <div className={`w-10 h-10 md:w-[52px] md:h-[52px] rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 ${
-        gold ? "bg-accent/[0.12] text-gold-dark" : "bg-primary/[0.08] text-primary"
+        gold ? "bg-accent/[0.12] text-gold-dark dark:text-accent" : "bg-primary/[0.08] text-primary"
       }`}>
         <Icon className="w-5 h-5 md:w-6 md:h-6" />
       </div>

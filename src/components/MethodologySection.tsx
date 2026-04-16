@@ -21,7 +21,7 @@ const StepCard = ({ icon: Icon, num, sKey, delay, gold }: { icon: React.ElementT
         <div
           className={`w-14 h-14 md:w-[70px] md:h-[70px] rounded-full flex items-center justify-center shadow-navy-lg border-[3px] border-card relative z-[1] transition-all duration-300 group-hover:scale-110 group-hover:shadow-navy-xl ${
             gold
-              ? "bg-gradient-to-br from-gold-dark to-accent text-accent-foreground"
+              ? "bg-gradient-to-br from-gold-dark to-accent dark:from-accent/25 dark:to-accent/15 text-accent-foreground dark:text-accent"
               : "bg-primary text-white"
           }`}
         >
