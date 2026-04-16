@@ -16,7 +16,7 @@ const CtaSection = () => {
           radial-gradient(ellipse at 70% 50%, rgba(212,175,55,0.06) 0%, transparent 60%)`
       }} />
 
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8 text-center relative z-[1]">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8 text-center relative z-[1]">
         <div ref={ref}>
           <div className="inline-flex items-center justify-center w-10 h-10 md:w-[52px] md:h-[52px] bg-accent text-accent-foreground rounded-full mx-auto mb-6 md:mb-8 shadow-gold animate-pulse-badge">
             <Star className="w-5 h-5 md:w-6 md:h-6" />

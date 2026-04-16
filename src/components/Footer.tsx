@@ -27,7 +27,7 @@ const Footer = () => {
     <footer className="bg-[#071528]">
       {/* Top */}
       <div className="py-10 md:py-16 pb-8 md:pb-10">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] gap-8 md:gap-10">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
@@ -94,7 +94,7 @@ const Footer = () => {
 
       {/* Bottom */}
       <div className="border-t border-white/[0.08] py-4 md:py-6">
-        <div className="max-w-[1200px] mx-auto px-5 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
+        <div className="max-w-[1400px] mx-auto px-5 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 md:gap-4">
            <span className="text-white/70 text-[0.65rem] md:text-xs">{t("footer.rights", { year: new Date().getFullYear() })}</span>
            <div className="flex gap-4 md:gap-6">
              <a href="#" className="text-white/70 text-[0.65rem] md:text-xs hover:text-accent transition-colors">{t("footer.legal")}</a>

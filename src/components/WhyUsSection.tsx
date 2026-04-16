@@ -11,7 +11,7 @@ const WhyUsSection = () => {
 
   return (
     <section className="py-14 md:py-24 bg-background">
-      <div className="max-w-[1200px] mx-auto px-5 md:px-8">
+      <div className="max-w-[1400px] mx-auto px-5 md:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left: Content */}
           <div ref={leftRef}>

@@ -52,7 +52,7 @@ const Navbar = () => {
             : "bg-white dark:bg-[#071528] py-2.5 md:py-3 shadow-[0_2px_20px_rgba(0,0,0,0.08)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-border/50 dark:border-white/10"
         }`}
       >
-        <div className="max-w-[1200px] mx-auto px-4 md:px-8 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0">
             <div className="relative flex items-center font-heading font-black text-lg md:text-xl tracking-tight text-white bg-gradient-to-br from-[#102848] to-[#0B1F3A] border-2 border-accent rounded-lg px-2 py-0.5 md:px-2.5 md:py-1 leading-none">
@@ -93,7 +93,7 @@ const Navbar = () => {
             <LanguageSwitcher isTransparent={isTransparent} />
             <Link
               to="/diagnostic"
-              className="font-heading text-[0.8rem] font-extrabold uppercase tracking-[0.05em] bg-accent text-accent-foreground px-5 py-2.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-px transition-all duration-200 ml-1"
+              className="font-heading text-[0.8rem] font-extrabold uppercase tracking-[0.05em] bg-accent text-accent-foreground px-6 py-2.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-px transition-all duration-200 ml-2 whitespace-nowrap"
             >
               {t("nav.cta")}
             </Link>
