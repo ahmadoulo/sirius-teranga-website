@@ -1,133 +1,67 @@
 
 
-## Plan: Integrate Real Content from STC Document into the Website
+## Plan: Polish Navbar Layout, Spacing, and Theme Integration
 
-The document defines the real content for Sirius Teranga Consulting -- a specialized Asset Management & EAM consulting firm partnered with Talan/Hexagon. The current site has generic placeholder content. This plan replaces it with real content and adds missing pages.
+### Issues Identified
 
----
-
-### Summary of Changes
-
-**A. Update existing content (translations fr.json + en.json)**
-**B. Create 3 new pages that don't exist yet**
-**C. Update routing and navigation**
-
----
-
-### A. Content Updates to Existing Sections
-
-#### 1. Hero Section
-- **Badge**: "Partenaire officiel de Talan -- Channel Partner Hexagon -- Senegal & Afrique de l'Ouest"
-- **Title**: "La Souverainete operationnelle. L'Expertise mondiale. L'Ancrage local."
-- **Subtitle**: Real text about Asset Management & EAM, 40 ans d'experience, alliance Talan
-- **CTA principal**: "Lancer mon Diagnostic gratuit" (instead of generic "Nous contacter")
-- **CTA secondaire**: Keep "Decouvrir nos services"
-- **Stats**: "40 ans" d'expertise, "7+" references mondiales, "N1" Partenaire Octave Attune EAM
-
-#### 2. "Why STC" / Proposition de valeur (Page 2)
-Replace current "WhyUs" content with the 3 pillars:
-- L'Heritage industriel (Toyota, Fives ECL, Saudequip, Orange...)
-- L'Alliance strategique (Talan, Hexagon, Octave Attune EAM)
-- Le Local-Global (ISO 55001, Hexagon Best Practices + terrain senegalais)
-
-#### 3. About Section
-Update p1/p2 with real positioning: cabinet de reference en Asset Management & EAM au Senegal
-
-#### 4. Contact Section
-- Phone: +221 78 788 80 55
-- Add subject options for EAM/Diagnostic
-
-#### 5. Footer
-- Update tagline with real positioning
-- Add new pages to navigation
+1. **Navbar too narrow** -- `max-w-[1200px]` creates excessive empty space on wider screens. The reference image (image-29) shows a wider, full-width navbar with content spread edge-to-edge.
+2. **CTA button text wraps** -- "FREE DIAGNOSTIC" breaks into 2 lines because the button is too narrow. Needs `whitespace-nowrap`.
+3. **Logo spacing** -- Logo is too close to nav links; needs more separation.
+4. **Light mode not visually distinct** -- The navbar and sections need better contrast in light mode (currently the hero always uses dark navy, but the scrolled navbar in light mode needs a cleaner white bg with crisp borders).
+5. **Metric card icons** (image-30 reference) -- The icon containers in WhyUsSection look cramped on smaller viewports; need consistent sizing and alignment.
+6. **Section containers too narrow** -- All sections use `max-w-[1200px]`, which creates too much dead space on wide screens. Widen to `max-w-[1400px]` globally.
 
 ---
 
-### B. New Pages to Create
+### Changes
 
-#### Page 1: `/partenariat` -- Partenariat Strategique (Doc Page 3)
-New component `PartnershipSection` and page `Partnership.tsx`:
-- Narrative block about Octave Attune EAM certification
-- "Chaine d'Excellence" visual: Hexagon -> Talan -> STC
-- Comparison table "Sans STC" vs "Avec STC" (5 rows)
-- CTA to diagnostic
+#### 1. Navbar (Navbar.tsx)
+- Widen container: `max-w-[1200px]` → `max-w-[1400px]`
+- Add `whitespace-nowrap` to CTA button so "DIAGNOSTIC GRATUIT" stays on one line
+- Increase gap between logo and nav links
+- Improve light mode scrolled state: stronger shadow, clearer border
+- Ensure theme toggle icon is visible in both modes
 
-#### Page 2: `/expertises` -- Expertises Complementaires (Doc Pages 4-6)
-New component `ExpertisesSection` and page `Expertises.tsx`:
-- 3 intervention domains as expandable cards:
-  1. Optimisation des processus & excellence operationnelle
-  2. Audit organisationnel & structuration
-  3. Mise a disposition de ressources & pilotage operationnel
-- Each with Problematiques / Interventions / Resultats
-- "Approche integree" visual: Organisation x Processus x Systemes
-- CTA to diagnostic transformation
+#### 2. Global section widths
+- **Files**: `HeroSection.tsx`, `WhyUsSection.tsx`, `AboutSection.tsx`, `MissionSection.tsx`, `ServicesSection.tsx`, `MethodologySection.tsx`, `ContactSection.tsx`, `CtaSection.tsx`, `Footer.tsx`, `PartnershipSection.tsx`, `ExpertisesSection.tsx`, `ReferencesSection.tsx`, `DiagnosticSection.tsx`
+- Change all `max-w-[1200px]` → `max-w-[1400px]` for wider content area
 
-#### Page 3: `/references` -- Experiences & References (Doc Pages 7-8)
-New component `ReferencesSection` and page `References.tsx`:
-- 3 expertise angles with company logos/names:
-  - Industrie lourde (Toyota, New Holland, Fives ECL, Eiffage, Vinci)
-  - Infrastructures critiques (RATP, CEA, Veolia, Le Louvre, Chateau Blanc, Macaroon SA)
-  - Ancrage local (Saudequip, Kaparock Ingenierie)
-- Sector reference table (7 sectors with missions + key references)
-- CTA "Discutons de votre projet"
+#### 3. WhyUsSection.tsx -- Fix metric card icons
+- Ensure icon containers have consistent size and padding
+- Better border/bg for light mode (border-border visible, card bg solid white)
 
-#### Page 4: `/diagnostic` -- Diagnostic de Maturite Digitale (Doc Pages 9-10)
-New component `DiagnosticSection` and page `Diagnostic.tsx`:
-- Landing page for the main CTA offer
-- "En 2 jours, sachez exactement ou vous en etes"
-- Day 1 / Day 2 breakdown
-- "Pour qui" section with eligibility criteria + eligible sectors
-- CTA with contact info
+#### 4. Light mode color polish (index.css)
+- Ensure `--background` in light mode is pure white `0 0% 100%` for cleaner appearance
+- Refine `--card` to use subtle off-white or pure white
+- Increase `--border` contrast slightly for crisper card edges in light mode
 
----
-
-### C. Routing & Navigation Updates
-
-#### App.tsx -- Add routes:
-```
-/partenariat -> Partnership
-/expertises -> Expertises
-/references -> References
-/diagnostic -> Diagnostic
-```
-
-#### Navbar -- Update nav links:
-- Accueil, Partenariat, Expertises, Services, References, Diagnostic, Contact
-
-#### fr.json / en.json -- Add all new translation keys for:
-- `nav.partnership`, `nav.expertises`, `nav.references`, `nav.diagnostic`
-- `partnership.*`, `expertises.*`, `references.*`, `diagnostic.*`
-- Update all existing keys with real document content
+#### 5. ThemeToggle.tsx
+- In light mode (non-transparent), use a visible icon color and border
 
 ---
 
 ### Technical Details
 
-- All new pages follow the same layout pattern: `Navbar + SEOHead + main + sections + Footer + BackToTop`
-- Same responsive patterns already established (clamp typography, py-14 md:py-24, etc.)
-- Comparison table on Partnership page uses a clean grid with green checkmarks / red crosses
-- References sector table uses responsive card layout on mobile, table on desktop
-- Diagnostic page uses a prominent CTA design with gold accent
-- All content in both fr.json and en.json (French content from doc, English translated)
+**Navbar width change:**
+```tsx
+// Before
+<div className="max-w-[1200px] mx-auto px-4 md:px-8 ...">
+// After
+<div className="max-w-[1400px] mx-auto px-6 md:px-10 ...">
+```
 
----
+**CTA fix:**
+```tsx
+<Link to="/diagnostic" className="... whitespace-nowrap px-6 py-2.5 ...">
+```
 
-### Files to Create
-- `src/pages/Partnership.tsx`
-- `src/pages/Expertises.tsx`
-- `src/pages/References.tsx`
-- `src/pages/Diagnostic.tsx`
-- `src/components/PartnershipSection.tsx`
-- `src/components/ExpertisesSection.tsx`
-- `src/components/ReferencesSection.tsx`
-- `src/components/DiagnosticSection.tsx`
+**CSS light mode refinement:**
+```css
+:root {
+  --background: 0 0% 100%;  /* pure white */
+  --border: 0 0% 85%;       /* slightly more visible */
+}
+```
 
-### Files to Modify
-- `src/App.tsx` (add routes)
-- `src/components/Navbar.tsx` (update nav links)
-- `src/i18n/locales/fr.json` (update all content + add new keys)
-- `src/i18n/locales/en.json` (mirror structure in English)
-- `src/components/HeroSection.tsx` (update stat keys)
-- `src/components/Footer.tsx` (update nav links + tagline)
-- `src/pages/Index.tsx` (update SEO metadata)
+All changes are cosmetic -- no logic or routing changes. Approximately 15 files touched, mostly single-line `max-w` replacements.
 
