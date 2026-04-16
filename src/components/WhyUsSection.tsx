@@ -48,7 +48,7 @@ const WhyItem = ({ pKey, delay }: { pKey: string; delay: number }) => {
   const { t } = useTranslation();
   return (
     <div ref={ref} className="flex gap-3 items-start">
-      <div className="w-8 h-8 md:w-9 md:h-9 bg-gradient-to-br from-gold-dark to-accent text-accent-foreground rounded-full flex items-center justify-center flex-shrink-0 shadow-gold">
+      <div className="w-8 h-8 md:w-9 md:h-9 bg-gradient-to-br from-gold-dark to-accent dark:from-accent/20 dark:to-accent/10 text-accent-foreground dark:text-accent rounded-full flex items-center justify-center flex-shrink-0 shadow-gold dark:shadow-none">
         <Check className="w-3.5 h-3.5 md:w-4 md:h-4 font-bold" />
       </div>
       <div>
@@ -68,7 +68,7 @@ const MetricCard = ({ icon: Icon, numKey, labelKey, gold, offset }: { icon: Reac
       }`}
     >
       <div className={`w-10 h-10 md:w-[52px] md:h-[52px] rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 ${
-        gold ? "bg-accent/[0.12] text-gold-dark" : "bg-primary/[0.08] text-primary"
+        gold ? "bg-accent/[0.12] text-gold-dark dark:text-accent" : "bg-primary/[0.08] text-primary"
       }`}>
         <Icon className="w-5 h-5 md:w-6 md:h-6" />
       </div>
