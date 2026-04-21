@@ -1,4 +1,4 @@
-import { LayoutGrid, MonitorSmartphone, Server, GitBranch, GraduationCap, Handshake, ArrowRight } from "lucide-react";
+import { LayoutGrid, MonitorSmartphone, Wrench, Server, GitBranch, GraduationCap, Handshake, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const serviceKeys = [
   { icon: LayoutGrid, key: "org" },
   { icon: MonitorSmartphone, key: "digital" },
+  { icon: Wrench, key: "gmao" },
   { icon: Server, key: "si" },
   { icon: GitBranch, key: "process" },
   { icon: GraduationCap, key: "training" },

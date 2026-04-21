@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoDark from "@/assets/logo-dark.png";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -30,11 +31,8 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-              <div className="relative flex items-center font-heading font-black text-lg md:text-xl tracking-tight text-white bg-gradient-to-br from-[#102848] to-[#0B1F3A] border-2 border-accent rounded-lg px-2 md:px-2.5 py-0.5 md:py-1 leading-none">
-                <span>S</span><span>T</span><span className="text-accent">C</span>
-                <div className="absolute -top-[3px] -right-[3px] w-2 h-2 bg-accent rounded-full border-[1.5px] border-[#071528]" />
-              </div>
+            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6" aria-label="Sirius Teranga Consulting - Accueil">
+              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-11 md:h-14 w-auto object-contain" />
               <div className="flex flex-col leading-tight">
                 <span className="font-heading font-extrabold text-sm md:text-base text-white">Sirius Teranga</span>
                 <span className="font-body text-[0.6rem] md:text-[0.7rem] text-accent uppercase tracking-[0.12em]">Consulting</span>
