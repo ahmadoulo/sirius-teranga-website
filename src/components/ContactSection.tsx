@@ -129,8 +129,8 @@ const ContactSection = () => {
               <label htmlFor="contact-message" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.message")} *</label>
               <textarea id="contact-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={`${inputClasses} resize-y min-h-[100px]`} placeholder={t("contact.message_placeholder")} />
             </div>
-            <button type="submit" className="w-full inline-flex items-center justify-center gap-2 font-heading text-xs md:text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300">
-              <span>{t("contact.submit")}</span>
+            <button type="submit" disabled={isSubmitting} className="w-full inline-flex items-center justify-center gap-2 font-heading text-xs md:text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-6 md:px-8 py-3 md:py-3.5 rounded-full shadow-gold hover:bg-gold-light hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+              <span>{isSubmitting ? "..." : t("contact.submit")}</span>
               <Send className="w-3.5 h-3.5 md:w-4 md:h-4" />
             </button>
           </form>
