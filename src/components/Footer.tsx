@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoDark from "@/assets/logo-dark.png";
+import logoDark from "@/assets/logo-dark-transparent.png";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -31,12 +31,8 @@ const Footer = () => {
         <div className="max-w-[1400px] mx-auto px-5 md:px-8 grid grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] gap-8 md:gap-10">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6" aria-label="Sirius Teranga Consulting - Accueil">
-              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-11 md:h-14 w-auto object-contain" />
-              <div className="flex flex-col leading-tight">
-                <span className="font-heading font-extrabold text-sm md:text-base text-white">Sirius Teranga</span>
-                <span className="font-body text-[0.6rem] md:text-[0.7rem] text-accent uppercase tracking-[0.12em]">Consulting</span>
-              </div>
+            <Link to="/" className="flex items-center mb-4 md:mb-6" aria-label="Sirius Teranga Consulting - Accueil">
+              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-12 md:h-16 w-auto object-contain" />
             </Link>
             <p className="text-white/70 text-xs md:text-sm leading-relaxed max-w-[280px]">{t("footer.tagline")}</p>
           </div>

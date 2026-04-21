@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import logoLight from "@/assets/logo.png";
-import logoDark from "@/assets/logo-dark.png";
+import logoDark from "@/assets/logo-dark-transparent.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -56,23 +56,15 @@ const Navbar = () => {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-10 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 md:gap-3 flex-shrink-0" aria-label="Sirius Teranga Consulting - Accueil">
+          <Link to="/" className="flex items-center flex-shrink-0" aria-label="Sirius Teranga Consulting - Accueil">
             {isTransparent ? (
-              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-10 md:h-12 w-auto object-contain" />
+              <img src={logoDark} alt="Sirius Teranga Consulting" className="h-11 md:h-14 w-auto object-contain" />
             ) : (
               <>
-                <img src={logoLight} alt="Sirius Teranga Consulting" className="h-10 md:h-12 w-auto object-contain block dark:hidden" />
-                <img src={logoDark} alt="Sirius Teranga Consulting" className="h-10 md:h-12 w-auto object-contain hidden dark:block" />
+                <img src={logoLight} alt="Sirius Teranga Consulting" className="h-11 md:h-14 w-auto object-contain block dark:hidden" />
+                <img src={logoDark} alt="Sirius Teranga Consulting" className="h-11 md:h-14 w-auto object-contain hidden dark:block" />
               </>
             )}
-            <div className="flex flex-col leading-tight">
-              <span className={`font-heading font-extrabold text-sm md:text-base tracking-wide transition-colors ${
-                isTransparent ? "text-white" : "text-foreground"
-              }`}>
-                Sirius Teranga
-              </span>
-              <span className="font-body text-[0.6rem] md:text-[0.7rem] text-accent uppercase tracking-[0.12em]">Consulting</span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
