@@ -7,17 +7,46 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const ContactSection = () => {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", company: "", subject: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const infoRef = useScrollAnimation('fade-in-left', 0);
   const formRef = useScrollAnimation<HTMLFormElement>('fade-in-right', 200);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
       toast.error(t("contact.error"));
       return;
     }
-    toast.success(t("contact.success"));
-    setForm({ name: "", email: "", company: "", subject: "", message: "" });
+
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      formData.append("access_key", "ea435ede-dfc0-4f09-88b8-9b49d525edf7");
+      formData.append("name", form.name);
+      formData.append("email", form.email);
+      formData.append("company", form.company);
+      formData.append("subject", form.subject);
+      formData.append("message", form.message);
+      formData.append("from_name", "Sirius Teranga Consulting — Site Web");
+      formData.append("subject_line", `Nouveau message — ${form.subject || "Contact"} — ${form.name}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success(t("contact.success"));
+        setForm({ name: "", email: "", company: "", subject: "", message: "" });
+      } else {
+        toast.error(t("contact.error"));
+      }
+    } catch {
+      toast.error(t("contact.error"));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const infoBlocks = [
