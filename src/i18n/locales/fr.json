@@ -64,11 +64,12 @@
     "tag": "Ce que nous faisons",
     "title": "Nos",
     "title_accent": "Services",
-    "subtitle": "Des solutions intégrées pour transformer la gestion de vos actifs et optimiser votre performance opérationnelle.",
+    "subtitle": "Des solutions intégrées EAM / GMAO pour transformer la gestion de vos actifs et optimiser votre performance opérationnelle.",
     "learn_more": "En savoir plus",
     "items": {
       "org": { "title": "Conseil Organisationnel", "desc": "Audit organisationnel, analyse RACI, définition du Target Operating Model et référentiels organisationnels pour une structure alignée avec vos enjeux." },
       "digital": { "title": "Intégration EAM", "desc": "Déploiement certifié Octave Attune EAM (Hexagon) avec méthodologie Audit to Success™, paramétrage métier et transfert de compétences." },
+      "gmao": { "title": "Solution GMAO", "desc": "Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs et pilotage des KPI maintenance." },
       "si": { "title": "Systèmes d'Information", "desc": "Audit et optimisation de vos SI, intégration EAM/ERP, stratégie data et pilotage des projets de transformation digitale." },
       "process": { "title": "Optimisation des Processus", "desc": "Cartographie VSM/BPMN, standardisation SOP, démarche Lean et amélioration continue pour des gains de productivité mesurables." },
       "training": { "title": "Formation & Transfert", "desc": "Programmes de formation certifiés Octave Attune EAM, accompagnement au changement et montée en compétences de vos équipes." },

@@ -64,11 +64,12 @@
     "tag": "What we do",
     "title": "Our",
     "title_accent": "Services",
-    "subtitle": "Integrated solutions to transform your asset management and optimize operational performance.",
+    "subtitle": "Integrated EAM / CMMS solutions to transform your asset management and optimize operational performance.",
     "learn_more": "Learn more",
     "items": {
       "org": { "title": "Organizational Consulting", "desc": "Organizational audit, RACI analysis, Target Operating Model definition and organizational standards for a structure aligned with your challenges." },
       "digital": { "title": "EAM Integration", "desc": "Certified Octave Attune EAM (Hexagon) deployment with Audit to Success™ methodology, business configuration and skills transfer." },
+      "gmao": { "title": "CMMS Solution (GMAO)", "desc": "Deployment of your Computerized Maintenance Management System (CMMS / GMAO): digitized work orders, preventive planning, asset traceability and maintenance KPI dashboards." },
       "si": { "title": "Information Systems", "desc": "IS audit and optimization, EAM/ERP integration, data strategy and digital transformation project management." },
       "process": { "title": "Process Optimization", "desc": "VSM/BPMN mapping, SOP standardization, Lean approach and continuous improvement for measurable productivity gains." },
       "training": { "title": "Training & Transfer", "desc": "Certified Octave Attune EAM training programs, change management and team upskilling." },
