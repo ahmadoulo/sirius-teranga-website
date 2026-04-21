@@ -1,67 +1,74 @@
 
 
-## Plan: Polish Navbar Layout, Spacing, and Theme Integration
+## Plan: Restore Original Logo + Add GMAO Service
 
-### Issues Identified
+### Client feedback (2 changes only)
 
-1. **Navbar too narrow** -- `max-w-[1200px]` creates excessive empty space on wider screens. The reference image (image-29) shows a wider, full-width navbar with content spread edge-to-edge.
-2. **CTA button text wraps** -- "FREE DIAGNOSTIC" breaks into 2 lines because the button is too narrow. Needs `whitespace-nowrap`.
-3. **Logo spacing** -- Logo is too close to nav links; needs more separation.
-4. **Light mode not visually distinct** -- The navbar and sections need better contrast in light mode (currently the hero always uses dark navy, but the scrolled navbar in light mode needs a cleaner white bg with crisp borders).
-5. **Metric card icons** (image-30 reference) -- The icon containers in WhyUsSection look cramped on smaller viewports; need consistent sizing and alignment.
-6. **Section containers too narrow** -- All sections use `max-w-[1200px]`, which creates too much dead space on wide screens. Widen to `max-w-[1400px]` globally.
+1. **Restore the original logo** with light/dark mode switching (currently a custom-built "STC" badge replaces it)
+2. **Add GMAO** (Gestion de la Maintenance Assistée par Ordinateur) somewhere visible on the homepage — in the **Services** block
 
 ---
 
-### Changes
+### Change 1 — Restore original logo in Navbar & Footer
 
-#### 1. Navbar (Navbar.tsx)
-- Widen container: `max-w-[1200px]` → `max-w-[1400px]`
-- Add `whitespace-nowrap` to CTA button so "DIAGNOSTIC GRATUIT" stays on one line
-- Increase gap between logo and nav links
-- Improve light mode scrolled state: stronger shadow, clearer border
-- Ensure theme toggle icon is visible in both modes
+The original logo files already exist in the project:
+- `src/assets/logo.png` (for light mode → dark logo on white)
+- `src/assets/logo-dark.png` (for dark mode → light logo on dark)
 
-#### 2. Global section widths
-- **Files**: `HeroSection.tsx`, `WhyUsSection.tsx`, `AboutSection.tsx`, `MissionSection.tsx`, `ServicesSection.tsx`, `MethodologySection.tsx`, `ContactSection.tsx`, `CtaSection.tsx`, `Footer.tsx`, `PartnershipSection.tsx`, `ExpertisesSection.tsx`, `ReferencesSection.tsx`, `DiagnosticSection.tsx`
-- Change all `max-w-[1200px]` → `max-w-[1400px]` for wider content area
+**Files modified:**
 
-#### 3. WhyUsSection.tsx -- Fix metric card icons
-- Ensure icon containers have consistent size and padding
-- Better border/bg for light mode (border-border visible, card bg solid white)
+**`src/components/Navbar.tsx`**
+- Replace the custom "STC" badge block (the gradient div with S/T/C letters and gold dot) with `<img>` tags showing the correct logo per theme
+- Show `logo.png` in light mode, `logo-dark.png` in dark mode (using `dark:` Tailwind variants — `block dark:hidden` / `hidden dark:block`)
+- On the transparent hero state (top of homepage), force the dark-mode (light) logo since the background is navy
+- Keep the existing "Sirius Teranga / Consulting" text wordmark next to it
+- Adjust logo height (~h-10 md:h-12) for a clean fit
 
-#### 4. Light mode color polish (index.css)
-- Ensure `--background` in light mode is pure white `0 0% 100%` for cleaner appearance
-- Refine `--card` to use subtle off-white or pure white
-- Increase `--border` contrast slightly for crisper card edges in light mode
-
-#### 5. ThemeToggle.tsx
-- In light mode (non-transparent), use a visible icon color and border
+**`src/components/Footer.tsx`**
+- Same pattern: use the original logo image instead of any text-based brand mark, sized appropriately for the footer dark background (use `logo-dark.png`)
 
 ---
 
-### Technical Details
+### Change 2 — Add GMAO service card
 
-**Navbar width change:**
-```tsx
-// Before
-<div className="max-w-[1200px] mx-auto px-4 md:px-8 ...">
-// After
-<div className="max-w-[1400px] mx-auto px-6 md:px-10 ...">
-```
+GMAO is the French equivalent / business name for EAM (the core product STC integrates: Octave Attune EAM = a GMAO solution). Adding it explicitly will resonate with French-speaking clients searching for "GMAO".
 
-**CTA fix:**
-```tsx
-<Link to="/diagnostic" className="... whitespace-nowrap px-6 py-2.5 ...">
-```
+**Approach:** Add a new dedicated **GMAO** service card to the Services grid on the homepage (currently 5 services + 1 CTA card).
 
-**CSS light mode refinement:**
-```css
-:root {
-  --background: 0 0% 100%;  /* pure white */
-  --border: 0 0% 85%;       /* slightly more visible */
+**`src/components/ServicesSection.tsx`**
+- Add a 6th service entry in `serviceKeys`: `{ icon: Wrench, key: "gmao" }` (icon `Wrench` from lucide-react — wrench/maintenance is the universal GMAO symbol)
+- Insert it in the relevant position (right after `digital` / EAM, since they are conceptually linked)
+
+**`src/i18n/locales/fr.json`** — add under `services.items`:
+```json
+"gmao": {
+  "title": "Solution GMAO",
+  "desc": "Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs et pilotage des KPI maintenance."
 }
 ```
 
-All changes are cosmetic -- no logic or routing changes. Approximately 15 files touched, mostly single-line `max-w` replacements.
+**`src/i18n/locales/en.json`** — mirror in English:
+```json
+"gmao": {
+  "title": "CMMS Solution",
+  "desc": "Deployment of your Computerized Maintenance Management System (CMMS): digitized work orders, preventive planning, asset traceability and maintenance KPI dashboards."
+}
+```
+
+**Bonus visibility:** mention "GMAO" in the Services subtitle so the term appears prominently on the homepage:
+- FR: "Des solutions intégrées **EAM / GMAO** pour transformer la gestion de vos actifs..."
+- EN: "Integrated **EAM / CMMS** solutions to transform your asset management..."
+
+---
+
+### Files touched (4 total)
+
+| File | Change |
+|---|---|
+| `src/components/Navbar.tsx` | Replace STC badge with `<img>` logo (light/dark variants) |
+| `src/components/Footer.tsx` | Use original logo image |
+| `src/components/ServicesSection.tsx` | Add 6th service: GMAO with `Wrench` icon |
+| `src/i18n/locales/fr.json` + `en.json` | Add `services.items.gmao` keys + tweak `services.subtitle` |
+
+No layout, routing, or color changes. Pure content + asset restoration as requested by the client.
 
