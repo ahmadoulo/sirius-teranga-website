@@ -179,6 +179,17 @@
     "services_training": "Training & Transfer",
     "brochure": "STC Brochure (PDF)"
   },
+  "brochure_dialog": {
+    "title": "Download the STC brochure",
+    "description": "Enter your email to receive our full brochure.",
+    "email_label": "Professional email",
+    "email_placeholder": "you@company.com",
+    "submit": "Download brochure",
+    "submitting": "Sending…",
+    "success": "Thank you! Your download is starting.",
+    "error": "An error occurred. Please try again.",
+    "privacy": "Your email is only used to share information about our services."
+  },
   "partnership": {
     "tag": "Our Alliance — The Foundation of our Authority",
     "title": "Octave Attune EAM in Senegal:",
