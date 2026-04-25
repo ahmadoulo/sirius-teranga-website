@@ -110,6 +110,8 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    <BrochureDialog open={brochureOpen} onOpenChange={setBrochureOpen} />
+    </>
   );
 };
 
