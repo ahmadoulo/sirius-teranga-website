@@ -1,4 +1,4 @@
-import { LayoutGrid, MonitorSmartphone, Wrench, Server, GitBranch, GraduationCap, Handshake, ArrowRight } from "lucide-react";
+import { LayoutGrid, MonitorSmartphone, Wrench, Server, GitBranch, GraduationCap, Handshake, ArrowRight, TrendingUp, Gauge, PiggyBank, Activity } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
@@ -81,8 +81,65 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
+
+        {/* GMAO Gains block */}
+        <GmaoGains />
       </div>
     </section>
+  );
+};
+
+const gmaoGainKeys = [
+  { icon: TrendingUp, key: "productivity" },
+  { icon: Gauge, key: "efficiency" },
+  { icon: PiggyBank, key: "costs" },
+  { icon: Activity, key: "availability" },
+];
+
+const GmaoGains = () => {
+  const { t } = useTranslation();
+  const headRef = useScrollAnimation('fade-in-up', 0);
+  return (
+    <div className="mt-16 md:mt-24">
+      <div ref={headRef} className="text-center mb-8 md:mb-12">
+        <div className="inline-block font-heading text-[0.65rem] md:text-xs font-bold tracking-[0.15em] uppercase text-accent bg-accent/10 border border-accent/30 px-3 md:px-4 py-1 md:py-1.5 rounded-full mb-3 md:mb-4">
+          {t("services.gmao_gains.tag")}
+        </div>
+        <h3 className="font-heading font-extrabold text-[clamp(1.2rem,3.2vw,2.2rem)] leading-[1.2] text-foreground">
+          {t("services.gmao_gains.title")} <span className="text-accent">{t("services.gmao_gains.title_accent")}</span>
+        </h3>
+        <p className="text-muted-foreground text-sm md:text-base max-w-[640px] mx-auto mt-3 md:mt-4">{t("services.gmao_gains.subtitle")}</p>
+      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
+        {gmaoGainKeys.map((g, i) => (
+          <GmaoGainCard key={g.key} icon={g.icon} gKey={g.key} delay={i * 100} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const GmaoGainCard = ({ icon: Icon, gKey, delay }: { icon: React.ElementType; gKey: string; delay: number }) => {
+  const ref = useScrollAnimation<HTMLDivElement>('fade-in-up', delay);
+  const { t } = useTranslation();
+  return (
+    <div
+      ref={ref}
+      className="bg-card border border-border rounded-xl p-4 md:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-navy-md hover:border-accent/40"
+    >
+      <div className="w-9 h-9 md:w-11 md:h-11 mx-auto bg-accent/10 rounded-lg flex items-center justify-center text-accent mb-3 md:mb-4">
+        <Icon className="w-4 h-4 md:w-5 md:h-5" />
+      </div>
+      <div className="font-heading font-black text-[clamp(1.1rem,3vw,1.8rem)] text-accent leading-none mb-2">
+        {t(`services.gmao_gains.items.${gKey}.value`)}
+      </div>
+      <div className="font-heading text-[0.7rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground mb-2">
+        {t(`services.gmao_gains.items.${gKey}.label`)}
+      </div>
+      <p className="text-muted-foreground text-[0.7rem] md:text-xs leading-relaxed hidden md:block">
+        {t(`services.gmao_gains.items.${gKey}.desc`)}
+      </p>
+    </div>
   );
 };
 

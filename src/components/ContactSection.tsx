@@ -6,7 +6,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
   const { t } = useTranslation();
-  const [form, setForm] = useState({ name: "", email: "", company: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const infoRef = useScrollAnimation('fade-in-left', 0);
   const formRef = useScrollAnimation<HTMLFormElement>('fade-in-right', 200);
@@ -24,6 +24,7 @@ const ContactSection = () => {
       formData.append("access_key", "ea435ede-dfc0-4f09-88b8-9b49d525edf7");
       formData.append("name", form.name);
       formData.append("email", form.email);
+      formData.append("phone", form.phone);
       formData.append("company", form.company);
       formData.append("subject", form.subject);
       formData.append("message", form.message);
@@ -38,7 +39,7 @@ const ContactSection = () => {
 
       if (data.success) {
         toast.success(t("contact.success"));
-        setForm({ name: "", email: "", company: "", subject: "", message: "" });
+        setForm({ name: "", email: "", phone: "", company: "", subject: "", message: "" });
       } else {
         toast.error(t("contact.error"));
       }
@@ -109,9 +110,15 @@ const ContactSection = () => {
                 <input id="contact-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputClasses} placeholder={t("contact.email_placeholder")} />
               </div>
             </div>
-            <div className="flex flex-col gap-1.5 mb-4 md:mb-5">
-              <label htmlFor="contact-company" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.company")}</label>
-              <input id="contact-company" type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClasses} placeholder={t("contact.company_placeholder")} />
+            <div className="grid sm:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-phone" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.phone")}</label>
+                <input id="contact-phone" type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputClasses} placeholder={t("contact.phone_placeholder")} />
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label htmlFor="contact-company" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.company")}</label>
+                <input id="contact-company" type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className={inputClasses} placeholder={t("contact.company_placeholder")} />
+              </div>
             </div>
             <div className="flex flex-col gap-1.5 mb-4 md:mb-5">
               <label htmlFor="contact-subject" className="font-heading text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.08em] text-foreground">{t("contact.subject")}</label>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
+import { Download } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HeroSection = () => {
@@ -38,7 +39,7 @@ const HeroSection = () => {
           {t("hero.subtitle")}
         </p>
 
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4 sm:px-0">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4 sm:px-0">
           <Link
             to="/diagnostic"
             className="inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-accent text-accent-foreground px-7 md:px-8 py-3 md:py-3.5 rounded-full border-2 border-transparent shadow-gold hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(212,175,55,0.45)] transition-all duration-300"
@@ -51,6 +52,14 @@ const HeroSection = () => {
           >
             {t("hero.cta2")}
           </Link>
+          <a
+            href="/brochure-stc-consulting.pdf"
+            download
+            className="inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-transparent text-white px-7 md:px-8 py-3 md:py-3.5 rounded-full border-2 border-accent/60 hover:bg-accent/10 hover:border-accent hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <Download className="w-4 h-4" />
+            {t("hero.brochure_btn")}
+          </a>
         </div>
 
         {/* Stats bar */}
