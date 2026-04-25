@@ -1,74 +1,92 @@
+## Plan : Derniers retours client avant mise en PROD
 
-
-## Plan: Restore Original Logo + Add GMAO Service
-
-### Client feedback (2 changes only)
-
-1. **Restore the original logo** with light/dark mode switching (currently a custom-built "STC" badge replaces it)
-2. **Add GMAO** (Gestion de la Maintenance Assistée par Ordinateur) somewhere visible on the homepage — in the **Services** block
+5 changements ciblés, tous mineurs, aucun impact structurel.
 
 ---
 
-### Change 1 — Restore original logo in Navbar & Footer
+### 1. Mettre à jour les coordonnées (téléphone + adresse)
 
-The original logo files already exist in the project:
-- `src/assets/logo.png` (for light mode → dark logo on white)
-- `src/assets/logo-dark.png` (for dark mode → light logo on dark)
+**`src/i18n/locales/fr.json` & `src/i18n/locales/en.json`** (clés `contact.info_phone` et `contact.info_location`) :
+- `info_phone` : `"+221 78 788 80 55"` → **`"+221 78 795 73 73"`**
+- `info_location` (FR) : `"Dakar, Sénégal"` → **`"Liberté 6, Dakar, Sénégal"`**
+- `info_location` (EN) : `"Dakar, Senegal"` → **`"Liberté 6, Dakar, Senegal"`**
 
-**Files modified:**
-
-**`src/components/Navbar.tsx`**
-- Replace the custom "STC" badge block (the gradient div with S/T/C letters and gold dot) with `<img>` tags showing the correct logo per theme
-- Show `logo.png` in light mode, `logo-dark.png` in dark mode (using `dark:` Tailwind variants — `block dark:hidden` / `hidden dark:block`)
-- On the transparent hero state (top of homepage), force the dark-mode (light) logo since the background is navy
-- Keep the existing "Sirius Teranga / Consulting" text wordmark next to it
-- Adjust logo height (~h-10 md:h-12) for a clean fit
-
-**`src/components/Footer.tsx`**
-- Same pattern: use the original logo image instead of any text-based brand mark, sized appropriately for the footer dark background (use `logo-dark.png`)
+Ces clés sont déjà utilisées par `ContactSection.tsx` et `Footer.tsx` → propagation automatique partout (page Contact, accueil, footer).
 
 ---
 
-### Change 2 — Add GMAO service card
+### 2. Téléchargement de la brochure STC Consulting
 
-GMAO is the French equivalent / business name for EAM (the core product STC integrates: Octave Attune EAM = a GMAO solution). Adding it explicitly will resonate with French-speaking clients searching for "GMAO".
+**Approche recommandée :** héberger le PDF dans `public/` pour un téléchargement direct (rapide, pas de redirection externe, pas de dépendance Google Drive). Ouvert à un lien Google Drive plus tard si vous préférez.
 
-**Approach:** Add a new dedicated **GMAO** service card to the Services grid on the homepage (currently 5 services + 1 CTA card).
+**Étapes :**
+- Le client devra fournir le fichier PDF de la brochure (à uploader). Pour ce plan, je placerai un placeholder à `public/brochure-stc-consulting.pdf` que vous remplacerez (ou j'utiliserai le fichier que vous m'enverrez).
+- Ajouter un bouton **« Télécharger la brochure »** (icône `Download` lucide) à 2 endroits stratégiques :
+  - **HeroSection** : à côté du CTA principal « Diagnostic gratuit » (variante outline pour ne pas concurrencer le CTA primaire)
+  - **Footer** : dans la colonne Navigation, lien discret « Brochure STC (PDF) »
+- Le bouton utilise `<a href="/brochure-stc-consulting.pdf" download>` → téléchargement natif du navigateur.
+- Nouvelles clés i18n : `hero.brochure_btn` / `footer.brochure` (FR : « Télécharger la brochure », EN : « Download brochure »).
 
-**`src/components/ServicesSection.tsx`**
-- Add a 6th service entry in `serviceKeys`: `{ icon: Wrench, key: "gmao" }` (icon `Wrench` from lucide-react — wrench/maintenance is the universal GMAO symbol)
-- Insert it in the relevant position (right after `digital` / EAM, since they are conceptually linked)
-
-**`src/i18n/locales/fr.json`** — add under `services.items`:
-```json
-"gmao": {
-  "title": "Solution GMAO",
-  "desc": "Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs et pilotage des KPI maintenance."
-}
-```
-
-**`src/i18n/locales/en.json`** — mirror in English:
-```json
-"gmao": {
-  "title": "CMMS Solution",
-  "desc": "Deployment of your Computerized Maintenance Management System (CMMS): digitized work orders, preventive planning, asset traceability and maintenance KPI dashboards."
-}
-```
-
-**Bonus visibility:** mention "GMAO" in the Services subtitle so the term appears prominently on the homepage:
-- FR: "Des solutions intégrées **EAM / GMAO** pour transformer la gestion de vos actifs..."
-- EN: "Integrated **EAM / CMMS** solutions to transform your asset management..."
+**Si vous préférez Google Drive** dès maintenant : il suffit de remplacer le `href` par le lien partagé Drive (format `https://drive.google.com/uc?export=download&id=FILE_ID`) — je peux faire l'ajustement.
 
 ---
 
-### Files touched (4 total)
+### 3. Ajouter le téléphone dans le formulaire de contact
 
-| File | Change |
+**`src/components/ContactSection.tsx`** :
+- Ajouter un champ **Téléphone** (input `type="tel"`) entre les champs Email et Société.
+- Layout : conserver la grille 2 colonnes en SM+ → ligne 1 = `Nom | Email`, ligne 2 = `Téléphone | Société`, puis Sujet, Message en pleine largeur.
+- État du formulaire : ajouter `phone: ""` dans `useState`.
+- Soumission : ajouter `formData.append("phone", form.phone)` dans le payload Web3Forms → le numéro arrivera bien dans l'email reçu.
+- Champ optionnel (pas d'astérisque, pas de validation bloquante).
+
+**Clés i18n ajoutées** : `contact.phone` / `contact.phone_placeholder` (FR : « Téléphone » / « +221 ... », EN : « Phone » / « +221 ... »).
+
+---
+
+### 4. Mention des gains GMAO chiffrés
+
+Enrichir la communication GMAO avec les chiffres fournis par le client : **+10-20% productivité**, **+15-25% efficacité**, **-10-20% coûts**, **+10-15% disponibilité**.
+
+**Deux emplacements complémentaires :**
+
+**a) Carte service GMAO** (`services.items.gmao.desc` dans `fr.json` / `en.json`) — enrichir la description :
+- FR : *« Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs. **Gains attendus : +10 à +20% de productivité, -10 à -20% sur les coûts de maintenance, +10 à +15% de disponibilité des équipements.** »*
+- EN : équivalent traduit.
+
+**b) Nouveau mini-bloc « Gains GMAO »** dans `ServicesSection.tsx`, juste sous la grille des services (avant ou en remplaçant la carte CTA, à voir) :
+- 4 mini-cartes horizontales, chacune avec un chiffre fort (typo gold) + label :
+  - **+10-20%** Productivité
+  - **+15-25%** Efficacité
+  - **-10-20%** Coûts maintenance
+  - **+10-15%** Disponibilité
+- Style cohérent avec les MetricCard de `WhyUsSection.tsx` (icônes, fond card, accent gold).
+- Titre du bloc : « Ce que la GMAO change concrètement » / « What CMMS concretely delivers ».
+- Bloc i18n : nouvelle section `services.gmao_gains` (titre + 4 entrées avec `value` et `label`).
+
+---
+
+### 5. Récapitulatif des fichiers touchés
+
+| Fichier | Changement |
 |---|---|
-| `src/components/Navbar.tsx` | Replace STC badge with `<img>` logo (light/dark variants) |
-| `src/components/Footer.tsx` | Use original logo image |
-| `src/components/ServicesSection.tsx` | Add 6th service: GMAO with `Wrench` icon |
-| `src/i18n/locales/fr.json` + `en.json` | Add `services.items.gmao` keys + tweak `services.subtitle` |
+| `src/i18n/locales/fr.json` | Téléphone, adresse, desc GMAO enrichie, clés `hero.brochure_btn`, `footer.brochure`, `contact.phone*`, `services.gmao_gains.*` |
+| `src/i18n/locales/en.json` | Mêmes ajouts en anglais |
+| `src/components/ContactSection.tsx` | Champ téléphone (input + state + payload Web3Forms) |
+| `src/components/HeroSection.tsx` | Bouton secondaire « Télécharger la brochure » à côté du CTA |
+| `src/components/Footer.tsx` | Lien discret « Brochure STC (PDF) » |
+| `src/components/ServicesSection.tsx` | Nouveau bloc « Gains GMAO » (4 chiffres clés) |
+| `public/brochure-stc-consulting.pdf` | Placeholder à remplacer par le vrai PDF (ou lien Drive) |
 
-No layout, routing, or color changes. Pure content + asset restoration as requested by the client.
+**Aucune modification** de routing, de thème, de structure. Le formulaire continue d'envoyer via Web3Forms (token déjà configuré) — le numéro de téléphone sera simplement inclus dans l'email reçu.
 
+---
+
+### Question ouverte (à confirmer en implémentation)
+
+**Pour la brochure** : voulez-vous que je :
+- (a) crée un placeholder vide à `public/brochure-stc-consulting.pdf` que vous remplacerez via upload, ou
+- (b) attende que vous m'envoyiez le PDF en pièce jointe pour l'intégrer directement, ou
+- (c) utilise dès maintenant un lien Google Drive (donnez-moi l'URL partagée) ?
+
+Par défaut je pars sur **(a)** pour ne pas bloquer les autres changements — il vous suffira d'uploader le fichier final ensuite, le bouton fonctionnera immédiatement.
