@@ -15,6 +15,7 @@ const HeroSection = () => {
   const statsRef = useScrollAnimation('fade-in-up', 400);
 
   return (
+    <>
     <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-[#071528] via-[#0B1F3A] to-[#102848]">
       {/* Background overlays */}
       <div className="absolute inset-0 pointer-events-none" style={{
@@ -84,6 +85,8 @@ const HeroSection = () => {
         <span className="font-heading text-[0.7rem] tracking-[0.1em] uppercase">{t("hero.scroll")}</span>
       </div>
     </section>
+    <BrochureDialog open={brochureOpen} onOpenChange={setBrochureOpen} />
+    </>
   );
 };
 
