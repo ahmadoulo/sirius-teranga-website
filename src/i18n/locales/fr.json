@@ -17,6 +17,7 @@
     "subtitle": "SIRIUS TERANGA CONSULTING est le cabinet de référence en Asset Management & EAM au Sénégal. Portés par 40 ans d'expérience industrielle et une alliance stratégique avec Talan — le leader français de l'intégration Octave Attune EAM — nous transformons la gestion de vos actifs critiques en avantage compétitif durable.",
     "cta1": "Lancer mon Diagnostic gratuit",
     "cta2": "Découvrir nos services",
+    "brochure_btn": "Télécharger la brochure",
     "scroll": "Défiler",
     "stat1_number": "40",
     "stat1_label": "Ans d'expertise cumulée",
@@ -69,7 +70,7 @@
     "items": {
       "org": { "title": "Conseil Organisationnel", "desc": "Audit organisationnel, analyse RACI, définition du Target Operating Model et référentiels organisationnels pour une structure alignée avec vos enjeux." },
       "digital": { "title": "Intégration EAM", "desc": "Déploiement certifié Octave Attune EAM (Hexagon) avec méthodologie Audit to Success™, paramétrage métier et transfert de compétences." },
-      "gmao": { "title": "Solution GMAO", "desc": "Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs et pilotage des KPI maintenance." },
+      "gmao": { "title": "Solution GMAO", "desc": "Mise en place de votre Gestion de la Maintenance Assistée par Ordinateur (GMAO) : digitalisation des interventions, planification préventive, traçabilité des actifs et pilotage des KPI maintenance. Gains attendus : +10 à +20% de productivité, -10 à -20% sur les coûts de maintenance et +10 à +15% de disponibilité des équipements." },
       "si": { "title": "Systèmes d'Information", "desc": "Audit et optimisation de vos SI, intégration EAM/ERP, stratégie data et pilotage des projets de transformation digitale." },
       "process": { "title": "Optimisation des Processus", "desc": "Cartographie VSM/BPMN, standardisation SOP, démarche Lean et amélioration continue pour des gains de productivité mesurables." },
       "training": { "title": "Formation & Transfert", "desc": "Programmes de formation certifiés Octave Attune EAM, accompagnement au changement et montée en compétences de vos équipes." },
@@ -77,7 +78,19 @@
     },
     "cta_title": "Un projet en tête ?",
     "cta_desc": "Discutons ensemble de vos défis et co-construisons une solution adaptée à vos besoins.",
-    "cta_button": "Lancer mon Diagnostic"
+    "cta_button": "Lancer mon Diagnostic",
+    "gmao_gains": {
+      "tag": "Pourquoi déployer une GMAO",
+      "title": "Ce que la GMAO change",
+      "title_accent": "concrètement",
+      "subtitle": "Une GMAO bien déployée transforme vos opérations de maintenance en levier de performance mesurable.",
+      "items": {
+        "productivity": { "value": "+10 à +20%", "label": "Productivité", "desc": "Moins de temps perdu, meilleure affectation des tâches, réduction des interventions non planifiées." },
+        "efficiency": { "value": "+15 à +25%", "label": "Efficacité", "desc": "Meilleures décisions grâce aux données historiques, prévisions, priorisation et coordination renforcée." },
+        "costs": { "value": "-10 à -20%", "label": "Coûts de maintenance", "desc": "Réduction des pannes, des temps d'arrêt et meilleure gestion des stocks de pièces détachées." },
+        "availability": { "value": "+10 à +15%", "label": "Disponibilité équipements", "desc": "Maintenance préventive structurée, anticipation des défaillances et pilotage en temps réel." }
+      }
+    }
   },
   "methodology": {
     "tag": "Notre Méthodologie",
@@ -122,6 +135,8 @@
     "subtitle": "Remplissez le formulaire ou utilisez nos coordonnées directes. Réponse sous 24h.",
     "name": "Nom complet",
     "email": "Email",
+    "phone": "Téléphone",
+    "phone_placeholder": "+221 ...",
     "company": "Entreprise",
     "subject": "Sujet",
     "subject_placeholder": "Sélectionnez un sujet",
@@ -144,9 +159,9 @@
     "info_email_label": "Email",
     "info_email": "contact@siriusteranga.com",
     "info_phone_label": "Téléphone",
-    "info_phone": "+221 78 788 80 55",
+    "info_phone": "+221 78 795 73 73",
     "info_location_label": "Bureau",
-    "info_location": "Dakar, Sénégal"
+    "info_location": "Liberté 6, Dakar, Sénégal"
   },
   "footer": {
     "tagline": "Cabinet de référence en Asset Management & EAM au Sénégal. Partenaire officiel Talan — Channel Partner Hexagon.",
@@ -161,7 +176,8 @@
     "services_digital": "Intégration EAM",
     "services_si": "Systèmes d'Information",
     "services_process": "Optimisation Processus",
-    "services_training": "Formation & Transfert"
+    "services_training": "Formation & Transfert",
+    "brochure": "Brochure STC (PDF)"
   },
   "partnership": {
     "tag": "Notre Alliance — Le Fondement de notre autorité",
