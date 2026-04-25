@@ -28,6 +28,7 @@ const Footer = () => {
   ];
 
   return (
+    <>
     <footer className="bg-[#071528]">
       {/* Top */}
       <div className="py-10 md:py-16 pb-8 md:pb-10">
