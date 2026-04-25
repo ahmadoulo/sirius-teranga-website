@@ -179,6 +179,17 @@
     "services_training": "Formation & Transfert",
     "brochure": "Brochure STC (PDF)"
   },
+  "brochure_dialog": {
+    "title": "Télécharger la brochure STC",
+    "description": "Renseignez votre email pour recevoir notre brochure complète.",
+    "email_label": "Email professionnel",
+    "email_placeholder": "vous@entreprise.com",
+    "submit": "Télécharger la brochure",
+    "submitting": "Envoi en cours…",
+    "success": "Merci ! Votre téléchargement démarre.",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "privacy": "Votre email est utilisé uniquement pour vous communiquer des informations sur nos services."
+  },
   "partnership": {
     "tag": "Notre Alliance — Le Fondement de notre autorité",
     "title": "Octave Attune EAM au Sénégal :",
