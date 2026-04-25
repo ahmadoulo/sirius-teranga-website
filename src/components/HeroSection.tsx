@@ -3,9 +3,11 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useRef, useState } from "react";
 import { Download } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import BrochureDialog from "./BrochureDialog";
 
 const HeroSection = () => {
   const { t } = useTranslation();
+  const [brochureOpen, setBrochureOpen] = useState(false);
   const badgeRef = useScrollAnimation('fade-in-up', 0);
   const titleRef = useScrollAnimation('fade-in-up', 100);
   const subRef = useScrollAnimation('fade-in-up', 200);
@@ -52,14 +54,14 @@ const HeroSection = () => {
           >
             {t("hero.cta2")}
           </Link>
-          <a
-            href="/brochure-stc-consulting.pdf"
-            download
+          <button
+            type="button"
+            onClick={() => setBrochureOpen(true)}
             className="inline-flex items-center justify-center gap-2 font-heading text-sm font-bold tracking-[0.05em] uppercase bg-transparent text-white px-7 md:px-8 py-3 md:py-3.5 rounded-full border-2 border-accent/60 hover:bg-accent/10 hover:border-accent hover:-translate-y-0.5 transition-all duration-300"
           >
             <Download className="w-4 h-4" />
             {t("hero.brochure_btn")}
-          </a>
+          </button>
         </div>
 
         {/* Stats bar */}
