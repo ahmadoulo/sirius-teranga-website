@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Download } from "lucide-react";
 import logoDark from "@/assets/logo-dark-transparent.png";
 
 const Footer = () => {
@@ -48,6 +48,16 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/brochure-stc-consulting.pdf"
+                  download
+                  className="inline-flex items-center gap-1.5 text-white/70 text-xs md:text-sm hover:text-accent hover:pl-1 transition-all duration-200"
+                >
+                  <Download className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  {t("footer.brochure")}
+                </a>
+              </li>
             </ul>
           </div>
 
