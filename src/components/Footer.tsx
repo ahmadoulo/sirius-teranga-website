@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, Phone, MapPin, Download } from "lucide-react";
 import logoDark from "@/assets/logo-dark-transparent.png";
+import BrochureDialog from "./BrochureDialog";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const [brochureOpen, setBrochureOpen] = useState(false);
 
   const navLinks = [
     { label: t("nav.home"), to: "/" },
@@ -49,14 +52,14 @@ const Footer = () => {
                 </li>
               ))}
               <li>
-                <a
-                  href="/brochure-stc-consulting.pdf"
-                  download
-                  className="inline-flex items-center gap-1.5 text-white/70 text-xs md:text-sm hover:text-accent hover:pl-1 transition-all duration-200"
+                <button
+                  type="button"
+                  onClick={() => setBrochureOpen(true)}
+                  className="inline-flex items-center gap-1.5 text-white/70 text-xs md:text-sm hover:text-accent hover:pl-1 transition-all duration-200 text-left"
                 >
                   <Download className="w-3 h-3 md:w-3.5 md:h-3.5" />
                   {t("footer.brochure")}
-                </a>
+                </button>
               </li>
             </ul>
           </div>
